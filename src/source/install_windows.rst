@@ -36,7 +36,7 @@ Locate the file
 .. figure:: /_static/make_file.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
-   :figwidth: 80%
+   :figwidth: 100%
 
 
 rename it
@@ -44,7 +44,7 @@ rename it
 .. figure:: /_static/rename.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
-   :figwidth: 80%
+   :figwidth: 100%
 
 
 path::
@@ -57,7 +57,7 @@ path::
 .. figure:: /_static/var_env.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
-   :figwidth: 80%
+   :figwidth: 100%
 
 Install pyusb
 ---------------
@@ -82,4 +82,4 @@ The current loading tool can utilize the default driver and coexist with the off
 .. figure:: /_static/driver.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
-   :figwidth: 80%
+   :figwidth: 100%
