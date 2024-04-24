@@ -13,5 +13,5 @@ all: build
 
 build:
 	@cd src && ./make.bat clean && ./make.bat html
-	@cp -R src/build/html/* docs
+	@cp -R src/build/html/* docs && touch docs/.nojekyll
 	@echo "Documentation built and copied to docs"
