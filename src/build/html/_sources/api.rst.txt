@@ -1,11 +1,10 @@
 API
 ===
 
-
-.. figure:: /_static/PinOut_CH552.jpg
-   :width: 80%
-   :align: center
-   :alt: image test
+.. automodule:: lumache
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 
 

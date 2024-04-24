@@ -1,4 +1,4 @@
-Environment for CH55x with SDCC and Ubuntu 23.10
+CH55x with SDCC and Ubuntu 23.10
 ===================================
 Ubuntu 23.10 Installer Environment
 ---------------

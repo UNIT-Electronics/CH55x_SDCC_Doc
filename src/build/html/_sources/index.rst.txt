@@ -29,7 +29,6 @@ Contents
 
    
    about
-   usage
    install_linux
    install_windows
    compile

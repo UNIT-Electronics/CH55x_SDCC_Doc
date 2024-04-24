@@ -1,4 +1,4 @@
-Environment for CH55x with SDCC and Windows
+CH55x with SDCC and Windows
 ===================================
 
 Compiler Installation 
@@ -23,15 +23,11 @@ Follow the steps below to install the necessary tools
 Configuring MAKE
 ---------------
 
-
 Remember that for Windows operating systems, an extra step is necessary, which is to open the environment variable -> Edit environment variable::
 
     C:\MinGW\bin
 
-
-
 Locate the file
-
 
 .. figure:: /_static/make_file.png
    :align: center
@@ -39,7 +35,7 @@ Locate the file
    :figwidth: 100%
 
 
-rename it
+Rename it:
 
 .. figure:: /_static/rename.png
    :align: center
@@ -59,14 +55,14 @@ path::
    :alt: GitHub build status reporting for pull requests.
    :figwidth: 100%
 
+
 Install pyusb
 ---------------
-
 
 Verify the installation with `python --version`. 
 
 If not installed, download and install:
-- [Python](https://www.python.org/downloads/)
+- `Python <https://www.python.org/downloads/>`_
 
 Use pip for install py usb::
 
@@ -84,4 +80,3 @@ The current loading tool can utilize the default driver and coexist with the off
    :alt: GitHub build status reporting for pull requests.
    :figwidth: 100%
 
-   
