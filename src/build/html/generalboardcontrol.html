@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recommended Operating Conditions &mdash; ISE_Documentation_board_CH552 0.0.1 documentation</title>
+  <title>General Board Control &mdash; ISE_Documentation_board_CH552 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -50,11 +50,14 @@
 <li class="toctree-l1"><a class="reference internal" href="install_linux.html">CH55x with SDCC and Ubuntu 23.10</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_windows.html">CH55x with SDCC and Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Recommended Operating Conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#operating-mode">Operating Mode</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#voltage-selector">Voltage Selector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#jst-connectors">JST Connectors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#built-in-leds">Built-In LEDs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">General Board Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#recommended-operating-conditions">Recommended Operating Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operating-mode">Operating Mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#voltage-selector">Voltage Selector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jst-connectors">JST Connectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#built-in-leds">Built-In LEDs</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog to Digital Converter (ADC)</a></li>
@@ -75,7 +78,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Recommended Operating Conditions</li>
+      <li class="breadcrumb-item active">General Board Control</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/generalboardcontrol.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -85,11 +88,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <p>General Board Control
-===
-The CH552, characterized by its compact size, native USB connectivity, and 16 KB memory (with 14 KB usable), enables the creation of simple yet effective programs. This allows for greater control in implementing various applications. The choice of this microcontroller is based on its affordability, ease of connection, and compatibility with various operating systems.</p>
+  <section id="general-board-control">
+<h1>General Board Control<a class="headerlink" href="#general-board-control" title="Link to this heading"></a></h1>
+<p>The CH552, characterized by its compact size, native USB connectivity, and 16 KB memory (with 14 KB usable), enables the creation of simple yet effective programs. This allows for greater control in implementing various applications. The choice of this microcontroller is based on its affordability, ease of connection, and compatibility with various operating systems.</p>
 <section id="recommended-operating-conditions">
-<h1>Recommended Operating Conditions<a class="headerlink" href="#recommended-operating-conditions" title="Link to this heading"></a></h1>
+<h2>Recommended Operating Conditions<a class="headerlink" href="#recommended-operating-conditions" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line">Symbol | Description                                | Minimum | Typical | Maximum | Units    |</div>
 </div>
@@ -99,21 +102,22 @@ The CH552, characterized by its compact size, native USB connectivity, and 16 KB
 | Top    | Operating temperature                      | -40     | 25      | 85      | °C       |</p>
 </section>
 <section id="operating-mode">
-<h1>Operating Mode<a class="headerlink" href="#operating-mode" title="Link to this heading"></a></h1>
+<h2>Operating Mode<a class="headerlink" href="#operating-mode" title="Link to this heading"></a></h2>
 <section id="voltage-selector">
-<h2>Voltage Selector<a class="headerlink" href="#voltage-selector" title="Link to this heading"></a></h2>
+<h3>Voltage Selector<a class="headerlink" href="#voltage-selector" title="Link to this heading"></a></h3>
 <p>The development board utilizes a clever voltage selector system consisting of three pins and a jumper switch. The configuration of these pins determines the operating voltage of the board. By connecting the central pin to the +5V pin via the jumper, the board operates at 5V. On the other hand, by connecting the central pin to the +3.3V pin, the APK2112K regulator is activated, powering the board at 3.3V. It is crucial to ensure that the jumper switch is in the correct position according to the desired voltage to avoid possible damage to modules, components, and the board itself.</p>
 <img alt="selector" class="align-center" src="_images/selector.png" />
 </section>
 <section id="jst-connectors">
-<h2>JST Connectors<a class="headerlink" href="#jst-connectors" title="Link to this heading"></a></h2>
+<h3>JST Connectors<a class="headerlink" href="#jst-connectors" title="Link to this heading"></a></h3>
 <p>The board features two 1mm JST connectors, linked to different pins. The first connector directly connects to GPIO 3.0 and 3.1 of the microcontroller, while the second one is linked to pins 3.2 and 1.5. Both connectors operate in parallel to the selected power supply voltage via the jumper switch. These connectors are compatible with QWIIC, STEMMA QT, or similar pin distribution protocols. It is essential to verify that the selector voltage matches the system voltage to avoid circuit damage. Additionally, these connectors allow the board to be powered and offer functionalities such as PWM and serial communication.</p>
 <img alt="jst" class="align-center" src="_images/jst.png" />
 </section>
 <section id="built-in-leds">
-<h2>Built-In LEDs<a class="headerlink" href="#built-in-leds" title="Link to this heading"></a></h2>
+<h3>Built-In LEDs<a class="headerlink" href="#built-in-leds" title="Link to this heading"></a></h3>
 <p>The board features two LEDs directly linked to the microcontroller. The first one is connected to pin 3.4, while the second one is a Neopixel LED connected to pin 3.3. This Neopixel provides an output with two headers, one connected to the data output and the other to the board’s ground, allowing for the external connection of more LEDs. To use this output, simply connect the DOUT pin to the DIN pin of the next LED in the row. As for power supply, you can use the VCC pin, provided that the external LEDs can operate at this voltage. Otherwise, it will be necessary to power them using an external source.</p>
 <img alt="jst" class="align-center" src="_images/neopixel.png" />
+</section>
 </section>
 </section>
 
