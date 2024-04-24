@@ -1,7 +1,9 @@
 Analog to Digital Converter (ADC)
 ==================================
 
-The CH552 has a single 8-bit ADC which can be used to read analog voltages and convert them to a digital value. You can construct such an ADC using the following code::
+The CH552 has four ADC channels, which can be used to read analog values from sensors. The ADC channels are multiplexed with the GPIO pins, so you can use any GPIO pin as an ADC input.
+
+The ADC has a resolution of 8 bits, which means it can read values from 0 to 255. The ADC can be configured to read values from 0 to 5V, or from 0 to 3.3V, depending on the VCC voltage::
 
     #include "src/config.h" // user configurations
     #include "src/system.h" // system functions
@@ -21,3 +23,5 @@ The CH552 has a single 8-bit ADC which can be used to read analog voltages and c
             int data = ADC_read(); // Assuming ADC_read() returns an int
         }
     }
+
+
