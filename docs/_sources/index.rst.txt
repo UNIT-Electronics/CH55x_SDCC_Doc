@@ -15,7 +15,7 @@ present various alternatives for usage.
 
 
 
-Check out the :doc:`usage` section for further information, including
+Check out the  section for further information, including
 installation instructions, and the :doc:`api` section for detailed
 
 .. note::

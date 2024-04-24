@@ -12,6 +12,6 @@ help:
 all: build
 
 build:
-	@cd src && ./make.bat html
+	@cd src && ./make.bat clean && ./make.bat html
 	@cp -R src/build/html/* docs
 	@echo "Documentation built and copied to docs"
