@@ -81,23 +81,23 @@
   <section id="analog-to-digital-converter-adc">
 <h1>Analog to Digital Converter (ADC)<a class="headerlink" href="#analog-to-digital-converter-adc" title="Link to this heading"></a></h1>
 <p>The CH552 has a single 8-bit ADC which can be used to read analog voltages and convert them to a digital value. You can construct such an ADC using the following code:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/config.h&quot;</span><span class="c1"> // user configurations</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/system.h&quot;</span><span class="c1"> // system functions</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/gpio.h&quot;</span><span class="c1">   // for GPIO</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/delay.h&quot;</span><span class="c1">  // for delays</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;src/config.h&quot; // user configurations</span>
+<span class="c1">#include &quot;src/system.h&quot; // system functions</span>
+<span class="c1">#include &quot;src/gpio.h&quot;   // for GPIO</span>
+<span class="c1">#include &quot;src/delay.h&quot;  // for delays</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="n">CLK_config</span><span class="p">();</span>
-<span class="w">    </span><span class="n">DLY_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">CLK_config</span><span class="p">();</span>
+    <span class="n">DLY_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">ADC_input</span><span class="p">(</span><span class="n">PIN_ADC</span><span class="p">);</span>
+    <span class="n">ADC_input</span><span class="p">(</span><span class="n">PIN_ADC</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">ADC_enable</span><span class="p">();</span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADC_read</span><span class="p">();</span><span class="w"> </span><span class="c1">// Assuming ADC_read() returns an int</span>
-<span class="w">    </span><span class="p">}</span>
+    <span class="n">ADC_enable</span><span class="p">();</span>
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nb">int</span> <span class="n">data</span> <span class="o">=</span> <span class="n">ADC_read</span><span class="p">();</span> <span class="o">//</span> <span class="n">Assuming</span> <span class="n">ADC_read</span><span class="p">()</span> <span class="n">returns</span> <span class="n">an</span> <span class="nb">int</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>

@@ -1,9 +1,7 @@
 Analog to Digital Converter (ADC)
 ==================================
 
-The CH552 has a single 8-bit ADC which can be used to read analog voltages and convert them to a digital value. You can construct such an ADC using the following code:
-
-.. code-block:: c
+The CH552 has a single 8-bit ADC which can be used to read analog voltages and convert them to a digital value. You can construct such an ADC using the following code::
 
     #include "src/config.h" // user configurations
     #include "src/system.h" // system functions
