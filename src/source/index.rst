@@ -32,5 +32,5 @@ Contents
    install_linux
    install_windows
    compile
-   
+   adc
    api
