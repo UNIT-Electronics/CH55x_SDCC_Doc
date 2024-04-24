@@ -18,7 +18,7 @@ Follow the steps below to install the necessary tools
     `here a alternative <https://sourceforge.net/projects/mingw/>`_ 
 
 - Installig Zadig
-    Download the latest version of `Zadig <https://zadig.akeo.ie/>`. You can download in a official website.
+    Download the latest version of `Zadig <https://zadig.akeo.ie/>`_. You can download in a official website.
 
 Configuring MAKE
 ---------------
@@ -33,7 +33,7 @@ Remember that for Windows operating systems, an extra step is necessary, which i
 Locate the file
 
 
-.. figure:: https://raw.githubusercontent.com/Cesarbautista10/CH55x_SDCC_Examples/main/Images/make_file.png
+.. figure:: /_static/make_file.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
    :figwidth: 80%
@@ -41,7 +41,7 @@ Locate the file
 
 rename it
 
-.. figure:: https://raw.githubusercontent.com/Cesarbautista10/CH55x_SDCC_Examples/main/Images/rename.png
+.. figure:: /_static/rename.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
    :figwidth: 80%
@@ -54,7 +54,7 @@ path::
 
 
 
-.. figure:: https://raw.githubusercontent.com/Cesarbautista10/CH55x_SDCC_Examples/main/Images/var_env.png
+.. figure:: /_static/var_env.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
    :figwidth: 80%
@@ -79,7 +79,7 @@ Update driver
 The current loading tool can utilize the default driver and coexist with the official WCHISPTool. In case the driver encounters issues, it is advisable to switch the driver version to libusb-win32 using Zadig.
 
 
-.. figure:: https://raw.githubusercontent.com/Cesarbautista10/CH55x_SDCC_Examples/main/Images/driver.png
+.. figure:: /_static/driver.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
    :figwidth: 80%

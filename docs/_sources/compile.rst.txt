@@ -25,7 +25,7 @@ Execute the command::
 This will compile the project and generate files with the following extensions:
 
 
-.. figure:: https://raw.githubusercontent.com/Cesarbautista10/CH55x_SDCC_Examples/main/Images/files.png
+.. figure:: /_static/files.png
    :width: 60%
    :align: center
    :alt: GitHub authorization page
@@ -41,7 +41,7 @@ Connect a device and press the BOOT button, then write the command::
 If the project is successful, the code will generate a blinking effect as shown below:
 
 
-.. figure:: https://github.com/Cesarbautista10/CH55x_SDCC_Examples/blob/main/Images/led.gif?raw=true
+.. figure:: /_static/led.gif
    :width: 60%
    :align: center
    :alt: GitHub authorization page

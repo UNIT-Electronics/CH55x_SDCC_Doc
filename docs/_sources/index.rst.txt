@@ -7,7 +7,7 @@ configurations.
 The Cocket Nova CH552 boards are incredibly easy to use. The projects focus on innovation and 
 present various alternatives for usage.
 
-.. figure:: https://unit-electronics.github.io/CH552_Curso_introductorio/docs/1-Descripcion-general/images/CH552.png
+.. figure:: /_static/CH552_Sq.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
    :figwidth: 80%
@@ -16,7 +16,7 @@ present various alternatives for usage.
 
 
 Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+installation instructions, and the :doc:`api` section for detailed
 
 .. note::
 
