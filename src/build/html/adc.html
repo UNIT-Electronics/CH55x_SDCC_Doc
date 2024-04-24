@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; ISE_Documentation_board_CH552 0.0.1 documentation</title>
+  <title>Analog to Digital Converter (ADC) &mdash; ISE_Documentation_board_CH552 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -45,11 +45,12 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_linux.html">CH55x with SDCC and Ubuntu 23.10</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_windows.html">CH55x with SDCC and Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Analog to Digital Converter (ADC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 </ul>
 
@@ -67,7 +68,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="breadcrumb-item active">Analog to Digital Converter (ADC)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/adc.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -77,30 +78,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <p>Analog to Digital Converter (ADC)
-===
-The CH552 has a single 8-bit ADC which can be used to read analog voltages and convert them to a digital value.
-You can construct such and ADC using the following code:</p>
-<p>Code
-—
-.. code-block:: c</p>
-<blockquote>
-<div><p>#include “src/config.h” // user configurations
-#include “src/system.h” // system functions
-#include “src/gpio.h”   // for GPIO
-#include “src/delay.h”  // for delays</p>
-<p>void main(void)
-{
-CLK_config();
-DLY_ms(5);</p>
-<p>ADC_input(PIN_ADC);</p>
-<p>ADC_enable();
-while (1)
-{</p>
-<blockquote>
-<div><p>int data = ADC_read(); // Assuming ADC_read() returns an int</p>
-</div></blockquote>
-</div></blockquote>
+  <section id="analog-to-digital-converter-adc">
+<h1>Analog to Digital Converter (ADC)<a class="headerlink" href="#analog-to-digital-converter-adc" title="Link to this heading"></a></h1>
+<p>The CH552 has a single 8-bit ADC which can be used to read analog voltages and convert them to a digital value. You can construct such an ADC using the following code:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/config.h&quot;</span><span class="c1"> // user configurations</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/system.h&quot;</span><span class="c1"> // system functions</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/gpio.h&quot;</span><span class="c1">   // for GPIO</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/delay.h&quot;</span><span class="c1">  // for delays</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">CLK_config</span><span class="p">();</span>
+<span class="w">    </span><span class="n">DLY_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">ADC_input</span><span class="p">(</span><span class="n">PIN_ADC</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">ADC_enable</span><span class="p">();</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADC_read</span><span class="p">();</span><span class="w"> </span><span class="c1">// Assuming ADC_read() returns an int</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 
 
            </div>
