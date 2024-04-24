@@ -20,7 +20,7 @@ Requirements
 - Understanding of Basic Electronics
 
 .. tip::
-   This getting started is designed for individuals with a basic understanding of programming and electronics.  This guide is ideal for individuals who are interested in learning about embedded systems and programming microcontrollers.
+   This getting started guide is tailored for individuals with a basic understanding of programming and electronics. It's ideal for those interested in diving into embedded systems and programming microcontrollers.
 
 Installation
 ------------
