@@ -12,6 +12,7 @@ help:
 all: build
 
 build:
+	@rm -rf docs && mkdir docs
 	@cd src && ./make.bat clean && ./make.bat html
 	@cp -R src/build/html/* docs && touch docs/.nojekyll
 	@echo "Documentation built and copied to docs"
