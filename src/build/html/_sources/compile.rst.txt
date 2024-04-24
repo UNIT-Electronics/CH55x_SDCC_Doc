@@ -26,7 +26,7 @@ This will compile the project and generate files with the following extensions:
 
 
 .. figure:: /_static/files.png
-   :width: 60%
+   :width: 80%
    :align: center
    :alt: GitHub authorization page
 
@@ -42,6 +42,8 @@ If the project is successful, the code will generate a blinking effect as shown 
 
 
 .. figure:: /_static/led.gif
-   :width: 60%
+   :width: 80%
    :align: center
    :alt: GitHub authorization page
+
+
