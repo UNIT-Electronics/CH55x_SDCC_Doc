@@ -5,12 +5,22 @@ The CH552, characterized by its compact size, native USB connectivity, and 16 KB
 
 Recommended Operating Conditions
 --------------------------------
+.. list-table:: Recommended Operating Conditions
+   :widths: 25 25 50
+   :header-rows: 1
 
-| Symbol | Description                                | Minimum | Typical | Maximum | Units    |
-|--------|--------------------------------------------|---------|---------|---------|----------|
-| VUSB   | Voltage supply via USB                     | 3.14    | 3.3/5   | 5.255   | V        |
-| VIn    | Voltage supply from pins                   | 2.7     | 3.3/5   | 5.5     | V        |
-| Top    | Operating temperature                      | -40     | 25      | 85      | °C       |
+   * - Symbol
+     - Description
+     - Range
+   * - VUSB
+     - Voltage supply via USB
+     - 3.14 to 5.255 V
+   * - VIn
+     - Voltage supply from pins
+     - 2.7 to 5.5 V
+   * - Top
+     - Operating temperature
+     - -40 to 85 °C
 
 Operating Mode
 ---------------
