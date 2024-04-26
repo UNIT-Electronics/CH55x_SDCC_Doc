@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Compile and Flash CH55x with SDCC &mdash; ISE_Documentation_board_CH552 0.0.1 documentation</title>
+  <title>Compile and Flash CH55x with SDCC &mdash; Documentation CH552 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -35,7 +35,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            ISE_Documentation_board_CH552
+            Documentation CH552
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -56,7 +56,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="generalboardcontrol.html">General Board Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog to Digital Converter (ADC)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwm.html">PWM (Pulse Width Modulation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="i2c.html">I2C (Inter-Integrated Circuit)</a></li>
 </ul>
 
         </div>
@@ -65,7 +66,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">ISE_Documentation_board_CH552</a>
+          <a href="index.html">Documentation CH552</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -89,11 +90,11 @@
 <h2>Running a Program<a class="headerlink" href="#running-a-program" title="Link to this heading"></a></h2>
 <p>To run the program, use a bash terminal.</p>
 <p>Clone the examples with the main code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Cesarbautista10</span><span class="o">/</span><span class="n">CH55x_SDCC_Examples</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Cesarbautista10</span><span class="o">/</span><span class="n">ESE_CH552_Examples_C</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <p>Navigate to the path:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">CH55x_SDCC_Examples</span><span class="o">/</span><span class="n">Software</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="mf">0.</span>\ <span class="n">Blink</span><span class="o">/</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">CH55x_SDCC_Examples</span><span class="o">/</span><span class="n">Software</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">Blink</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>Connect a device with the BOOT button pressed.</p>
@@ -102,9 +103,7 @@
 </pre></div>
 </div>
 <p>This will compile the project and generate files with the following extensions:</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="_images/files.png"><img alt="GitHub authorization page" src="_images/files.png" style="width: 80%;" /></a>
-</figure>
+<a class="reference internal image-reference" href="_images/files.png"><img alt="GitHub authorization page" class="align-center" src="_images/files.png" style="width: 80%;" /></a>
 </section>
 <section id="flashing-the-program">
 <h2>Flashing the Program<a class="headerlink" href="#flashing-the-program" title="Link to this heading"></a></h2>
@@ -114,7 +113,7 @@
 </div>
 <p>If the project is successful, the code will generate a blinking effect as shown below:</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="_images/led.gif"><img alt="GitHub authorization page" src="_images/led.gif" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/led.png"><img alt="GitHub authorization page" src="_images/led.png" style="width: 80%;" /></a>
 </figure>
 </section>
 </section>

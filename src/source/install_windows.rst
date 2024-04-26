@@ -29,18 +29,18 @@ Remember that for Windows operating systems, an extra step is necessary, which i
 
 Locate the file
 
-.. figure:: /_static/make_file.png
+.. image:: /_static/make_file.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
-   :figwidth: 100%
+   :width: 100%
 
 
 Rename it:
 
-.. figure:: /_static/rename.png
+.. image:: /_static/rename.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
-   :figwidth: 100%
+   :width: 100%
 
 
 path::
@@ -50,10 +50,10 @@ path::
 
 
 
-.. figure:: /_static/var_env.png
+.. image:: /_static/var_env.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
-   :figwidth: 100%
+   :width: 100%
 
 
 Install pyusb
@@ -75,8 +75,8 @@ Update driver
 The current loading tool can utilize the default driver and coexist with the official WCHISPTool. In case the driver encounters issues, it is advisable to switch the driver version to libusb-win32 using Zadig.
 
 
-.. figure:: /_static/driver.png
+.. image:: /_static/driver.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
-   :figwidth: 100%
+   :width: 100%
 
