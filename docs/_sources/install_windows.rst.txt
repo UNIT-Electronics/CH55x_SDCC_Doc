@@ -39,14 +39,15 @@ Rename it:
 
 .. image:: /_static/rename.png
    :align: center
-   :alt: GitHub build status reporting for pull requests.
+   :alt: rename make
    :width: 100%
 
+.. warning:: 
+    Sometimes the file is necessary create a copy and rename it to make.exe
 
 path::
     
     C:\MinGW\bin\make
-
 
 
 

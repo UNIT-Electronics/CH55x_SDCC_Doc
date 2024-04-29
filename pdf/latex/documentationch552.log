@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.25)  29 APR 2024 09:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.25)  29 APR 2024 09:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -996,13 +996,13 @@ Package pdftex.def Info: rename.png  used on input line 338.
 <var_env.png, id=211, 462.97969pt x 438.13687pt>
 File: var_env.png Graphic file (type png)
 <use var_env.png>
-Package pdftex.def Info: var_env.png  used on input line 347.
+Package pdftex.def Info: var_env.png  used on input line 352.
 (pdftex.def)             Requested size: 469.75502pt x 444.55379pt.
  [9 <./rename.png>] [10 <./var_env.png>]
 <driver.png, id=224, 442.65375pt x 201.00093pt>
 File: driver.png Graphic file (type png)
 <use driver.png>
-Package pdftex.def Info: driver.png  used on input line 372.
+Package pdftex.def Info: driver.png  used on input line 377.
 (pdftex.def)             Requested size: 469.75502pt x 213.31758pt.
  [11 <./driver.png>] [12
 
@@ -1011,19 +1011,19 @@ Chapter 4.
 <files.png, id=234, 560.8453pt x 187.45032pt>
 File: files.png Graphic file (type png)
 <use files.png>
-Package pdftex.def Info: files.png  used on input line 412.
+Package pdftex.def Info: files.png  used on input line 417.
 (pdftex.def)             Requested size: 375.80544pt x 125.6025pt.
 <led.png, id=235, 575.90157pt x 304.13625pt>
 File: led.png Graphic file (type png)
 <use led.png>
-Package pdftex.def Info: led.png  used on input line 430.
+Package pdftex.def Info: led.png  used on input line 435.
 (pdftex.def)             Requested size: 375.80544pt x 198.47049pt.
 [13 <./files.png>] [14 <./led.png>]
 Chapter 5.
 <selector.png, id=246, 409.53pt x 240.14719pt>
 File: selector.png Graphic file (type png)
 <use selector.png>
-Package pdftex.def Info: selector.png  used on input line 509.
+Package pdftex.def Info: selector.png  used on input line 514.
 (pdftex.def)             Requested size: 409.52899pt x 240.14658pt.
 [15
 
@@ -1031,18 +1031,18 @@ Package pdftex.def Info: selector.png  used on input line 509.
 <jst.png, id=254, 235.63031pt x 370.38374pt>
 File: jst.png Graphic file (type png)
 <use jst.png>
-Package pdftex.def Info: jst.png  used on input line 517.
+Package pdftex.def Info: jst.png  used on input line 522.
 (pdftex.def)             Requested size: 235.62973pt x 370.38283pt.
  [16 <./selector.png>]
 <neopixel.png, id=260, 189.70876pt x 327.47343pt>
 File: neopixel.png Graphic file (type png)
 <use neopixel.png>
-Package pdftex.def Info: neopixel.png  used on input line 525.
+Package pdftex.def Info: neopixel.png  used on input line 530.
 (pdftex.def)             Requested size: 189.70828pt x 327.47264pt.
  [17 <./jst.png>] [18 <./neopixel.png>]
 Chapter 6.
 LaTeX Font Info:    Font shape `T1/txtt/m/it' in size <10> not available
-(Font)              Font shape `T1/txtt/m/sl' tried instead on input line 547.
+(Font)              Font shape `T1/txtt/m/sl' tried instead on input line 552.
 [19
 
 ] [20
@@ -1052,7 +1052,7 @@ Chapter 7.
 [21] [22]
 Chapter 8.
 
-Overfull \vbox (1.81982pt too high) detected at line 675
+Overfull \vbox (1.81982pt too high) detected at line 680
  []
 
 [23
@@ -1066,10 +1066,10 @@ Package rerunfilecheck Info: File `documentationch552.out' has not changed.
 (rerunfilecheck)             Checksum: 687657861CCBB47BE6961775B37E7AA3;4153.
  ) 
 Here is how much of TeX's memory you used:
- 16513 strings out of 474486
- 281156 string characters out of 5740451
- 1963542 words of memory out of 5000000
- 38355 multiletter control sequences out of 15000+600000
+ 16517 strings out of 474486
+ 281298 string characters out of 5740451
+ 1964542 words of memory out of 5000000
+ 38359 multiletter control sequences out of 15000+600000
  612195 words of font info for 78 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  72i,12n,79p,894b,665s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1084,7 +1084,7 @@ ocal/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/Innovacion0
 fb><C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfo
 nts/t1xtt.pfb><C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/txfonts/t1xtt.pfb>
-Output written on documentationch552.pdf (28 pages, 1414277 bytes).
+Output written on documentationch552.pdf (28 pages, 1414467 bytes).
 PDF statistics:
  345 PDF objects out of 1000 (max. 8388607)
  57 named destinations out of 1000 (max. 500000)
