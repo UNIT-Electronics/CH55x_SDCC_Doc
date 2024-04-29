@@ -89,6 +89,110 @@
 <p>CH552 supports 14 sets of interrupt signal sources, including 6 sets of interrupts (INT0, T0, INT1, T1,
 UART0 and T2) compatible with the standard MCS51, and 8 sets of extended interrupts (SPI0, TKEY,
 USB, ADC, UART1, PWMX, GPIO and WDOG). The GPIO interrupt can be selected from 7 I/O pins.</p>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Default priority sequence of interrupt sources</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 18.2%" />
+<col style="width: 18.2%" />
+<col style="width: 9.1%" />
+<col style="width: 27.3%" />
+<col style="width: 27.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interrupt source</p></th>
+<th class="head"><p>Entry address</p></th>
+<th class="head"><p>Interrupt No.</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default priority sequence</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>INT_NO_INT0</p></td>
+<td><p>0x0003</p></td>
+<td><p>0</p></td>
+<td><p>External interrupt 0</p></td>
+<td><p>High priority</p></td>
+</tr>
+<tr class="row-odd"><td><p>INT_NO_TMR0</p></td>
+<td><p>0x000B</p></td>
+<td><p>1</p></td>
+<td><p>Timer 0 interrupt</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-even"><td><p>INT_NO_INT1</p></td>
+<td><p>0x0013</p></td>
+<td><p>2</p></td>
+<td><p>External interrupt 1</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>INT_NO_TMR1</p></td>
+<td><p>0x001B</p></td>
+<td><p>3</p></td>
+<td><p>Timer 1 interrupt</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-even"><td><p>INT_NO_UART0</p></td>
+<td><p>0x0023</p></td>
+<td><p>4</p></td>
+<td><p>UART0 interrupt</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>INT_NO_TMR2</p></td>
+<td><p>0x002B</p></td>
+<td><p>5</p></td>
+<td><p>Timer 2 interrupt</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-even"><td><p>INT_NO_SPI0</p></td>
+<td><p>0x0033</p></td>
+<td><p>6</p></td>
+<td><p>SPI0 interrupt</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>INT_NO_TKEY</p></td>
+<td><p>0x003B</p></td>
+<td><p>7</p></td>
+<td><p>Touch key timer interrupt</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-even"><td><p>INT_NO_USB</p></td>
+<td><p>0x0043</p></td>
+<td><p>8</p></td>
+<td><p>USB interrupt</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>INT_NO_ADC</p></td>
+<td><p>0x004B</p></td>
+<td><p>9</p></td>
+<td><p>ADC interrupt</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-even"><td><p>INT_NO_UART1</p></td>
+<td><p>0x0053</p></td>
+<td><p>10</p></td>
+<td><p>UART1 interrupt</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>INT_NO_PWMX</p></td>
+<td><p>0x005B</p></td>
+<td><p>11</p></td>
+<td><p>PWM1/PWM2 interrupt</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-even"><td><p>INT_NO_GPIO</p></td>
+<td><p>0x0063</p></td>
+<td><p>12</p></td>
+<td><p>GPIO Interrupt</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>INT_NO_WDOG</p></td>
+<td><p>0x006B</p></td>
+<td><p>13</p></td>
+<td><p>Watchdog timer interrupt</p></td>
+<td><p>Low priority</p></td>
+</tr>
+</tbody>
+</table>
 <p>The interrupt priority is determined by the interrupt number.</p>
 <section id="timer-0-1-interrupts">
 <h2>Timer 0/1  Interrupts<a class="headerlink" href="#timer-0-1-interrupts" title="Link to this heading"></a></h2>

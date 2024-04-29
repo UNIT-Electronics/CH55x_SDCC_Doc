@@ -689,6 +689,262 @@ CH552 supports 14 sets of interrupt signal sources, including 6 sets of interrup
 UART0 and T2) compatible with the standard MCS51, and 8 sets of extended interrupts (SPI0, TKEY,
 USB, ADC, UART1, PWMX, GPIO and WDOG). The GPIO interrupt can be selected from 7 I/O pins.
 
+
+\begin{savenotes}\sphinxattablestart
+\sphinxthistablewithglobalstyle
+\centering
+\sphinxcapstartof{table}
+\sphinxthecaptionisattop
+\sphinxcaption{Default priority sequence of interrupt sources}\label{\detokenize{interrupts:id11}}
+\sphinxaftertopcaption
+\begin{tabular}[t]{\X{20}{110}\X{20}{110}\X{10}{110}\X{30}{110}\X{30}{110}}
+\sphinxtoprule
+\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Interrupt source
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Entry address
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Interrupt No.
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Description
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Default priority sequence
+\\
+\sphinxmidrule
+\sphinxtableatstartofbodyhook
+\sphinxAtStartPar
+INT\_NO\_INT0
+&
+\sphinxAtStartPar
+0x0003
+&
+\sphinxAtStartPar
+0
+&
+\sphinxAtStartPar
+External interrupt 0
+&
+\sphinxAtStartPar
+High priority
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_TMR0
+&
+\sphinxAtStartPar
+0x000B
+&
+\sphinxAtStartPar
+1
+&
+\sphinxAtStartPar
+Timer 0 interrupt
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_INT1
+&
+\sphinxAtStartPar
+0x0013
+&
+\sphinxAtStartPar
+2
+&
+\sphinxAtStartPar
+External interrupt 1
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_TMR1
+&
+\sphinxAtStartPar
+0x001B
+&
+\sphinxAtStartPar
+3
+&
+\sphinxAtStartPar
+Timer 1 interrupt
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_UART0
+&
+\sphinxAtStartPar
+0x0023
+&
+\sphinxAtStartPar
+4
+&
+\sphinxAtStartPar
+UART0 interrupt
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_TMR2
+&
+\sphinxAtStartPar
+0x002B
+&
+\sphinxAtStartPar
+5
+&
+\sphinxAtStartPar
+Timer 2 interrupt
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_SPI0
+&
+\sphinxAtStartPar
+0x0033
+&
+\sphinxAtStartPar
+6
+&
+\sphinxAtStartPar
+SPI0 interrupt
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_TKEY
+&
+\sphinxAtStartPar
+0x003B
+&
+\sphinxAtStartPar
+7
+&
+\sphinxAtStartPar
+Touch key timer interrupt
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_USB
+&
+\sphinxAtStartPar
+0x0043
+&
+\sphinxAtStartPar
+8
+&
+\sphinxAtStartPar
+USB interrupt
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_ADC
+&
+\sphinxAtStartPar
+0x004B
+&
+\sphinxAtStartPar
+9
+&
+\sphinxAtStartPar
+ADC interrupt
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_UART1
+&
+\sphinxAtStartPar
+0x0053
+&
+\sphinxAtStartPar
+10
+&
+\sphinxAtStartPar
+UART1 interrupt
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_PWMX
+&
+\sphinxAtStartPar
+0x005B
+&
+\sphinxAtStartPar
+11
+&
+\sphinxAtStartPar
+PWM1/PWM2 interrupt
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_GPIO
+&
+\sphinxAtStartPar
+0x0063
+&
+\sphinxAtStartPar
+12
+&
+\sphinxAtStartPar
+GPIO Interrupt
+&
+\sphinxAtStartPar
+↓
+\\
+\sphinxhline
+\sphinxAtStartPar
+INT\_NO\_WDOG
+&
+\sphinxAtStartPar
+0x006B
+&
+\sphinxAtStartPar
+13
+&
+\sphinxAtStartPar
+Watchdog timer interrupt
+&
+\sphinxAtStartPar
+Low priority
+\\
+\sphinxbottomrule
+\end{tabular}
+\sphinxtableafterendhook\par
+\sphinxattableend\end{savenotes}
+
 \sphinxAtStartPar
 The interrupt priority is determined by the interrupt number.
 
