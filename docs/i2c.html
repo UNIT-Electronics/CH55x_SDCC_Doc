@@ -53,6 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog to Digital Converter (ADC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pwm.html">PWM (Pulse Width Modulation)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">I2C (Inter-Integrated Circuit)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#oled-display-sd1306">OLED Display SD1306</a></li>
 </ul>
 </li>
@@ -84,6 +85,8 @@
              
   <section id="i2c-inter-integrated-circuit">
 <h1>I2C (Inter-Integrated Circuit)<a class="headerlink" href="#i2c-inter-integrated-circuit" title="Link to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
 <p>I2C is a serial communication protocol, so data is transferred bit by bit along a single wire (the SDA line). The SCL line is used to synchronize the data transfer. The I2C protocol is a master-slave protocol, which means that the communication is always initiated by the master device. A master device can communicate with one or multiple slave devices. The master device generates the clock signal and initiates the data transfer. The slave devices are addressed by the master device, and they respond to the master device based on the address they are assigned. The I2C protocol supports multiple devices on the same bus, and each device has a unique address. This allows multiple devices to communicate with each other using the same bus.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -94,6 +97,7 @@
 <span class="c1">#define I2C_SDA_PIN  P30</span>
 </pre></div>
 </div>
+</section>
 <section id="oled-display-sd1306">
 <h2>OLED Display SD1306<a class="headerlink" href="#oled-display-sd1306" title="Link to this heading"></a></h2>
 <p>The OLED display is a 128x64 pixel monochrome display that uses the I2C protocol for communication. The display has a built-in controller that handles the display refresh and data transfer. The display is controlled by the microcontroller using the I2C protocol. The display has a resolution of 128x64 pixels, which allows it to display text, graphics, and images. The display is monochrome, which means that it can only display one color (white) on a black background. The display has a built-in controller that handles the display refresh and data transfer. The display is controlled by the microcontroller using the I2C protocol. The display has a resolution of 128x64 pixels, which allows it to display text, graphics, and images. The display is monochrome, which means that it can only display one color (white) on a black background:</p>

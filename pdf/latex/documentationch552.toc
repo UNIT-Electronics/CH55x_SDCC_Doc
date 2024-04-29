@@ -24,4 +24,5 @@
 \contentsline {chapter}{\numberline {6}Analog to Digital Converter (ADC)}{19}{chapter.6}%
 \contentsline {chapter}{\numberline {7}PWM (Pulse Width Modulation)}{21}{chapter.7}%
 \contentsline {chapter}{\numberline {8}I2C (Inter\sphinxhyphen {}Integrated Circuit)}{23}{chapter.8}%
-\contentsline {section}{\numberline {8.1}OLED Display SD1306}{23}{section.8.1}%
+\contentsline {section}{\numberline {8.1}Description}{23}{section.8.1}%
+\contentsline {section}{\numberline {8.2}OLED Display SD1306}{23}{section.8.2}%
