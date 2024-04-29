@@ -34,7 +34,8 @@ installation instructions, and the :doc:`api` section for detailed
    compile
    generalboardcontrol
    adc
-   pwm
    i2c
    interrupts
+   pwm
+   ws2812
    

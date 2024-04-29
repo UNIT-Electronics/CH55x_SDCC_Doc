@@ -22,10 +22,11 @@
 \contentsline {subsection}{\numberline {5.2.2}JST Connectors}{16}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}Built\sphinxhyphen {}In LEDs}{17}{subsection.5.2.3}%
 \contentsline {chapter}{\numberline {6}Analog to Digital Converter (ADC)}{19}{chapter.6}%
-\contentsline {chapter}{\numberline {7}PWM (Pulse Width Modulation)}{21}{chapter.7}%
-\contentsline {chapter}{\numberline {8}I2C (Inter\sphinxhyphen {}Integrated Circuit)}{23}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Description}{23}{section.8.1}%
-\contentsline {section}{\numberline {8.2}OLED Display SD1306}{23}{section.8.2}%
-\contentsline {chapter}{\numberline {9}Interrupts}{25}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Timer 0/1 Interrupts}{25}{section.9.1}%
-\contentsline {section}{\numberline {9.2}External Interrupts}{26}{section.9.2}%
+\contentsline {chapter}{\numberline {7}I2C (Inter\sphinxhyphen {}Integrated Circuit)}{21}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Description}{21}{section.7.1}%
+\contentsline {section}{\numberline {7.2}OLED Display SD1306}{21}{section.7.2}%
+\contentsline {chapter}{\numberline {8}Interrupts}{23}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Timer 0/1 Interrupts}{23}{section.8.1}%
+\contentsline {section}{\numberline {8.2}External Interrupts}{24}{section.8.2}%
+\contentsline {chapter}{\numberline {9}PWM (Pulse Width Modulation)}{25}{chapter.9}%
+\contentsline {chapter}{\numberline {10}WS2812}{27}{chapter.10}%
