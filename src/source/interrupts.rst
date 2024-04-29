@@ -10,11 +10,11 @@ pins.
    :widths: 20 20 10 30 20
    :header-rows: 1
 
-   * - Interrupt source
-     -  Entry address
-     -  Interrupt No.
+   * -  Interrupt src.
+     -  Entry addr.
+     -  Interrupt #
      -  Description
-     -  Default priority sequence
+     -  Default prio. seq.
    * - INT_NO_INT0
      - 0x0003
      - 0
