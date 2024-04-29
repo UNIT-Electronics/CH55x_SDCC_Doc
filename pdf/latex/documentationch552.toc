@@ -26,3 +26,6 @@
 \contentsline {chapter}{\numberline {8}I2C (Inter\sphinxhyphen {}Integrated Circuit)}{23}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Description}{23}{section.8.1}%
 \contentsline {section}{\numberline {8.2}OLED Display SD1306}{23}{section.8.2}%
+\contentsline {chapter}{\numberline {9}Interrupts}{25}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Timer 0/1 Interrupts}{25}{section.9.1}%
+\contentsline {section}{\numberline {9.2}External Interrupts}{25}{section.9.2}%

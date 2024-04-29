@@ -36,4 +36,5 @@ installation instructions, and the :doc:`api` section for detailed
    adc
    pwm
    i2c
+   interrupts
    

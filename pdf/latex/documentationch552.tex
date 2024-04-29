@@ -679,6 +679,126 @@ The OLED display is a 128x64 pixel monochrome display that uses the I2C protocol
 \PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
 
+\sphinxstepscope
+
+
+\chapter{Interrupts}
+\label{\detokenize{interrupts:interrupts}}\label{\detokenize{interrupts::doc}}
+\sphinxAtStartPar
+CH552 supports 14 sets of interrupt signal sources, including 6 sets of interrupts (INT0, T0, INT1, T1,
+UART0 and T2) compatible with the standard MCS51, and 8 sets of extended interrupts (SPI0, TKEY,
+USB, ADC, UART1, PWMX, GPIO and WDOG). The GPIO interrupt can be selected from 7 I/O pins.
+
+\sphinxAtStartPar
+The interrupt priority is determined by the interrupt number.
+
+
+\section{Timer 0/1  Interrupts}
+\label{\detokenize{interrupts:timer-0-1-interrupts}}
+\sphinxAtStartPar
+Timer0 and Timer1 are 16\sphinxhyphen{}bit timers/counters configured by TCON and TMOD. TCON is used for
+timer/counter T0 and T1 startup control and overflow interrupt as well as external interrupt control. Each
+timer is a 16\sphinxhyphen{}bit timing unit composed of dual 8\sphinxhyphen{}bit registers. The high byte counter of timer 0 is TH0 and
+the low byte counter of timer 0 is TL0. The high byte counter of timer 1 is TH1 and the low byte counter of
+timer 1 is TL1. Timer 1 can also be used as the baud rate generator of UART0.
+\begin{description}
+\sphinxlineitem{code example::}
+\sphinxAtStartPar
+void timer0\_interrupt(void) \_\_interrupt(INT\_NO\_TMR0)        /* Timer0 interrupt service routine (ISR) {\color{red}\bfseries{}*}/
+\{
+\begin{quote}
+
+\sphinxAtStartPar
+PIN\_toggle(PIN\_BUZZER);
+TH0 = 0xFF;             /* 50ms timer value {\color{red}\bfseries{}*}/
+TL0 = 0x00;
+\end{quote}
+
+\sphinxAtStartPar
+\}
+
+\sphinxAtStartPar
+int main(void)
+\{
+\begin{quote}
+
+\sphinxAtStartPar
+CLK\_config();
+DLY\_ms(5);
+PIN\_output(PIN\_BUZZER);
+EA  = 1;                /* Enable global interrupt \sphinxstyleemphasis{/
+ET0 = 1;                /} Enable timer0 interrupt {\color{red}\bfseries{}*}/
+
+\sphinxAtStartPar
+TH0 = 0xFF;             /* 50ms timer value \sphinxstyleemphasis{/
+TL0 = 0x00;
+TMOD = 0x01;            /} Timer0 mode1 \sphinxstyleemphasis{/
+TR0 = 1;                /} Start timer0 {\color{red}\bfseries{}*}/
+while(1);
+\end{quote}
+
+\sphinxAtStartPar
+\}
+
+\end{description}
+
+
+\section{External Interrupts}
+\label{\detokenize{interrupts:external-interrupts}}
+\sphinxAtStartPar
+INT0 and INT1 are external interrupt input pins. When the external interrupt is triggered, the
+corresponding interrupt service routine is executed. The external interrupt is triggered by the
+falling edge, rising edge, or both edges of the external interrupt input signal. The external interrupt
+input signal is sampled by the external interrupt input pin and the external interrupt is triggered
+according to the external interrupt trigger mode.
+\begin{description}
+\sphinxlineitem{code example::}
+\sphinxAtStartPar
+void ext0\_interrupt(void) \_\_interrupt(INT\_NO\_INT0)
+\{
+\begin{quote}
+
+\sphinxAtStartPar
+PIN\_toggle(PIN\_LED);
+\end{quote}
+
+\sphinxAtStartPar
+\}
+
+\sphinxAtStartPar
+int main(void)
+\{
+\begin{quote}
+
+\sphinxAtStartPar
+CLK\_config();
+DLY\_ms(5);
+PIN\_output\_OD(PIN\_INT);
+PIN\_output(PIN\_LED);
+
+\sphinxAtStartPar
+EA  = 1;     /* Enable global interrupt {\color{red}\bfseries{}*}/
+EX0 = 1;    // Enable INT0
+IT0 = 1;    // INT0 is edge triggered
+
+\sphinxAtStartPar
+while(1)
+\{
+\begin{quote}
+
+\sphinxAtStartPar
+// Do nothing
+\end{quote}
+
+\sphinxAtStartPar
+\}
+\end{quote}
+
+\sphinxAtStartPar
+\}
+
+\end{description}
+
 
 
 \renewcommand{\indexname}{Index}
