@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.25)  29 APR 2024 11:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.25)  29 APR 2024 15:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1060,13 +1060,8 @@ Overfull \vbox (1.81982pt too high) detected at line 680
 ] [24]
 Chapter 9.
 
-Underfull \hbox (badness 10000) in paragraph at lines 709--711
+Underfull \hbox (badness 10000) in paragraph at lines 710--712
 []|\T1/qhv/m/n/10 In-ter-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 709--711
-\T1/qhv/m/n/10 rupt
  []
 
 [25
@@ -1081,26 +1076,28 @@ Package rerunfilecheck Info: File `documentationch552.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  16532 strings out of 474486
- 281527 string characters out of 5740451
- 1964542 words of memory out of 5000000
+ 281526 string characters out of 5740451
+ 1985542 words of memory out of 5000000
  38368 multiletter control sequences out of 15000+600000
  612195 words of font info for 78 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  72i,12n,79p,894b,665s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-g
-yre/qhvb.pfb><C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/tex-gyre/qhvbi.pfb><C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/tex-gyre/qhvr.pfb><C:/Users/Innovacion07/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C:/Users/Innovacion07/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/Innovacion0
-7/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Users
-/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/t1xbtt.p
-fb><C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfo
-nts/t1xtt.pfb><C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/txfonts/t1xtt.pfb>
-Output written on documentationch552.pdf (30 pages, 1426531 bytes).
+<C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmmi5.pfb><C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Innovacion07/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/Innovacion07/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvbi.pfb><C:/Users/Innovacion07/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/Inn
+ovacion07/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C
+:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/
+qtmr.pfb><C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/tex-gyre/qtmri.pfb><C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/txfonts/t1xbtt.pfb><C:/Users/Innovacion07/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb><C:/Users/Innovacion07/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
+Output written on documentationch552.pdf (30 pages, 1439697 bytes).
 PDF statistics:
- 370 PDF objects out of 1000 (max. 8388607)
+ 378 PDF objects out of 1000 (max. 8388607)
  63 named destinations out of 1000 (max. 500000)
  321 words of extra memory for PDF output out of 10000 (max. 10000000)
 

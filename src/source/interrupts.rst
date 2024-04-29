@@ -1,12 +1,13 @@
 Interrupts
 ========
 
-CH552 supports 14 sets of interrupt signal sources, including 6 sets of interrupts (INT0, T0, INT1, T1, 
-UART0 and T2) compatible with the standard MCS51, and 8 sets of extended interrupts (SPI0, TKEY, 
-USB, ADC, UART1, PWMX, GPIO and WDOG). The GPIO interrupt can be selected from 7 I/O pins. 
+The CH552 microcontroller supports 14 sets of interrupt signal sources. These include 6 sets of interrupts 
+(INT0, T0, INT1, T1, UART0, and T2), which are compatible with the standard MCS51, and 8 sets of extended 
+interrupts (SPI0, TKEY, USB, ADC, UART1, PWMX, GPIO, and WDOG). The GPIO interrupt can be chosen from 7 I/O 
+pins.
 
 .. list-table:: Default priority sequence of interrupt sources
-   :widths: 20 20 10 30 30
+   :widths: 20 20 10 30 20
    :header-rows: 1
 
    * - Interrupt source
@@ -91,13 +92,13 @@ The interrupt priority is determined by the interrupt number.
 Timer 0/1  Interrupts
 ---------------------
 
-Timer0 and Timer1 are 16-bit timers/counters configured by TCON and TMOD. TCON is used for 
-timer/counter T0 and T1 startup control and overflow interrupt as well as external interrupt control. Each 
-timer is a 16-bit timing unit composed of dual 8-bit registers. The high byte counter of timer 0 is TH0 and 
-the low byte counter of timer 0 is TL0. The high byte counter of timer 1 is TH1 and the low byte counter of 
-timer 1 is TL1. Timer 1 can also be used as the baud rate generator of UART0. 
-
+Timer0 and Timer1 are 16-bit timers/counters controlled by TCON and TMOD. TCON is responsible for timer/counter
+T0 and T1 startup control, overflow interrupt, and external interrupt control. Each timer consists of dual
+8-bit registers forming a 16-bit timing unit. Timer 0's high byte counter is TH0, and its low byte counter 
+is TL0. Similarly, Timer 1's high byte counter is TH1, and its low byte counter is TL1. Timer 1 can also 
+serve as the baud rate generator for UART0.
 code example:: 
+
     void timer0_interrupt(void) __interrupt(INT_NO_TMR0)	/* Timer0 interrupt service routine (ISR) */
     {
         PIN_toggle(PIN_BUZZER);
@@ -124,13 +125,13 @@ code example::
 External Interrupts
 -------------------
 
-INT0 and INT1 are external interrupt input pins. When the external interrupt is triggered, the 
-corresponding interrupt service routine is executed. The external interrupt is triggered by the 
-falling edge, rising edge, or both edges of the external interrupt input signal. The external interrupt 
-input signal is sampled by the external interrupt input pin and the external interrupt is triggered 
-according to the external interrupt trigger mode. 
+INT0 and INT1 are external interrupt input pins. When an external interrupt occurs, the corresponding 
+interrupt service routine is executed. The external interrupt can be triggered by the falling edge,
+rising edge, or both edges of the external interrupt input signal. The trigger mode is determined by the 
+external interrupt input pin.
 
-code example:: 
+code example::
+     
     void ext0_interrupt(void) __interrupt(INT_NO_INT0)
     {
         PIN_toggle(PIN_LED);  

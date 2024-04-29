@@ -86,17 +86,18 @@
              
   <section id="interrupts">
 <h1>Interrupts<a class="headerlink" href="#interrupts" title="Link to this heading"></a></h1>
-<p>CH552 supports 14 sets of interrupt signal sources, including 6 sets of interrupts (INT0, T0, INT1, T1,
-UART0 and T2) compatible with the standard MCS51, and 8 sets of extended interrupts (SPI0, TKEY,
-USB, ADC, UART1, PWMX, GPIO and WDOG). The GPIO interrupt can be selected from 7 I/O pins.</p>
-<table class="docutils align-default" id="id11">
-<caption><span class="caption-text">Default priority sequence of interrupt sources</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<p>The CH552 microcontroller supports 14 sets of interrupt signal sources. These include 6 sets of interrupts
+(INT0, T0, INT1, T1, UART0, and T2), which are compatible with the standard MCS51, and 8 sets of extended
+interrupts (SPI0, TKEY, USB, ADC, UART1, PWMX, GPIO, and WDOG). The GPIO interrupt can be chosen from 7 I/O
+pins.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Default priority sequence of interrupt sources</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
 <colgroup>
-<col style="width: 18.2%" />
-<col style="width: 18.2%" />
-<col style="width: 9.1%" />
-<col style="width: 27.3%" />
-<col style="width: 27.3%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 10.0%" />
+<col style="width: 30.0%" />
+<col style="width: 20.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Interrupt source</p></th>
@@ -196,72 +197,68 @@ USB, ADC, UART1, PWMX, GPIO and WDOG). The GPIO interrupt can be selected from 7
 <p>The interrupt priority is determined by the interrupt number.</p>
 <section id="timer-0-1-interrupts">
 <h2>Timer 0/1  Interrupts<a class="headerlink" href="#timer-0-1-interrupts" title="Link to this heading"></a></h2>
-<p>Timer0 and Timer1 are 16-bit timers/counters configured by TCON and TMOD. TCON is used for
-timer/counter T0 and T1 startup control and overflow interrupt as well as external interrupt control. Each
-timer is a 16-bit timing unit composed of dual 8-bit registers. The high byte counter of timer 0 is TH0 and
-the low byte counter of timer 0 is TL0. The high byte counter of timer 1 is TH1 and the low byte counter of
-timer 1 is TL1. Timer 1 can also be used as the baud rate generator of UART0.</p>
-<dl>
-<dt>code example::</dt><dd><p>void timer0_interrupt(void) __interrupt(INT_NO_TMR0)        /* Timer0 interrupt service routine (ISR) <a href="#id1"><span class="problematic" id="id2">*</span></a>/
-{</p>
-<blockquote>
-<div><p>PIN_toggle(PIN_BUZZER);
-TH0 = 0xFF;             /* 50ms timer value <a href="#id3"><span class="problematic" id="id4">*</span></a>/
-TL0 = 0x00;</p>
-</div></blockquote>
-<p>}</p>
-<p>int main(void)
-{</p>
-<blockquote>
-<div><p>CLK_config();
-DLY_ms(5);
-PIN_output(PIN_BUZZER);
-EA  = 1;                /* Enable global interrupt <em>/
-ET0 = 1;                /</em> Enable timer0 interrupt <a href="#id5"><span class="problematic" id="id6">*</span></a>/</p>
-<p>TH0 = 0xFF;             /* 50ms timer value <em>/
-TL0 = 0x00;
-TMOD = 0x01;            /</em> Timer0 mode1 <em>/
-TR0 = 1;                /</em> Start timer0 <a href="#id7"><span class="problematic" id="id8">*</span></a>/
-while(1);</p>
-</div></blockquote>
-<p>}</p>
-</dd>
-</dl>
+<p>Timer0 and Timer1 are 16-bit timers/counters controlled by TCON and TMOD. TCON is responsible for timer/counter
+T0 and T1 startup control, overflow interrupt, and external interrupt control. Each timer consists of dual
+8-bit registers forming a 16-bit timing unit. Timer 0’s high byte counter is TH0, and its low byte counter
+is TL0. Similarly, Timer 1’s high byte counter is TH1, and its low byte counter is TL1. Timer 1 can also
+serve as the baud rate generator for UART0.
+code example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">timer0_interrupt</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="n">__interrupt</span><span class="p">(</span><span class="n">INT_NO_TMR0</span><span class="p">)</span>        <span class="o">/*</span> <span class="n">Timer0</span> <span class="n">interrupt</span> <span class="n">service</span> <span class="n">routine</span> <span class="p">(</span><span class="n">ISR</span><span class="p">)</span> <span class="o">*/</span>
+<span class="p">{</span>
+    <span class="n">PIN_toggle</span><span class="p">(</span><span class="n">PIN_BUZZER</span><span class="p">);</span>
+    <span class="n">TH0</span> <span class="o">=</span> <span class="mh">0xFF</span><span class="p">;</span>             <span class="o">/*</span> <span class="mi">50</span><span class="n">ms</span> <span class="n">timer</span> <span class="n">value</span> <span class="o">*/</span>
+    <span class="n">TL0</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CLK_config</span><span class="p">();</span>
+    <span class="n">DLY_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">PIN_output</span><span class="p">(</span><span class="n">PIN_BUZZER</span><span class="p">);</span>
+    <span class="n">EA</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                <span class="o">/*</span> <span class="n">Enable</span> <span class="k">global</span> <span class="n">interrupt</span> <span class="o">*/</span>
+    <span class="n">ET0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                <span class="o">/*</span> <span class="n">Enable</span> <span class="n">timer0</span> <span class="n">interrupt</span> <span class="o">*/</span>
+
+    <span class="n">TH0</span> <span class="o">=</span> <span class="mh">0xFF</span><span class="p">;</span>             <span class="o">/*</span> <span class="mi">50</span><span class="n">ms</span> <span class="n">timer</span> <span class="n">value</span> <span class="o">*/</span>
+    <span class="n">TL0</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">;</span>
+    <span class="n">TMOD</span> <span class="o">=</span> <span class="mh">0x01</span><span class="p">;</span>            <span class="o">/*</span> <span class="n">Timer0</span> <span class="n">mode1</span> <span class="o">*/</span>
+    <span class="n">TR0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                <span class="o">/*</span> <span class="n">Start</span> <span class="n">timer0</span> <span class="o">*/</span>
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 <section id="external-interrupts">
 <h2>External Interrupts<a class="headerlink" href="#external-interrupts" title="Link to this heading"></a></h2>
-<p>INT0 and INT1 are external interrupt input pins. When the external interrupt is triggered, the
-corresponding interrupt service routine is executed. The external interrupt is triggered by the
-falling edge, rising edge, or both edges of the external interrupt input signal. The external interrupt
-input signal is sampled by the external interrupt input pin and the external interrupt is triggered
-according to the external interrupt trigger mode.</p>
-<dl>
-<dt>code example::</dt><dd><p>void ext0_interrupt(void) __interrupt(INT_NO_INT0)
-{</p>
-<blockquote>
-<div><p>PIN_toggle(PIN_LED);</p>
-</div></blockquote>
-<p>}</p>
-<p>int main(void)
-{</p>
-<blockquote>
-<div><p>CLK_config();
-DLY_ms(5);
-PIN_output_OD(PIN_INT);
-PIN_output(PIN_LED);</p>
-<p>EA  = 1;     /* Enable global interrupt <a href="#id9"><span class="problematic" id="id10">*</span></a>/
-EX0 = 1;    // Enable INT0
-IT0 = 1;    // INT0 is edge triggered</p>
-<p>while(1)
-{</p>
-<blockquote>
-<div><p>// Do nothing</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>}</p>
-</dd>
-</dl>
+<p>INT0 and INT1 are external interrupt input pins. When an external interrupt occurs, the corresponding
+interrupt service routine is executed. The external interrupt can be triggered by the falling edge,
+rising edge, or both edges of the external interrupt input signal. The trigger mode is determined by the
+external interrupt input pin.</p>
+<p>code example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">ext0_interrupt</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="n">__interrupt</span><span class="p">(</span><span class="n">INT_NO_INT0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">PIN_toggle</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CLK_config</span><span class="p">();</span>
+    <span class="n">DLY_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">PIN_output_OD</span><span class="p">(</span><span class="n">PIN_INT</span><span class="p">);</span>
+    <span class="n">PIN_output</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">);</span>
+
+    <span class="n">EA</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>     <span class="o">/*</span> <span class="n">Enable</span> <span class="k">global</span> <span class="n">interrupt</span> <span class="o">*/</span>
+    <span class="n">EX0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>    <span class="o">//</span> <span class="n">Enable</span> <span class="n">INT0</span>
+    <span class="n">IT0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>    <span class="o">//</span> <span class="n">INT0</span> <span class="ow">is</span> <span class="n">edge</span> <span class="n">triggered</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="o">//</span> <span class="n">Do</span> <span class="n">nothing</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 
