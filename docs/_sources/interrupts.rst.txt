@@ -5,7 +5,7 @@ CH552 supports 14 sets of interrupt signal sources, including 6 sets of interrup
 UART0 and T2) compatible with the standard MCS51, and 8 sets of extended interrupts (SPI0, TKEY, 
 USB, ADC, UART1, PWMX, GPIO and WDOG). The GPIO interrupt can be selected from 7 I/O pins. 
 
-.. table::
+.. list-table::  Default priority sequence of interrupt sources
    :align: center
    :widths: 20, 20, 10, 30, 30
 
