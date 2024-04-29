@@ -10,7 +10,7 @@ I2C is a serial communication protocol, so data is transferred bit by bit along 
 All pin configurations are defined in the config.h file. The I2C pins are defined as follows::
     
         #define I2C_SCL_PIN  P32
-        #define I2C_SDA_PIN  P30
+        #define I2C_SDA_PIN  P15
 
 OLED Display SD1306
 -------------------
