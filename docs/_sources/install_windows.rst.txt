@@ -42,8 +42,14 @@ Rename it:
    :alt: rename make
    :width: 100%
 
+
+
+
 .. warning:: 
-    Sometimes the file is necessary create a copy and rename it to make.exe
+    Sometimes, it is necessary to create a copy of the file and rename it to make.exe.
+
+
+
 
 path::
     
