@@ -1,29 +1,30 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
-project = 'Documentation CH552'
+project = 'Cocket Nova Development Board'
 copyright = '2024, Cesar Bautista'
 author = 'Cesar Bautista'
 release = '0.0.1'
 
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode', 'sphinx.ext.napoleon', 'rst2pdf.pdfbuilder']
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.githubpages',
+    'sphinx_togglebutton',
+    'rst2pdf.pdfbuilder',
+]
 
 templates_path = ['_templates']
 exclude_patterns = []
-
-
-
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+master_doc = 'index'
+numfig = True
 
 html_theme = 'sphinx_rtd_theme'
+html_logo = "_static/Logo-UNIT_Web-04-800x182.png"
 html_static_path = ['_static']
-pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'{author}'),]
+latex_logo = "_static/Logo-UNIT_Web-04-800x182.png"
