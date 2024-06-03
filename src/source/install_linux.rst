@@ -3,7 +3,7 @@ CH55x with SDCC and Ubuntu
 Ubuntu 23.10 Installer Environment
 ---------------
 
-.. note::
+.. caution::
 
    This project is under active development. The information provided here is subject to change.
 
