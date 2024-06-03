@@ -29,18 +29,25 @@ Remember that for Windows operating systems, an extra step is necessary, which i
 
 Locate the file
 
-.. image:: /_static/make_file.png
+.. _make_file:
+.. figure:: /_static/make_file.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
    :width: 100%
+   
+   make file
 
 
 Rename it:
 
-.. image:: /_static/rename.png
+.. _rename:
+
+.. figure:: /_static/rename.png
    :align: center
    :alt: rename make
    :width: 100%
+   
+   rename make
 
 
 
@@ -56,11 +63,13 @@ path::
     C:\MinGW\bin\make
 
 
-
-.. image:: /_static/var_env.png
+.. _var_env:
+.. figure:: /_static/var_env.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
    :width: 100%
+   
+   var_env
 
 
 Install pyusb
@@ -81,9 +90,11 @@ Update driver
 
 The current loading tool can utilize the default driver and coexist with the official WCHISPTool. In case the driver encounters issues, it is advisable to switch the driver version to libusb-win32 using Zadig.
 
+.. _driver:
 
-.. image:: /_static/driver.png
+.. figure:: /_static/driver.png
    :align: center
    :alt: GitHub build status reporting for pull requests.
    :width: 100%
-
+   
+   driver
