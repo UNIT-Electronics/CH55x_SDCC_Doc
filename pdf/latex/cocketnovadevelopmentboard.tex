@@ -63,7 +63,7 @@
 
 
 \title{Cocket Nova Development Board}
-\date{May 22, 2024}
+\date{May 23, 2024}
 \release{0.0.1}
 \author{Cesar Bautista}
 \newcommand{\sphinxlogo}{\sphinxincludegraphics{Logo-UNIT_Web-04-800x182.png}\par}
@@ -150,8 +150,8 @@ The CH552 microcontroller development board has a total of 16 pins, each with a 
 \sphinxstepscope
 
 
-\chapter{CH55x with SDCC and Ubuntu 23.10}
-\label{\detokenize{install_linux:ch55x-with-sdcc-and-ubuntu-23-10}}\label{\detokenize{install_linux::doc}}
+\chapter{CH55x with SDCC and Ubuntu}
+\label{\detokenize{install_linux:ch55x-with-sdcc-and-ubuntu}}\label{\detokenize{install_linux::doc}}
 
 \section{Ubuntu 23.10 Installer Environment}
 \label{\detokenize{install_linux:ubuntu-23-10-installer-environment}}
@@ -168,11 +168,12 @@ Update the operating system:
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-Install \sphinxtitleref{make} and \sphinxtitleref{binutils}:
+Install \sphinxtitleref{make}, \sphinxtitleref{binutils} and \sphinxtitleref{sdcc}:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{sudo} \PYG{n}{apt} \PYG{n}{install} \PYG{n}{make}
 \PYG{n}{sudo} \PYG{n}{apt} \PYG{n}{install} \PYG{n}{binutils}
+\PYG{n}{sudo} \PYG{n}{apt} \PYG{n}{install} \PYG{n}{sdcc}
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -186,7 +187,7 @@ Clone the examples with the main code:
 Navigate to the path:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{cd} \PYG{o}{\PYGZti{}}\PYG{o}{/}\PYG{n}{CH55x\PYGZus{}SDCC\PYGZus{}Examples}\PYG{o}{/}\PYG{n}{Software}\PYG{o}{/}\PYG{n}{examples}\PYG{o}{/}\PYG{l+m+mf}{0.}\PYGZbs{} \PYG{n}{Blink}\PYG{o}{/}
+\PYG{n}{cd} \PYG{n}{CH55x\PYGZus{}SDCC\PYGZus{}Examples}\PYG{o}{/}\PYG{n}{Software}\PYG{o}{/}\PYG{n}{examples}\PYG{o}{/}\PYG{l+m+mi}{0}\PYG{n}{\PYGZus{}Blink}
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar

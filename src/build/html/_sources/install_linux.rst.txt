@@ -1,4 +1,4 @@
-CH55x with SDCC and Ubuntu 23.10
+CH55x with SDCC and Ubuntu 
 ===================================
 Ubuntu 23.10 Installer Environment
 ---------------
@@ -12,10 +12,12 @@ Update the operating system::
     sudo apt update
 
 
-Install `make` and `binutils`::
+Install `make`, `binutils` and `sdcc`::
 
     sudo apt install make
     sudo apt install binutils
+    sudo apt install sdcc
+
 
 Clone the examples with the main code::
 
@@ -24,7 +26,7 @@ Clone the examples with the main code::
 
 Navigate to the path::
 
-    cd ~/CH55x_SDCC_Examples/Software/examples/0.\ Blink/
+    cd CH55x_SDCC_Examples/Software/examples/0_Blink
 
 
 Execute the command::
