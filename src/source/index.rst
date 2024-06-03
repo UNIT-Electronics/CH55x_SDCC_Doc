@@ -8,10 +8,16 @@ configurations.
 The Cocket Nova CH552 boards are incredibly easy to use. The projects focus on innovation and 
 present various alternatives for usage.
 
-.. image:: /_static/CH552_Sq.png
+.. _ch552:
+
+.. figure:: /_static/CH552_Sq.png
    :align: center
    :alt: ch552 img
    :width: 80%
+   
+   Cocket Nova CH552 Desing graphic
+
+
 
 
 

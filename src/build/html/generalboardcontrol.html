@@ -8,6 +8,7 @@
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6217da0c" />
 
   
   <!--[if lt IE 9]>
@@ -138,17 +139,32 @@
 <section id="voltage-selector">
 <h3>Voltage Selector<a class="headerlink" href="#voltage-selector" title="Link to this heading"></a></h3>
 <p>The development board utilizes a clever voltage selector system consisting of three pins and a jumper switch. The configuration of these pins determines the operating voltage of the board. By connecting the central pin to the +5V pin via the jumper, the board operates at 5V. On the other hand, by connecting the central pin to the +3.3V pin, the APK2112K regulator is activated, powering the board at 3.3V. It is crucial to ensure that the jumper switch is in the correct position according to the desired voltage to avoid possible damage to modules, components, and the board itself.</p>
-<img alt="selector" class="align-center" src="_images/selector.png" />
+<figure class="align-center" id="id2">
+<span id="selector"></span><img alt="selector" src="_images/selector.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">USB Connector</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="jst-connectors">
 <h3>JST Connectors<a class="headerlink" href="#jst-connectors" title="Link to this heading"></a></h3>
 <p>The board features two 1mm JST connectors, linked to different pins. The first connector directly connects to GPIO 3.0 and 3.1 of the microcontroller, while the second one is linked to pins 3.2 and 1.5. Both connectors operate in parallel to the selected power supply voltage via the jumper switch. These connectors are compatible with QWIIC, STEMMA QT, or similar pin distribution protocols. It is essential to verify that the selector voltage matches the system voltage to avoid circuit damage. Additionally, these connectors allow the board to be powered and offer functionalities such as PWM and serial communication.</p>
-<img alt="jst" class="align-center" src="_images/jst.png" />
+<figure class="align-center" id="id3">
+<span id="jst"></span><img alt="jst" src="_images/jst.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">JST Connectors</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="built-in-leds">
 <h3>Built-In LEDs<a class="headerlink" href="#built-in-leds" title="Link to this heading"></a></h3>
 <p>The board features two LEDs directly linked to the microcontroller. The first one is connected to pin 3.4, while the second one is a Neopixel LED connected to pin 3.3. This Neopixel provides an output with two headers, one connected to the data output and the other to the board’s ground, allowing for the external connection of more LEDs. To use this output, simply connect the DOUT pin to the DIN pin of the next LED in the row. As for power supply, you can use the VCC pin, provided that the external LEDs can operate at this voltage. Otherwise, it will be necessary to power them using an external source.</p>
-<img alt="jst" class="align-center" src="_images/neopixel.png" />
+<figure class="align-center" id="id4">
+<span id="neopixel"></span><img alt="jst" src="_images/neopixel.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Neopixel LED</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 </section>

@@ -24,11 +24,16 @@ Execute the command::
 
 This will compile the project and generate files with the following extensions:
 
+.. _files:
 
-.. image:: /_static/files.png
+.. figure:: /_static/files.png
    :width: 80%
    :align: center
-   :alt: GitHub authorization page
+   :alt: sections of the code
+   
+   command line
+
+
 
 Flashing the Program 
 ---------------
@@ -40,10 +45,12 @@ Connect a device and press the BOOT button, then write the command::
 
 If the project is successful, the code will generate a blinking effect as shown below:
 
+.. _led:
 
 .. figure:: /_static/led.png
    :width: 80%
    :align: center
-   :alt: GitHub authorization page
+   
+   LED blinking
 
 
