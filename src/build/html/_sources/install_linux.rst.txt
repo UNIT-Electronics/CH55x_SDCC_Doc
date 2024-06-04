@@ -51,7 +51,10 @@ Connect a device with the BOOT button pressed::
 
 The device will be shown with this description::
 
-    Descriptor
+    pc@LAPTOP:~$ lsusb
+    Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+    Bus 001 Device 002: ID 4348:55e0 WinChipHead
+    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub   
 
 
 Install pyusb

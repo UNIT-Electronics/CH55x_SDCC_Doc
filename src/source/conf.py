@@ -1,6 +1,6 @@
 
 project = 'Cocket Nova Development Board'
-copyright = '2024, Cesar Bautista'
+copyright = '2024, Unit Electronics'
 author = 'Cesar Bautista'
 release = '0.0.1'
 
@@ -28,6 +28,7 @@ html_theme = 'sphinx_rtd_theme'
 html_logo = "_static/Logo-UNIT_Web-04-800x182.png"
 html_static_path = ['_static']
 latex_logo = "_static/Logo-UNIT_Web-04-800x182.png"
+
 html_css_files = [
     'custom.css',
 ]

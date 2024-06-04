@@ -1,7 +1,6 @@
 Cocket Nova Getting Started Guide
 ===================================
 
-**Cocket Nova** 
 
 The Coket Nova guide is an instructional manual for utilizing the compiler SDCC. It serves various purposes, allowing users to explore different features and obtain new projects and 
 configurations.
