@@ -55,7 +55,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About the Cocket Nova CH552 Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_linux.html">CH55x with SDCC and Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_windows.html">CH55x with SDCC and Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
@@ -94,13 +94,33 @@
   <section id="analog-to-digital-converter-adc">
 <h1>Analog to Digital Converter (ADC)<a class="headerlink" href="#analog-to-digital-converter-adc" title="Link to this heading"></a></h1>
 <p>The CH552 has four ADC channels, which can be used to read analog values from sensors. The ADC channels are multiplexed with the GPIO pins, so you can use any GPIO pin as an ADC input.
-the distribution of the ADC channels is as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">ADC0</span><span class="p">:</span> <span class="n">P1</span><span class="mf">.1</span>
-<span class="o">&gt;&gt;</span> <span class="n">ADC1</span><span class="p">:</span> <span class="n">P1</span><span class="mf">.4</span>
-<span class="o">&gt;&gt;</span> <span class="n">ADC2</span><span class="p">:</span> <span class="n">P1</span><span class="mf">.5</span>
-<span class="o">&gt;&gt;</span> <span class="n">ADC3</span><span class="p">:</span> <span class="n">P3</span><span class="mf">.2</span>
-</pre></div>
-</div>
+the distribution of the ADC channels is as follows.</p>
+<table class="docutils align-center" id="id1">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Pin Mapping</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>PIN</p></th>
+<th class="head"><p>ADC Channel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A0</p></td>
+<td><p>P1.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>A1</p></td>
+<td><p>P1.4</p></td>
+</tr>
+<tr class="row-even"><td><p>A2</p></td>
+<td><p>P1.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>A3</p></td>
+<td><p>P3.2</p></td>
+</tr>
+</tbody>
+</table>
 <p>The ADC has a resolution of 8 bits, which means it can read values from 0 to 255. The ADC can be configured to read values from 0 to 5V, or from 0 to 3.3V, depending on the VCC voltage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;src/config.h&quot; // user configurations</span>
 <span class="c1">#include &quot;src/system.h&quot; // system functions</span>
@@ -135,7 +155,7 @@ the distribution of the ADC channels is as follows:</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Cesar Bautista.</p>
+    <p>&#169; Copyright 2024, Unit Electronics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
