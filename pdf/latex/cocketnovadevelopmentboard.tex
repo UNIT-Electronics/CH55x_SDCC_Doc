@@ -63,7 +63,7 @@
 
 
 \title{Cocket Nova Development Board}
-\date{Jun 03, 2024}
+\date{Jun 04, 2024}
 \release{0.0.1}
 \author{Cesar Bautista}
 \newcommand{\sphinxlogo}{\sphinxincludegraphics{Logo-UNIT_Web-04-800x182.png}\par}
@@ -83,9 +83,6 @@
 \pagestyle{normal}
 \phantomsection\label{\detokenize{index::doc}}
 
-
-\sphinxAtStartPar
-\sphinxstylestrong{Cocket Nova}
 
 \sphinxAtStartPar
 The Coket Nova guide is an instructional manual for utilizing the compiler SDCC. It serves various purposes, allowing users to explore different features and obtain new projects and
@@ -108,11 +105,8 @@ This project is under active development.
 \sphinxstepscope
 
 
-\chapter{About}
-\label{\detokenize{about:about}}\label{\detokenize{about::doc}}
-
-\section{Describing}
-\label{\detokenize{about:describing}}
+\chapter{About the Cocket Nova CH552 Guide}
+\label{\detokenize{about:about-the-cocket-nova-ch552-guide}}\label{\detokenize{about::doc}}
 \sphinxAtStartPar
 This is an excellent guide for beginner programmers, focused on using the SDCC compiler in both Windows and Linux environments.
 Here, you can find excellent references and examples along with comprehensive documentation focusing on developing technology for embedded systems.
@@ -233,7 +227,10 @@ Connect a device with the BOOT button pressed:
 The device will be shown with this description:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{Descriptor}
+pc@LAPTOP:\PYGZti{}\PYGZdl{} lsusb
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 002: ID 4348:55e0 WinChipHead
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 \end{sphinxVerbatim}
 
 
@@ -587,14 +584,58 @@ The board features two LEDs directly linked to the microcontroller. The first on
 \label{\detokenize{adc:analog-to-digital-converter-adc}}\label{\detokenize{adc::doc}}
 \sphinxAtStartPar
 The CH552 has four ADC channels, which can be used to read analog values from sensors. The ADC channels are multiplexed with the GPIO pins, so you can use any GPIO pin as an ADC input.
-the distribution of the ADC channels is as follows:
+the distribution of the ADC channels is as follows.
 
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{ADC0}\PYG{p}{:} \PYG{n}{P1}\PYG{l+m+mf}{.1}
-\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{ADC1}\PYG{p}{:} \PYG{n}{P1}\PYG{l+m+mf}{.4}
-\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{ADC2}\PYG{p}{:} \PYG{n}{P1}\PYG{l+m+mf}{.5}
-\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{ADC3}\PYG{p}{:} \PYG{n}{P3}\PYG{l+m+mf}{.2}
-\end{sphinxVerbatim}
+
+\begin{savenotes}\sphinxattablestart
+\sphinxthistablewithglobalstyle
+\centering
+\sphinxcapstartof{table}
+\sphinxthecaptionisattop
+\sphinxcaption{Pin Mapping}\label{\detokenize{adc:id1}}
+\sphinxaftertopcaption
+\begin{tabular}[t]{\X{10}{30}\X{20}{30}}
+\sphinxtoprule
+\sphinxstyletheadfamily 
+\sphinxAtStartPar
+PIN
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+ADC Channel
+\\
+\sphinxmidrule
+\sphinxtableatstartofbodyhook
+\sphinxAtStartPar
+A0
+&
+\sphinxAtStartPar
+P1.1
+\\
+\sphinxhline
+\sphinxAtStartPar
+A1
+&
+\sphinxAtStartPar
+P1.4
+\\
+\sphinxhline
+\sphinxAtStartPar
+A2
+&
+\sphinxAtStartPar
+P1.5
+\\
+\sphinxhline
+\sphinxAtStartPar
+A3
+&
+\sphinxAtStartPar
+P3.2
+\\
+\sphinxbottomrule
+\end{tabular}
+\sphinxtableafterendhook\par
+\sphinxattableend\end{savenotes}
 
 \sphinxAtStartPar
 The ADC has a resolution of 8 bits, which means it can read values from 0 to 255. The ADC can be configured to read values from 0 to 5V, or from 0 to 3.3V, depending on the VCC voltage:
@@ -625,11 +666,8 @@ The ADC has a resolution of 8 bits, which means it can read values from 0 to 255
 
 \chapter{I2C (Inter\sphinxhyphen{}Integrated Circuit)}
 \label{\detokenize{i2c:i2c-inter-integrated-circuit}}\label{\detokenize{i2c::doc}}
-
-\section{Description}
-\label{\detokenize{i2c:description}}
 \sphinxAtStartPar
-I2C is a serial communication protocol, so data is transferred bit by bit along a single wire (the SDA line). The SCL line is used to synchronize the data transfer. The I2C protocol is a master\sphinxhyphen{}slave protocol, which means that the communication is always initiated by the master device. A master device can communicate with one or multiple slave devices. The master device generates the clock signal and initiates the data transfer. The slave devices are addressed by the master device, and they respond to the master device based on the address they are assigned. The I2C protocol supports multiple devices on the same bus, and each device has a unique address. This allows multiple devices to communicate with each other using the same bus.
+I2C is a serial communication protocol, so data is transferred bit by bit along a single wire (the SDA line). The SCL line is used to synchronize the data transfer. The I2C protocol is a master\sphinxhyphen{}slave protocol, which means that the communication is always initiated by the master device. A master device can communicate with one or multiple slave devices.
 
 \begin{sphinxadmonition}{note}{Note:}
 \sphinxAtStartPar
@@ -637,18 +675,66 @@ The microcontroller use bit banging to communicate with the I2C devices.
 \end{sphinxadmonition}
 
 \sphinxAtStartPar
-All pin configurations are defined in the config.h file. The I2C pins are defined as follows:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{}define I2C\PYGZus{}SCL\PYGZus{}PIN  P32}
-\PYG{c+c1}{\PYGZsh{}define I2C\PYGZus{}SDA\PYGZus{}PIN  P15}
-\end{sphinxVerbatim}
+All pin configurations are defined in the \sphinxtitleref{config.h} file. The I2C pins are defined as follows
 
 
-\section{OLED Display SD1306}
-\label{\detokenize{i2c:oled-display-sd1306}}
+\begin{savenotes}\sphinxattablestart
+\sphinxthistablewithglobalstyle
+\centering
+\sphinxcapstartof{table}
+\sphinxthecaptionisattop
+\sphinxcaption{I2C Pinout}\label{\detokenize{i2c:id1}}
+\sphinxaftertopcaption
+\begin{tabular}[t]{\X{20}{60}\X{20}{60}\X{20}{60}}
+\sphinxtoprule
+\sphinxstyletheadfamily 
 \sphinxAtStartPar
-The OLED display is a 128x64 pixel monochrome display that uses the I2C protocol for communication. The display has a built\sphinxhyphen{}in controller that handles the display refresh and data transfer. The display is controlled by the microcontroller using the I2C protocol. The display has a resolution of 128x64 pixels, which allows it to display text, graphics, and images. The display is monochrome, which means that it can only display one color (white) on a black background. The display has a built\sphinxhyphen{}in controller that handles the display refresh and data transfer. The display is controlled by the microcontroller using the I2C protocol. The display has a resolution of 128x64 pixels, which allows it to display text, graphics, and images. The display is monochrome, which means that it can only display one color (white) on a black background:
+PIN
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+I2C 1
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+I2C 2
+\\
+\sphinxmidrule
+\sphinxtableatstartofbodyhook
+\sphinxAtStartPar
+SDA
+&
+\sphinxAtStartPar
+P15
+&
+\sphinxAtStartPar
+P31
+\\
+\sphinxhline
+\sphinxAtStartPar
+SCLK
+&
+\sphinxAtStartPar
+P32
+&
+\sphinxAtStartPar
+P30
+\\
+\sphinxbottomrule
+\end{tabular}
+\sphinxtableafterendhook\par
+\sphinxattableend\end{savenotes}
+
+
+\section{SSD1306 Display}
+\label{\detokenize{i2c:ssd1306-display}}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[width=0.500\linewidth]{{oled}.jpg}
+\caption{SSD1306 Display}\label{\detokenize{i2c:id2}}\label{\detokenize{i2c:figura-ssd1306-display}}\end{figure}
+
+\sphinxAtStartPar
+The OLED display is a 128x64 pixel monochrome display that uses the I2C protocol for communication:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{void} \PYG{n}{beep}\PYG{p}{(}\PYG{n}{void}\PYG{p}{)} \PYG{p}{\PYGZob{}}
@@ -1080,72 +1166,103 @@ Some of the functions provided by the PWM module are:
 \label{\detokenize{ws2812:ws2812}}\label{\detokenize{ws2812::doc}}
 \sphinxAtStartPar
 This is a simple library for controlling WS2812 LEDs with an CH552 microcontroller. It is based on the
-{[}WS2812 datasheet{]}(\sphinxurl{https://cdn-shop.adafruit.com/datasheets/WS2812.pdf}) and the
-{[}CH552 datasheet{]}(\sphinxurl{https://www.waveshare.com/w/upload/1/1d/CH552T-DS-EN-1.0.pdf}).
+\sphinxhref{https://cdn-shop.adafruit.com/datasheets/WS2812.pdf}{WS2812 datasheet} and the
+\sphinxhref{https://www.waveshare.com/w/upload/1/1d/CH552T-DS-EN-1.0.pdf}{CH552 datasheet}.
 
-\sphinxAtStartPar
-The library is written in C and can be used with the {[}SDCC{]}(\sphinxurl{http://sdcc.sourceforge.net/}) compiler.
+\begin{figure}[htbp]
+\centering
+\capstart
 
+\noindent\sphinxincludegraphics[width=0.400\linewidth]{{WS1280_LED}.jpg}
+\caption{WS2812 LED Strip}\label{\detokenize{ws2812:id1}}\label{\detokenize{ws2812:figura-dualmcu-one}}\end{figure}
+
+
+\begin{savenotes}\sphinxattablestart
+\sphinxthistablewithglobalstyle
+\centering
+\sphinxcapstartof{table}
+\sphinxthecaptionisattop
+\sphinxcaption{Pin Mapping for WS2812}\label{\detokenize{ws2812:id2}}
+\sphinxaftertopcaption
+\begin{tabular}[t]{\X{10}{20}\X{10}{20}}
+\sphinxtoprule
+\sphinxstyletheadfamily 
 \sphinxAtStartPar
-Code:
+PIN
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+GPIO CH552
+\\
+\sphinxmidrule
+\sphinxtableatstartofbodyhook
+\sphinxAtStartPar
+DOUT
+&
+\sphinxAtStartPar
+P3.3
+\\
+\sphinxbottomrule
+\end{tabular}
+\sphinxtableafterendhook\par
+\sphinxattableend\end{savenotes}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{}define delay 100}
-\PYG{c+c1}{\PYGZsh{}define NeoPixel 16 // Number Neopixel conect}
-\PYG{c+c1}{\PYGZsh{}define level 100 // Ilumination level 0 to 255}
+\PYG{c+cp}{\PYGZsh{}}\PYG{c+cp}{define delay 100}
+\PYG{c+cp}{\PYGZsh{}}\PYG{c+cp}{define NeoPixel 16 }\PYG{c+c1}{// Number Neopixel conect}
+\PYG{c+cp}{\PYGZsh{}}\PYG{c+cp}{define level 100 }\PYG{c+c1}{// Ilumination level 0 to 255}
 
-\PYG{n}{void} \PYG{n}{randomColorSequence}\PYG{p}{(}\PYG{n}{void}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{randomColorSequence}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
 
-\PYG{k}{for}\PYG{p}{(}\PYG{n+nb}{int} \PYG{n}{j}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{j}\PYG{o}{\PYGZlt{}}\PYG{n}{NeoPixel}\PYG{p}{;}\PYG{n}{j}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
-    \PYG{n}{uint8\PYGZus{}t} \PYG{n}{red} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{level}\PYG{p}{;}
-    \PYG{n}{uint8\PYGZus{}t} \PYG{n}{green} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{level}\PYG{p}{;}
-    \PYG{n}{uint8\PYGZus{}t} \PYG{n}{blue} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{level}\PYG{p}{;}
-    \PYG{n}{uint8\PYGZus{}t} \PYG{n}{num} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{NeoPixel}\PYG{p}{;}
+\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{j}\PYG{o}{\PYGZlt{}}\PYG{n}{NeoPixel}\PYG{p}{;}\PYG{n}{j}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{red}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rand}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZpc{}}\PYG{+w}{ }\PYG{n}{level}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{green}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rand}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZpc{}}\PYG{+w}{ }\PYG{n}{level}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{blue}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rand}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZpc{}}\PYG{+w}{ }\PYG{n}{level}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{num}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rand}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZpc{}}\PYG{+w}{ }\PYG{n}{NeoPixel}\PYG{p}{;}
 
-    \PYG{k}{for}\PYG{p}{(}\PYG{n+nb}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{num}\PYG{p}{;} \PYG{n}{i}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
-        \PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
-    \PYG{p}{\PYGZcb{}}
-    \PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{n}{red}\PYG{p}{,} \PYG{n}{green}\PYG{p}{,} \PYG{n}{blue}\PYG{p}{)}\PYG{p}{;}
-    \PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{n}{delay}\PYG{p}{)}\PYG{p}{;}
-    \PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
-    \PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{num}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{n}{red}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{green}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{blue}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{n}{delay}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
 
-    \PYG{k}{for}\PYG{p}{(}\PYG{n+nb}{int} \PYG{n}{l}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{l}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{9}\PYG{p}{;} \PYG{n}{l}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
-        \PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
-    \PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{l}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{l}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{9}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{l}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
 
 \PYG{p}{\PYGZcb{}}
 
-\PYG{n}{void} \PYG{n}{colorSequence}\PYG{p}{(}\PYG{n}{void}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{colorSequence}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
 
-\PYG{k}{for}\PYG{p}{(}\PYG{n+nb}{int} \PYG{n}{j}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{j}\PYG{o}{\PYGZlt{}}\PYG{o}{=}\PYG{n}{NeoPixel}\PYG{p}{;}\PYG{n}{j}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
-        \PYG{n}{uint8\PYGZus{}t} \PYG{n}{red} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{level}\PYG{p}{;}
-        \PYG{n}{uint8\PYGZus{}t} \PYG{n}{green} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{level}\PYG{p}{;}
-        \PYG{n}{uint8\PYGZus{}t} \PYG{n}{blue} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{level}\PYG{p}{;}
-    \PYG{k}{for}\PYG{p}{(}\PYG{n+nb}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{j}\PYG{p}{;} \PYG{n}{i}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
-        \PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{n}{red}\PYG{p}{,} \PYG{n}{green}\PYG{p}{,} \PYG{n}{blue}\PYG{p}{)}\PYG{p}{;}
-    \PYG{p}{\PYGZcb{}}
-    \PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{n}{delay}\PYG{p}{)}\PYG{p}{;}
-    \PYG{k}{for}\PYG{p}{(}\PYG{n+nb}{int} \PYG{n}{l}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{l}\PYG{o}{\PYGZlt{}}\PYG{n}{j}\PYG{p}{;} \PYG{n}{l}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
-        \PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
-    \PYG{p}{\PYGZcb{}}
+\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{j}\PYG{o}{\PYGZlt{}}\PYG{o}{=}\PYG{n}{NeoPixel}\PYG{p}{;}\PYG{n}{j}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{red}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rand}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZpc{}}\PYG{+w}{ }\PYG{n}{level}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{green}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rand}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZpc{}}\PYG{+w}{ }\PYG{n}{level}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{blue}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rand}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZpc{}}\PYG{+w}{ }\PYG{n}{level}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{j}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{n}{red}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{green}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{blue}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{n}{delay}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{l}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{l}\PYG{o}{\PYGZlt{}}\PYG{n}{j}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{l}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{NEO\PYGZus{}writeColor}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
 
-\PYG{o}{/}\PYG{o}{/} \PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{=}
-\PYG{o}{/}\PYG{o}{/} \PYG{n}{Main} \PYG{n}{Function}
-\PYG{o}{/}\PYG{o}{/} \PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{=}
-\PYG{n}{void} \PYG{n}{main}\PYG{p}{(}\PYG{n}{void}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-\PYG{n}{NEO\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}                       \PYG{o}{/}\PYG{o}{/} \PYG{n}{init} \PYG{n}{NeoPixels}
-\PYG{n}{CLK\PYGZus{}config}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}                     \PYG{o}{/}\PYG{o}{/} \PYG{n}{configure} \PYG{n}{system} \PYG{n}{clock}
-\PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{n}{delay}\PYG{p}{)}\PYG{p}{;}                       \PYG{o}{/}\PYG{o}{/} \PYG{n}{wait} \PYG{k}{for} \PYG{n}{clock} \PYG{n}{to} \PYG{n}{settle}
+\PYG{c+c1}{// ===================================================================================}
+\PYG{c+c1}{// Main Function}
+\PYG{c+c1}{// ===================================================================================}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{n}{NEO\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                       }\PYG{c+c1}{// init NeoPixels}
+\PYG{n}{CLK\PYGZus{}config}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                     }\PYG{c+c1}{// configure system clock}
+\PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{n}{delay}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                       }\PYG{c+c1}{// wait for clock to settle}
 
-\PYG{o}{/}\PYG{o}{/} \PYG{n}{Loop}
-\PYG{k}{while} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-    \PYG{n}{randomColorSequence}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
-    \PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{;}
-    \PYG{n}{colorSequence}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
-    \PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{;}
+\PYG{c+c1}{// Loop}
+\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{randomColorSequence}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{colorSequence}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
