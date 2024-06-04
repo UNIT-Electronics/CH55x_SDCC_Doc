@@ -56,9 +56,10 @@
 % Set up styles of URL: it should be placed after hyperref.
 \urlstyle{same}
 
+\addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
 
 \usepackage{sphinxmessages}
-
+\setcounter{tocdepth}{1}
 
 
 
@@ -84,6 +85,11 @@
 \phantomsection\label{\detokenize{index::doc}}
 
 
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+This project is under active development.
+\end{sphinxadmonition}
+
 \sphinxAtStartPar
 The Coket Nova guide is an instructional manual for utilizing the compiler SDCC. It serves various purposes, allowing users to explore different features and obtain new projects and
 configurations.
@@ -97,9 +103,9 @@ present various alternatives for usage.
 \noindent\sphinxincludegraphics[width=0.800\linewidth]{{CH552_Sq}.png}
 \caption{Cocket Nova CH552 Desing graphic}\label{\detokenize{index:id1}}\label{\detokenize{index:ch552}}\end{figure}
 
-\begin{sphinxadmonition}{note}{Note:}
+\begin{sphinxadmonition}{tip}{Tip:}
 \sphinxAtStartPar
-This project is under active development.
+The codes examples in github are available in the following link: \sphinxhref{https://github.com/UNIT-Electronics/CH55x\_SDCC\_Examples}{DualMCU ONE Github}
 \end{sphinxadmonition}
 
 \sphinxstepscope
@@ -159,9 +165,6 @@ The CH552 microcontroller development board has a total of 16 pins, each with a 
 
 \chapter{CH55x with SDCC and Ubuntu}
 \label{\detokenize{install_linux:ch55x-with-sdcc-and-ubuntu}}\label{\detokenize{install_linux::doc}}
-
-\section{Ubuntu 23.10 Installer Environment}
-\label{\detokenize{install_linux:ubuntu-23-10-installer-environment}}
 \begin{sphinxadmonition}{caution}{Caution:}
 \sphinxAtStartPar
 This project is under active development. The information provided here is subject to change.
@@ -187,14 +190,14 @@ Install \sphinxtitleref{make}, \sphinxtitleref{binutils} and \sphinxtitleref{sdc
 Clone the examples with the main code:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{git} \PYG{n}{clone} \PYG{n}{https}\PYG{p}{:}\PYG{o}{/}\PYG{o}{/}\PYG{n}{github}\PYG{o}{.}\PYG{n}{com}\PYG{o}{/}\PYG{n}{Cesarbautista10}\PYG{o}{/}\PYG{n}{CH55x\PYGZus{}SDCC\PYGZus{}Examples}\PYG{o}{.}\PYG{n}{git}
+\PYG{n}{git} \PYG{n}{clone} \PYG{n}{https}\PYG{p}{:}\PYG{o}{/}\PYG{o}{/}\PYG{n}{github}\PYG{o}{.}\PYG{n}{com}\PYG{o}{/}\PYG{n}{UNIT}\PYG{o}{\PYGZhy{}}\PYG{n}{Electronics}\PYG{o}{/}\PYG{n}{CH55x\PYGZus{}SDCC\PYGZus{}Examples}\PYG{o}{.}\PYG{n}{git}
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
 Navigate to the path:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{cd} \PYG{n}{CH55x\PYGZus{}SDCC\PYGZus{}Examples}\PYG{o}{/}\PYG{n}{Software}\PYG{o}{/}\PYG{n}{examples}\PYG{o}{/}\PYG{l+m+mi}{0}\PYG{n}{\PYGZus{}Blink}
+\PYG{n}{cd} \PYG{n}{CH55x\PYGZus{}SDCC\PYGZus{}Examples}\PYG{o}{/}\PYG{n}{Software}\PYG{o}{/}\PYG{n}{examples}\PYG{o}{/}\PYG{n}{Blink}
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -446,7 +449,7 @@ This will compile the project and generate files with the following extensions:
 \capstart
 
 \noindent\sphinxincludegraphics[width=0.800\linewidth]{{files}.png}
-\caption{command line}\label{\detokenize{compile:id1}}\label{\detokenize{compile:files}}\end{figure}
+\caption{command line}\label{\detokenize{compile:id2}}\label{\detokenize{compile:files}}\end{figure}
 
 
 \section{Flashing the Program}
@@ -466,7 +469,54 @@ If the project is successful, the code will generate a blinking effect as shown 
 \capstart
 
 \noindent\sphinxincludegraphics[width=0.800\linewidth]{{led}.png}
-\caption{LED blinking}\label{\detokenize{compile:id2}}\label{\detokenize{compile:led}}\end{figure}
+\caption{LED blinking}\label{\detokenize{compile:id3}}\label{\detokenize{compile:led}}\end{figure}
+
+
+\section{Software Development prototype}
+\label{\detokenize{compile:software-development-prototype}}
+
+\subsection{Loadupch}
+\label{\detokenize{compile:loadupch}}
+\sphinxAtStartPar
+The Loadupch is a software development prototype that allows users to upload code to the CH552 microcontroller. It is a simple and easy\sphinxhyphen{}to\sphinxhyphen{}use tool that provides a graphical interface for uploading code to the microcontroller. The Loadupch tool is available for Windows and Linux operating systems.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[width=0.600\linewidth]{{loadupch}.png}
+\caption{Loadupch tool}\label{\detokenize{compile:id4}}\label{\detokenize{compile:id1}}\end{figure}
+
+
+\subsection{Installing Loadupch}
+\label{\detokenize{compile:installing-loadupch}}
+\begin{sphinxadmonition}{warning}{Warning:}
+\sphinxAtStartPar
+The Loadupch tool is still under development and may contain bugs. Use it at your own risk.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+Use pypi to install the \sphinxhref{https://pypi.org/project/loadupch/}{Loadupch tool}:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{pip} \PYG{n}{install} \PYG{n}{loadupch}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+run the Loadupch tool:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{python} \PYG{o}{\PYGZhy{}}\PYG{n}{m} \PYG{n}{loadupch}
+\end{sphinxVerbatim}
+
+\begin{sphinxadmonition}{tip}{Tip:}
+\sphinxAtStartPar
+To uninstall the Loadupch tool, use the following command:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{pip} \PYG{n}{uninstall} \PYG{n}{loadupch}
+\end{sphinxVerbatim}
+\end{sphinxadmonition}
 
 \sphinxstepscope
 

@@ -395,6 +395,7 @@ INPUT C:\Users\Innovacion07\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\tex-gy
 INPUT C:\Users\Innovacion07\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\t1xtt.tfm
 INPUT C:\Users\Innovacion07\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qtmri.tfm
 INPUT C:\Users\Innovacion07\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\t1xbtt.tfm
+INPUT C:\Users\Innovacion07\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qtmr.tfm
 INPUT .\make_file.png
 INPUT .\make_file.png
 INPUT .\make_file.png
@@ -463,6 +464,17 @@ INPUT .\led.png
 INPUT .\led.png
 INPUT C:\Users\Innovacion07\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qtmr.tfm
 INPUT C:\Users\Innovacion07\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qhvr.tfm
+INPUT .\loadupch.png
+INPUT .\loadupch.png
+INPUT .\loadupch.png
+INPUT .\loadupch.png
+INPUT .\loadupch.png
+INPUT .\loadupch.png
+INPUT .\loadupch.png
+INPUT .\loadupch.png
+INPUT .\loadupch.png
+INPUT .\loadupch.png
+INPUT .\loadupch.png
 INPUT .\selector.png
 INPUT .\selector.png
 INPUT .\selector.png
@@ -508,7 +520,6 @@ INPUT .\oled.jpg
 INPUT .\oled.jpg
 INPUT .\oled.jpg
 INPUT .\oled.jpg
-INPUT C:\Users\Innovacion07\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qtmr.tfm
 INPUT .\WS1280_LED.jpg
 INPUT .\WS1280_LED.jpg
 INPUT .\WS1280_LED.jpg
