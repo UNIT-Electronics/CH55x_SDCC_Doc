@@ -54,3 +54,39 @@ If the project is successful, the code will generate a blinking effect as shown 
    LED blinking
 
 
+Software Development prototype
+----------------
+
+Loadupch 
+~~~~~~~~~~~~~~~~~~~~~~
+
+The Loadupch is a software development prototype that allows users to upload code to the CH552 microcontroller. It is a simple and easy-to-use tool that provides a graphical interface for uploading code to the microcontroller. The Loadupch tool is available for Windows and Linux operating systems.
+
+.. _loadupch:
+
+.. figure:: /_static/loadupch.png
+   :width: 60%
+   :align: center
+   :alt: Loadupch tool
+
+   Loadupch tool
+
+Installing Loadupch
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. Warning::
+   The Loadupch tool is still under development and may contain bugs. Use it at your own risk.
+
+Use pypi to install the `Loadupch tool <https://pypi.org/project/loadupch/>`_::
+
+    pip install loadupch
+
+run the Loadupch tool::
+
+    python -m loadupch
+
+.. tip::
+    To uninstall the Loadupch tool, use the following command::
+
+        pip uninstall loadupch
+
