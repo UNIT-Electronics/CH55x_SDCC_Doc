@@ -1,0 +1,87 @@
+WS2812
+=======
+This is a simple library for controlling WS2812 LEDs with an CH552 microcontroller. It is based on the 
+`WS2812 datasheet <https://cdn-shop.adafruit.com/datasheets/WS2812.pdf>`_ and the 
+`CH552 datasheet <https://www.waveshare.com/w/upload/1/1d/CH552T-DS-EN-1.0.pdf>`_.
+
+
+
+.. _figura-dualmcu-one:
+
+.. figure:: /_static/WS1280_LED.jpg
+   :align: center
+   :alt: rgb led
+   :width: 40%
+
+   WS2812 LED Strip
+
+.. list-table:: Pin Mapping for WS2812
+   :widths: 10 10
+   :header-rows: 1
+   :align: center
+
+   * - PIN
+     - GPIO CH552
+   * - DOUT
+     - P3.3
+
+.. code-block:: c
+
+    #define delay 100
+    #define NeoPixel 16 // Number Neopixel conect
+    #define level 100 // Ilumination level 0 to 255
+
+    void randomColorSequence(void) {
+
+    for(int j=0;j<NeoPixel;j++){
+        uint8_t red = rand() % level;
+        uint8_t green = rand() % level;
+        uint8_t blue = rand() % level;
+        uint8_t num = rand() % NeoPixel;
+
+        for(int i=0; i<num; i++){
+            NEO_writeColor(0, 0, 0);
+        }
+        NEO_writeColor(red, green, blue);
+        DLY_ms(delay);
+        NEO_writeColor(0, 0, 0);
+        }
+        
+        for(int l=0; l<9; l++){
+            NEO_writeColor(0, 0, 0);
+        }
+
+    }
+
+    void colorSequence(void) {
+    
+    for(int j=0;j<=NeoPixel;j++){
+            uint8_t red = rand() % level;
+            uint8_t green = rand() % level;
+            uint8_t blue = rand() % level;
+        for(int i=0; i<j; i++){
+            NEO_writeColor(red, green, blue);
+        }
+        DLY_ms(delay);
+        for(int l=0; l<j; l++){
+            NEO_writeColor(0, 0, 0);
+        }
+    }
+    }
+
+    // ===================================================================================
+    // Main Function
+    // ===================================================================================
+    void main(void) {
+    NEO_init();                       // init NeoPixels
+    CLK_config();                     // configure system clock
+    DLY_ms(delay);                       // wait for clock to settle
+
+    // Loop
+    while (1) {
+        randomColorSequence();
+        DLY_ms(100);
+        colorSequence();
+        DLY_ms(100);
+    }
+    }
