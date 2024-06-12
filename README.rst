@@ -33,7 +33,7 @@ Recommended Operating Conditions
      - Operating temperature
      - -40 to 85 °C
 
-.. image:: path/to/version.png
+.. image:: ./src/source/_static/CH552_Sq.png
    :alt: Version
    :align: center
 
