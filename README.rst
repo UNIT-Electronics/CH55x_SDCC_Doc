@@ -47,7 +47,7 @@ Current version: 1.0.0
 License
 -------
 
-This project is licensed under the GPL-3.0 License - see the [LICENSE](./LICENSE) file for details.
+This project is licensed under the GPL-3.0 License - see the `License <./LICENSE>`_ file for details.
 
 Acknowledgments
 ---------------
@@ -57,5 +57,5 @@ We would like to thank the following contributors for their invaluable input and
 
 - The SDCC community for their continuous support and development of the compiler.
 
-For further information and updates, visit our [GitHub repository](https://github.com/UNIT-Electronics).
+For further information and updates, visit our `GitHub repository <https://github.com/UNIT-Electronics>`_.
 
