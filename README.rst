@@ -1,10 +1,10 @@
-ISE_Documentation_board_CH552
+Documentation board CH55x
 =============================
 
 .. raw:: html
-    <h1>ISE_Documentation_board_CH552</h1>
+    <h1>Cocket Nova Getting Started Guide</h1>
 
-    <p>The ISE_Documentation_board_CH552 guide is an instructional manual for utilizing the compiler SDCC. 
+    <p>The Cocket Nova Getting Started Guide is an instructional manual for utilizing the compiler SDCC. 
     It serves various purposes, allowing users to explore different features and obtain new projects and 
     configurations. The Cocket Nova CH552 boards are incredibly easy to use. The projects focus on innovation 
     and present various alternatives for usage.</p>
@@ -16,22 +16,23 @@ ISE_Documentation_board_CH552
 
 Recommended Operating Conditions
 --------------------------------
-
 .. list-table::
-   :header-rows: 1
-
-   * - Symbol
-     - Description
-     - Range
-   * - VUSB
-     - Voltage supply via USB
-     - 3.14 to 5.255 V
-   * - VIn
-     - Voltage supply from pins
-     - 2.7 to 5.5 V
-   * - Top
-     - Operating temperature
-     - -40 to 85 °C
+    :header-rows: 1
+    :widths: 25 25 50
+    :align: center
+    
+    * - Symbol
+      - Description
+      - Range
+    * - VUSB
+      - Voltage supply via USB
+      - 3.14 to 5.255 V
+    * - VIn
+      - Voltage supply from pins
+      - 2.7 to 5.5 V
+    * - Top
+      - Operating temperature
+      - -40 to 85 °C
 
 
 
