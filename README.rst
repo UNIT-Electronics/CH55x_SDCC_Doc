@@ -33,19 +33,21 @@ Recommended Operating Conditions
      - Operating temperature
      - -40 to 85 °C
 
-.. image:: ./src/source/_static/CH552_Sq.png
-   :alt: Version
-   :align: center
+
 
 Version
 -------
+
+.. image:: ./src/source/_static/CH552_Sq.png
+   :alt: Version
+   :align: center
 
 Current version: 1.0.0
 
 License
 -------
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the GPL-3.0 License - see the [LICENSE](./LICENSE) file for details.
 
 Acknowledgments
 ---------------
