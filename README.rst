@@ -14,31 +14,46 @@ ISE_Documentation_board_CH552
     applications. The choice of this microcontroller is based on its affordability, ease of connection, and compatibility
     with various operating systems.</p>
 
-    <h2>Recommended Operating Conditions</h2>
+Recommended Operating Conditions
+--------------------------------
 
-    <table>
-      <thead>
-         <tr>
-            <th>Symbol</th>
-            <th>Description</th>
-            <th>Range</th>
-         </tr>
-      </thead>
-      <tbody>
-         <tr>
-            <td>VUSB</td>
-            <td>Voltage supply via USB</td>
-            <td>3.14 to 5.255 V</td>
-         </tr>
-         <tr>
-            <td>VIn</td>
-            <td>Voltage supply from pins</td>
-            <td>2.7 to 5.5 V</td>
-         </tr>
-         <tr>
-            <td>Top</td>
-            <td>Operating temperature</td>
-            <td>-40 to 85 °C</td>
-         </tr>
-      </tbody>
-    </table>
+.. list-table::
+   :header-rows: 1
+
+   * - Symbol
+     - Description
+     - Range
+   * - VUSB
+     - Voltage supply via USB
+     - 3.14 to 5.255 V
+   * - VIn
+     - Voltage supply from pins
+     - 2.7 to 5.5 V
+   * - Top
+     - Operating temperature
+     - -40 to 85 °C
+
+.. image:: path/to/version.png
+   :alt: Version
+   :align: center
+
+Version
+-------
+
+Current version: 1.0.0
+
+License
+-------
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+---------------
+
+We would like to thank the following contributors for their invaluable input and support:
+
+
+- The SDCC community for their continuous support and development of the compiler.
+
+For further information and updates, visit our [GitHub repository](https://github.com/UNIT-Electronics).
+
