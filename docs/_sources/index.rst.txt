@@ -25,7 +25,7 @@ present various alternatives for usage.
 
 
 .. tip::
-   The codes examples in github are available in the following link: `DualMCU ONE Github <https://github.com/UNIT-Electronics/CH55x_SDCC_Examples>`_
+   The codes examples in github are available in the following link: `CH55x_SDCC_Examples Github <https://github.com/UNIT-Electronics/CH55x_SDCC_Examples>`_
 
 
 

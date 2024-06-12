@@ -64,7 +64,7 @@
 
 
 \title{Cocket Nova Development Board}
-\date{Jun 04, 2024}
+\date{Jun 10, 2024}
 \release{0.0.1}
 \author{Cesar Bautista}
 \newcommand{\sphinxlogo}{\sphinxincludegraphics{Logo-UNIT_Web-04-800x182.png}\par}
@@ -105,7 +105,7 @@ present various alternatives for usage.
 
 \begin{sphinxadmonition}{tip}{Tip:}
 \sphinxAtStartPar
-The codes examples in github are available in the following link: \sphinxhref{https://github.com/UNIT-Electronics/CH55x\_SDCC\_Examples}{DualMCU ONE Github}
+The codes examples in github are available in the following link: \sphinxhref{https://github.com/UNIT-Electronics/CH55x\_SDCC\_Examples}{CH55x\_SDCC\_Examples Github}
 \end{sphinxadmonition}
 
 \sphinxstepscope
@@ -421,7 +421,7 @@ To run the program, use a bash terminal.
 Clone the examples with the main code:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{git} \PYG{n}{clone} \PYG{n}{https}\PYG{p}{:}\PYG{o}{/}\PYG{o}{/}\PYG{n}{github}\PYG{o}{.}\PYG{n}{com}\PYG{o}{/}\PYG{n}{Cesarbautista10}\PYG{o}{/}\PYG{n}{ESE\PYGZus{}CH552\PYGZus{}Examples\PYGZus{}C}\PYG{o}{.}\PYG{n}{git}
+\PYG{n}{git} \PYG{n}{clone} \PYG{n}{https}\PYG{p}{:}\PYG{o}{/}\PYG{o}{/}\PYG{n}{github}\PYG{o}{.}\PYG{n}{com}\PYG{o}{/}\PYG{n}{UNIT}\PYG{o}{\PYGZhy{}}\PYG{n}{Electronics}\PYG{o}{/}\PYG{n}{CH55x\PYGZus{}SDCC\PYGZus{}Examples}
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -586,10 +586,7 @@ Operating temperature
 \sphinxattableend\end{savenotes}
 
 
-\section{Operating Mode}
-\label{\detokenize{generalboardcontrol:operating-mode}}
-
-\subsection{Voltage Selector}
+\section{Voltage Selector}
 \label{\detokenize{generalboardcontrol:voltage-selector}}
 \sphinxAtStartPar
 The development board utilizes a clever voltage selector system consisting of three pins and a jumper switch. The configuration of these pins determines the operating voltage of the board. By connecting the central pin to the +5V pin via the jumper, the board operates at 5V. On the other hand, by connecting the central pin to the +3.3V pin, the APK2112K regulator is activated, powering the board at 3.3V. It is crucial to ensure that the jumper switch is in the correct position according to the desired voltage to avoid possible damage to modules, components, and the board itself.
@@ -598,11 +595,11 @@ The development board utilizes a clever voltage selector system consisting of th
 \centering
 \capstart
 
-\noindent\sphinxincludegraphics{{selector}.png}
+\noindent\sphinxincludegraphics[width=0.800\linewidth]{{selector}.png}
 \caption{USB Connector}\label{\detokenize{generalboardcontrol:id2}}\label{\detokenize{generalboardcontrol:selector}}\end{figure}
 
 
-\subsection{JST Connectors}
+\section{JST Connectors}
 \label{\detokenize{generalboardcontrol:jst-connectors}}
 \sphinxAtStartPar
 The board features two 1mm JST connectors, linked to different pins. The first connector directly connects to GPIO 3.0 and 3.1 of the microcontroller, while the second one is linked to pins 3.2 and 1.5. Both connectors operate in parallel to the selected power supply voltage via the jumper switch. These connectors are compatible with QWIIC, STEMMA QT, or similar pin distribution protocols. It is essential to verify that the selector voltage matches the system voltage to avoid circuit damage. Additionally, these connectors allow the board to be powered and offer functionalities such as PWM and serial communication.
@@ -611,11 +608,11 @@ The board features two 1mm JST connectors, linked to different pins. The first c
 \centering
 \capstart
 
-\noindent\sphinxincludegraphics{{jst}.png}
+\noindent\sphinxincludegraphics[width=0.500\linewidth]{{jst}.png}
 \caption{JST Connectors}\label{\detokenize{generalboardcontrol:id3}}\label{\detokenize{generalboardcontrol:jst}}\end{figure}
 
 
-\subsection{Built\sphinxhyphen{}In LEDs}
+\section{Built\sphinxhyphen{}In LEDs}
 \label{\detokenize{generalboardcontrol:built-in-leds}}
 \sphinxAtStartPar
 The board features two LEDs directly linked to the microcontroller. The first one is connected to pin 3.4, while the second one is a Neopixel LED connected to pin 3.3. This Neopixel provides an output with two headers, one connected to the data output and the other to the board’s ground, allowing for the external connection of more LEDs. To use this output, simply connect the DOUT pin to the DIN pin of the next LED in the row. As for power supply, you can use the VCC pin, provided that the external LEDs can operate at this voltage. Otherwise, it will be necessary to power them using an external source.

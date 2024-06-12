@@ -18,10 +18,9 @@
 \contentsline {subsection}{\numberline {4.3.2}Installing Loadupch}{16}{subsection.4.3.2}%
 \contentsline {chapter}{\numberline {5}General Board Control}{19}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Recommended Operating Conditions}{19}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Operating Mode}{19}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Voltage Selector}{19}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}JST Connectors}{19}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Built\sphinxhyphen {}In LEDs}{20}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.2}Voltage Selector}{19}{section.5.2}%
+\contentsline {section}{\numberline {5.3}JST Connectors}{19}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Built\sphinxhyphen {}In LEDs}{21}{section.5.4}%
 \contentsline {chapter}{\numberline {6}Analog to Digital Converter (ADC)}{23}{chapter.6}%
 \contentsline {chapter}{\numberline {7}I2C (Inter\sphinxhyphen {}Integrated Circuit)}{25}{chapter.7}%
 \contentsline {section}{\numberline {7.1}SSD1306 Display}{25}{section.7.1}%

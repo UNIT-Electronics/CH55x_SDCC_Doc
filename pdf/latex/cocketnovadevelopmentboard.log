@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.25)  4 JUN 2024 15:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.25)  10 JUN 2024 10:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,7 +903,7 @@ Package hyperref Info: Link coloring ON on input line 73.
 \openout5 = `cocketnovadevelopmentboard.out'.
 
 Package hyperref Info: Option `pageanchor' set `false' on input line 81.
-<Logo-UNIT_Web-04-800x182.png, id=128, 602.25pt x 137.01187pt>
+<Logo-UNIT_Web-04-800x182.png, id=124, 602.25pt x 137.01187pt>
 LaTeX Font Info:    Trying to load font information for T1+txtt on input line 8
 1.
 
@@ -950,7 +950,7 @@ rs/Innovacion07/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc
 ] [2
 
 ]
-<CH552_Sq.png, id=180, 796.47563pt x 337.26pt>
+<CH552_Sq.png, id=178, 796.47563pt x 337.26pt>
 File: CH552_Sq.png Graphic file (type png)
 <use CH552_Sq.png>
 Package pdftex.def Info: CH552_Sq.png  used on input line 103.
@@ -959,7 +959,7 @@ Package pdftex.def Info: CH552_Sq.png  used on input line 103.
 
 ]
 Chapter 1.
-<CH552.png, id=194, 597.73312pt x 550.30594pt>
+<CH552.png, id=192, 597.73312pt x 550.30594pt>
 File: CH552.png Graphic file (type png)
 <use CH552.png>
 Package pdftex.def Info: CH552.png  used on input line 125.
@@ -972,7 +972,7 @@ LaTeX Font Info:    Trying to load font information for TS1+qtm on input line 1
 fd
 File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 )
-<PinOut_CH552.jpg, id=202, 641.39626pt x 757.32938pt>
+<PinOut_CH552.jpg, id=200, 641.39626pt x 757.32938pt>
 File: PinOut_CH552.jpg Graphic file (type jpg)
 <use PinOut_CH552.jpg>
 Package pdftex.def Info: PinOut_CH552.jpg  used on input line 160.
@@ -986,17 +986,17 @@ LaTeX Font Info:    Font shape `T1/txtt/b/n' in size <10> not available
 (Font)              Font shape `T1/txtt/bx/n' tried instead on input line 215.
 [7] [8]
 Chapter 3.
-<make_file.png, id=232, 590.95781pt x 447.92343pt>
+<make_file.png, id=230, 590.95781pt x 447.92343pt>
 File: make_file.png Graphic file (type png)
 <use make_file.png>
 Package pdftex.def Info: make_file.png  used on input line 347.
 (pdftex.def)             Requested size: 469.75502pt x 356.06325pt.
-<rename.png, id=233, 590.95781pt x 444.15938pt>
+<rename.png, id=231, 590.95781pt x 444.15938pt>
 File: rename.png Graphic file (type png)
 <use rename.png>
 Package pdftex.def Info: rename.png  used on input line 357.
 (pdftex.def)             Requested size: 469.75502pt x 353.07112pt.
-<var_env.png, id=234, 462.97969pt x 438.13687pt>
+<var_env.png, id=232, 462.97969pt x 438.13687pt>
 File: var_env.png Graphic file (type png)
 <use var_env.png>
 Package pdftex.def Info: var_env.png  used on input line 376.
@@ -1004,7 +1004,7 @@ Package pdftex.def Info: var_env.png  used on input line 376.
 [9
 
 ] [10 <./make_file.png>] [11 <./rename.png>] [12 <./var_env.png>]
-<driver.png, id=259, 442.65375pt x 201.00093pt>
+<driver.png, id=257, 442.65375pt x 201.00093pt>
 File: driver.png Graphic file (type png)
 <use driver.png>
 Package pdftex.def Info: driver.png  used on input line 406.
@@ -1013,61 +1013,61 @@ Package pdftex.def Info: driver.png  used on input line 406.
 
 ]
 Chapter 4.
-<files.png, id=270, 560.8453pt x 187.45032pt>
+<files.png, id=268, 560.8453pt x 187.45032pt>
 File: files.png Graphic file (type png)
 <use files.png>
 Package pdftex.def Info: files.png  used on input line 451.
 (pdftex.def)             Requested size: 375.80544pt x 125.6025pt.
 [15 <./files.png>]
-<led.png, id=278, 575.90157pt x 304.13625pt>
+<led.png, id=276, 575.90157pt x 304.13625pt>
 File: led.png Graphic file (type png)
 <use led.png>
 Package pdftex.def Info: led.png  used on input line 471.
 (pdftex.def)             Requested size: 375.80544pt x 198.47049pt.
-<loadupch.png, id=279, 225.09094pt x 319.94531pt>
+<loadupch.png, id=277, 225.09094pt x 319.94531pt>
 File: loadupch.png Graphic file (type png)
 <use loadupch.png>
 Package pdftex.def Info: loadupch.png  used on input line 487.
 (pdftex.def)             Requested size: 281.85587pt x 400.67758pt.
  [16 <./led.png>] [17 <./loadupch.png>] [18]
 Chapter 5.
-<selector.png, id=297, 409.53pt x 240.14719pt>
+<selector.png, id=295, 409.53pt x 240.14719pt>
 File: selector.png Graphic file (type png)
 <use selector.png>
-Package pdftex.def Info: selector.png  used on input line 601.
-(pdftex.def)             Requested size: 409.52899pt x 240.14658pt.
-<jst.png, id=298, 235.63031pt x 370.38374pt>
+Package pdftex.def Info: selector.png  used on input line 598.
+(pdftex.def)             Requested size: 375.80544pt x 220.38475pt.
+<jst.png, id=296, 235.63031pt x 370.38374pt>
 File: jst.png Graphic file (type png)
 <use jst.png>
-Package pdftex.def Info: jst.png  used on input line 614.
-(pdftex.def)             Requested size: 235.62973pt x 370.38283pt.
+Package pdftex.def Info: jst.png  used on input line 611.
+(pdftex.def)             Requested size: 234.8775pt x 369.20729pt.
 [19
 
-]
-<neopixel.png, id=305, 189.70876pt x 327.47343pt>
+] [20 <./selector.png> <./jst.png>]
+<neopixel.png, id=311, 189.70876pt x 327.47343pt>
 File: neopixel.png Graphic file (type png)
 <use neopixel.png>
-Package pdftex.def Info: neopixel.png  used on input line 627.
+Package pdftex.def Info: neopixel.png  used on input line 624.
 (pdftex.def)             Requested size: 189.70828pt x 327.47264pt.
- [20 <./selector.png>] [21 <./jst.png>] [22 <./neopixel.png>]
+ [21 <./neopixel.png>] [22
+
+]
 Chapter 6.
 LaTeX Font Info:    Font shape `T1/txtt/m/it' in size <10> not available
-(Font)              Font shape `T1/txtt/m/sl' tried instead on input line 694.
-[23
-
-] [24
+(Font)              Font shape `T1/txtt/m/sl' tried instead on input line 691.
+[23] [24
 
 ]
 Chapter 7.
-<oled.jpg, id=335, 602.25pt x 602.25pt>
+<oled.jpg, id=333, 602.25pt x 602.25pt>
 File: oled.jpg Graphic file (type jpg)
 <use oled.jpg>
-Package pdftex.def Info: oled.jpg  used on input line 783.
+Package pdftex.def Info: oled.jpg  used on input line 780.
 (pdftex.def)             Requested size: 234.8775pt x 234.87654pt.
 [25] [26 <./oled.jpg>]
 Chapter 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 845--847
+Underfull \hbox (badness 10000) in paragraph at lines 842--844
 []|\T1/qhv/m/n/10 In-ter-
  []
 
@@ -1079,10 +1079,10 @@ Chapter 9.
 
 ] [30]
 Chapter 10.
-<WS1280_LED.jpg, id=368, 602.25pt x 602.25pt>
+<WS1280_LED.jpg, id=366, 602.25pt x 602.25pt>
 File: WS1280_LED.jpg Graphic file (type jpg)
 <use WS1280_LED.jpg>
-Package pdftex.def Info: WS1280_LED.jpg  used on input line 1226.
+Package pdftex.def Info: WS1280_LED.jpg  used on input line 1223.
 (pdftex.def)             Requested size: 187.89914pt x 187.8994pt.
 [31
 
@@ -1094,13 +1094,13 @@ L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `cocketnovadevelopmentboard.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: 966441ADE8AF681B17A22B9877CAEEF5;4759.
+(rerunfilecheck)             Checksum: 3C2ED27508E20F3A82E2D0901793E2C5;4610.
  ) 
 Here is how much of TeX's memory you used:
- 16626 strings out of 474486
- 283041 string characters out of 5740451
+ 16623 strings out of 474486
+ 282951 string characters out of 5740451
  1991542 words of memory out of 5000000
- 38437 multiletter control sequences out of 15000+600000
+ 38435 multiletter control sequences out of 15000+600000
  612195 words of font info for 78 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  72i,11n,79p,664b,698s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1117,9 +1117,9 @@ c/tex-gyre/qtmri.pfb><C:/Users/Innovacion07/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/txfonts/t1xbtt.pfb><C:/Users/Innovacion07/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb><C:/Users/Innovacion07/AppData/Loca
 l/Programs/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on cocketnovadevelopmentboard.pdf (36 pages, 2055705 bytes).
+Output written on cocketnovadevelopmentboard.pdf (36 pages, 2055561 bytes).
 PDF statistics:
- 440 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
- 349 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 438 PDF objects out of 1000 (max. 8388607)
+ 87 named destinations out of 1000 (max. 500000)
+ 341 words of extra memory for PDF output out of 10000 (max. 10000000)
 

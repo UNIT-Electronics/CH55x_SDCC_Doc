@@ -7,7 +7,7 @@ To run the program, use a bash terminal.
 
 Clone the examples with the main code::
 
-    git clone https://github.com/Cesarbautista10/ESE_CH552_Examples_C.git
+    git clone https://github.com/UNIT-Electronics/CH55x_SDCC_Examples
 
 
 Navigate to the path::

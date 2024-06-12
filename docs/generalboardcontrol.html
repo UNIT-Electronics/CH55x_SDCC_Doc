@@ -62,12 +62,9 @@
 <li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">General Board Control</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#recommended-operating-conditions">Recommended Operating Conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#operating-mode">Operating Mode</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#voltage-selector">Voltage Selector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jst-connectors">JST Connectors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#built-in-leds">Built-In LEDs</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#voltage-selector">Voltage Selector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jst-connectors">JST Connectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#built-in-leds">Built-In LEDs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog to Digital Converter (ADC)</a></li>
@@ -135,30 +132,28 @@
 </tbody>
 </table>
 </section>
-<section id="operating-mode">
-<h2>Operating Mode<a class="headerlink" href="#operating-mode" title="Link to this heading"></a></h2>
 <section id="voltage-selector">
-<h3>Voltage Selector<a class="headerlink" href="#voltage-selector" title="Link to this heading"></a></h3>
+<h2>Voltage Selector<a class="headerlink" href="#voltage-selector" title="Link to this heading"></a></h2>
 <p>The development board utilizes a clever voltage selector system consisting of three pins and a jumper switch. The configuration of these pins determines the operating voltage of the board. By connecting the central pin to the +5V pin via the jumper, the board operates at 5V. On the other hand, by connecting the central pin to the +3.3V pin, the APK2112K regulator is activated, powering the board at 3.3V. It is crucial to ensure that the jumper switch is in the correct position according to the desired voltage to avoid possible damage to modules, components, and the board itself.</p>
 <figure class="align-center" id="id2">
-<span id="selector"></span><img alt="selector" src="_images/selector.png" />
+<span id="selector"></span><a class="reference internal image-reference" href="_images/selector.png"><img alt="selector" src="_images/selector.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 11 </span><span class="caption-text">USB Connector</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="jst-connectors">
-<h3>JST Connectors<a class="headerlink" href="#jst-connectors" title="Link to this heading"></a></h3>
+<h2>JST Connectors<a class="headerlink" href="#jst-connectors" title="Link to this heading"></a></h2>
 <p>The board features two 1mm JST connectors, linked to different pins. The first connector directly connects to GPIO 3.0 and 3.1 of the microcontroller, while the second one is linked to pins 3.2 and 1.5. Both connectors operate in parallel to the selected power supply voltage via the jumper switch. These connectors are compatible with QWIIC, STEMMA QT, or similar pin distribution protocols. It is essential to verify that the selector voltage matches the system voltage to avoid circuit damage. Additionally, these connectors allow the board to be powered and offer functionalities such as PWM and serial communication.</p>
 <figure class="align-center" id="id3">
-<span id="jst"></span><img alt="jst" src="_images/jst.png" />
+<span id="jst"></span><a class="reference internal image-reference" href="_images/jst.png"><img alt="jst" src="_images/jst.png" style="width: 50%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 12 </span><span class="caption-text">JST Connectors</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="built-in-leds">
-<h3>Built-In LEDs<a class="headerlink" href="#built-in-leds" title="Link to this heading"></a></h3>
+<h2>Built-In LEDs<a class="headerlink" href="#built-in-leds" title="Link to this heading"></a></h2>
 <p>The board features two LEDs directly linked to the microcontroller. The first one is connected to pin 3.4, while the second one is a Neopixel LED connected to pin 3.3. This Neopixel provides an output with two headers, one connected to the data output and the other to the board’s ground, allowing for the external connection of more LEDs. To use this output, simply connect the DOUT pin to the DIN pin of the next LED in the row. As for power supply, you can use the VCC pin, provided that the external LEDs can operate at this voltage. Otherwise, it will be necessary to power them using an external source.</p>
 <figure class="align-center" id="id4">
 <span id="neopixel"></span><img alt="jst" src="_images/neopixel.png" />
@@ -166,7 +161,6 @@
 <p><span class="caption-number">Fig. 13 </span><span class="caption-text">Neopixel LED</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-</section>
 </section>
 </section>
 
