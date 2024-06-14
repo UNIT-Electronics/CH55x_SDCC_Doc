@@ -1,10 +1,11 @@
 General Board Control
-===================================
+=====================
 
 The CH552, characterized by its compact size, native USB connectivity, and 16 KB memory (with 14 KB usable), enables the creation of simple yet effective programs. This allows for greater control in implementing various applications. The choice of this microcontroller is based on its affordability, ease of connection, and compatibility with various operating systems.
 
 Recommended Operating Conditions
 --------------------------------
+
 .. list-table:: Recommended Operating Conditions
    :widths: 25 25 50
    :header-rows: 1
@@ -34,7 +35,7 @@ The development board utilizes a clever voltage selector system consisting of th
 .. figure:: /_static/selector.png
    :alt: selector
    :align: center
-   :width: 80%
+   :width: 40%
    
    USB Connector
 
@@ -61,7 +62,8 @@ The board features two LEDs directly linked to the microcontroller. The first on
 .. _neopixel:
 
 .. figure:: /_static/neopixel.png
-   :alt: jst
+   :alt: neopixel
    :align: center
+   :width: 50%
    
    Neopixel LED

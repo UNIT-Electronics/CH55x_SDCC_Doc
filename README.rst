@@ -45,6 +45,12 @@ Version
 
 Current version: 1.0.0
 
+`Documentation Official Website <>`_
+
+ 
+
+`Documentation Official PDF Version 0.1.0 <./pdf/latex/cocketnovadevelopmentboardprogrammingguidecc.pdf>`_
+
 License
 -------
 

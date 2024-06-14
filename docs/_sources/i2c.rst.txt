@@ -24,7 +24,7 @@ All pin configurations are defined in the `config.h` file. The I2C pins are defi
      - P30
 
 SSD1306 Display
-~~~~~~~~~~~~~~~
+----------------
 
 .. _figura-ssd1306-display:
 
