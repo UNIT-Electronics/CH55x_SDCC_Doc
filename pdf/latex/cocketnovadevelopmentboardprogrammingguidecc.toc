@@ -12,7 +12,7 @@
 \contentsline {section}{\numberline {3.4}Locate the file}{8}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Rename it}{9}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Add the path to the environment variable}{9}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Verify the installation}{11}{section.3.7}%
+\contentsline {section}{\numberline {3.7}Verify the installation}{10}{section.3.7}%
 \contentsline {section}{\numberline {3.8}Update driver}{11}{section.3.8}%
 \contentsline {chapter}{\numberline {4}Compile and Flash CH55x with SDCC}{13}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Running a Program}{13}{section.4.1}%

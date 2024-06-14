@@ -54,7 +54,7 @@ After installing MinGW, you will need to locate the `mingw32-make.exe` file. Thi
 .. figure:: /_static/make_file.png
    :align: center
    :alt: Locating the mingw32-make.exe file.
-   :width: 80%
+   :width: 90%
 
    Locating the `mingw32-make.exe` file
 
@@ -66,7 +66,7 @@ After locating `mingw32-make.exe`, rename it to `make.exe`. This change is neces
 .. figure:: /_static/rename.png
    :align: center
    :alt: Renaming mingw32-make.exe to make.exe.
-   :width: 80%
+   :width: 90%
    
    Renaming `mingw32-make.exe` to `make.exe`
 
@@ -86,18 +86,27 @@ Next, you need to add the path to the MinGW bin directory to your system's envir
 .. figure:: /_static/var_env.png
    :align: center
    :alt: Adding MinGW bin directory to environment variables.
-   :width: 70%
+   :width: 60%
    
    Adding MinGW bin directory to environment variables
 
 Verify the installation
------------------------
+------------------------
+
 To verify that the `make` command is correctly set up, open a new command prompt and type::
 
     make --version
 
 You should see the version information for `make`, indicating that it is correctly installed and recognized by the system.
 
+.. _verify:
+
+.. figure:: /_static/make_version.png
+   :align: center
+   :alt: Verifying the installation of make.
+   :width: 90%
+   
+   Verifying the installation of `make`
 
 Update driver
 ---------------

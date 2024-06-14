@@ -372,7 +372,7 @@ After installing MinGW, you will need to locate the \sphinxtitleref{mingw32\sphi
 \centering
 \capstart
 
-\noindent\sphinxincludegraphics[width=0.800\linewidth]{{make_file}.png}
+\noindent\sphinxincludegraphics[width=0.900\linewidth]{{make_file}.png}
 \caption{Locating the \sphinxtitleref{mingw32\sphinxhyphen{}make.exe} file}\label{\detokenize{install_windows:id2}}\label{\detokenize{install_windows:make-file}}\end{figure}
 
 
@@ -385,7 +385,7 @@ After locating \sphinxtitleref{mingw32\sphinxhyphen{}make.exe}, rename it to \sp
 \centering
 \capstart
 
-\noindent\sphinxincludegraphics[width=0.800\linewidth]{{rename}.png}
+\noindent\sphinxincludegraphics[width=0.900\linewidth]{{rename}.png}
 \caption{Renaming \sphinxtitleref{mingw32\sphinxhyphen{}make.exe} to \sphinxtitleref{make.exe}}\label{\detokenize{install_windows:id3}}\label{\detokenize{install_windows:rename}}\end{figure}
 
 \begin{sphinxadmonition}{warning}{Warning:}
@@ -422,7 +422,7 @@ In the Edit Environment Variable window, click “New” and add the path \sphin
 \centering
 \capstart
 
-\noindent\sphinxincludegraphics[width=0.700\linewidth]{{var_env}.png}
+\noindent\sphinxincludegraphics[width=0.600\linewidth]{{var_env}.png}
 \caption{Adding MinGW bin directory to environment variables}\label{\detokenize{install_windows:id4}}\label{\detokenize{install_windows:var-env}}\end{figure}
 
 
@@ -438,6 +438,13 @@ To verify that the \sphinxtitleref{make} command is correctly set up, open a new
 \sphinxAtStartPar
 You should see the version information for \sphinxtitleref{make}, indicating that it is correctly installed and recognized by the system.
 
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[width=0.900\linewidth]{{make_version}.png}
+\caption{Verifying the installation of \sphinxtitleref{make}}\label{\detokenize{install_windows:id5}}\label{\detokenize{install_windows:verify}}\end{figure}
+
 
 \section{Update driver}
 \label{\detokenize{install_windows:update-driver}}
@@ -449,7 +456,7 @@ The current loading tool can utilize the default driver and coexist with the off
 \capstart
 
 \noindent\sphinxincludegraphics[width=1.000\linewidth]{{driver}.png}
-\caption{driver}\label{\detokenize{install_windows:id5}}\label{\detokenize{install_windows:driver}}\end{figure}
+\caption{driver}\label{\detokenize{install_windows:id6}}\label{\detokenize{install_windows:driver}}\end{figure}
 
 \begin{sphinxadmonition}{warning}{Warning:}
 \sphinxAtStartPar
@@ -876,15 +883,18 @@ P30
 
 \section{SSD1306 Display}
 \label{\detokenize{i2c:ssd1306-display}}
+\sphinxAtStartPar
+The OLED display is a 128x64 pixel monochrome display that uses the I2C protocol for communication.
+
 \begin{figure}[htbp]
 \centering
 \capstart
 
-\noindent\sphinxincludegraphics[width=0.500\linewidth]{{oled}.jpg}
+\noindent\sphinxincludegraphics[width=0.400\linewidth]{{oled}.jpg}
 \caption{SSD1306 Display}\label{\detokenize{i2c:id2}}\label{\detokenize{i2c:figura-ssd1306-display}}\end{figure}
 
 \sphinxAtStartPar
-The OLED display is a 128x64 pixel monochrome display that uses the I2C protocol for communication:
+The following code snippet shows how to initialize the OLED display and print a message on the screen:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{void} \PYG{n}{beep}\PYG{p}{(}\PYG{n}{void}\PYG{p}{)} \PYG{p}{\PYGZob{}}
@@ -913,6 +923,11 @@ The OLED display is a 128x64 pixel monochrome display that uses the I2C protocol
 \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
+
+\begin{sphinxadmonition}{tip}{Tip:}
+\sphinxAtStartPar
+Remember to includes library corresponding to the OLED display in the file.
+\end{sphinxadmonition}
 
 \sphinxstepscope
 
