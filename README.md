@@ -1,5 +1,11 @@
 # Cocket Nova Getting Started Guide
 
+<div align="center">
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+ 
+</div>
+
 The Cocket Nova Getting Started Guide is an instructional manual for utilizing the compiler SDCC. 
 It serves various purposes, allowing users to explore different features and obtain new projects and 
 configurations. The Cocket Nova CH552 boards are incredibly easy to use. The projects focus on innovation 
@@ -9,7 +15,15 @@ The CH552, characterized by its compact size, native USB connectivity, and 16 KB
 enables the creation of simple yet effective programs. This allows for greater control in implementing various
 applications. The choice of this microcontroller is based on its affordability, ease of connection, and compatibility with various operating systems.
 
-## Recommended Operating Conditions
+
+
+## Cocket Nova Development board
+
+<div align="center">
+
+![Version](./src/source/_static/CH552_Sq.png)
+
+</div>
 
 <div align="center">
 
@@ -20,15 +34,6 @@ applications. The choice of this microcontroller is based on its affordability, 
 | Top    | Operating temperature     | -40 to 85 °C   |
 
 </div>
-
-## Version
-<div align="center">
-
-![Version](./src/source/_static/CH552_Sq.png)
-
-</div>
-
-### Current version: 1.0.0
 
 [Documentation Official Website]()
 
