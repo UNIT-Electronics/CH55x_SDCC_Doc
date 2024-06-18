@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CH55x with SDCC and Windows &mdash; Cocket Nova Development Board 0.0.1 documentation</title>
+  <title>CH55x with SDCC and Windows &mdash; Cocket Nova Development Board Programming Guide C/C++ 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
@@ -17,7 +17,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script>let toggleHintShow = 'Click to show';</script>
@@ -43,7 +43,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            Cocket Nova Development Board
+            Cocket Nova Development Board Programming Guide C/C++
               <img src="_static/Logo-UNIT_Web-04-800x182.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -56,16 +56,21 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="about.html">About the Cocket Nova CH552 Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Cocket Nova CH552 Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_linux.html">CH55x with SDCC and Ubuntu</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">CH55x with SDCC and Windows</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#compiler-installation">Compiler Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuring-make">Configuring MAKE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-variable-configuration">Environment Variable Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-pyusb">Install pyusb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#locate-the-file">Locate the file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rename-it">Rename it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-the-path-to-the-environment-variable">Add the path to the environment variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verify-the-installation">Verify the installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#update-driver">Update driver</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html#software-development-prototype">Software Development Prototype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generalboardcontrol.html">General Board Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog to Digital Converter (ADC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="i2c.html">I2C (Inter-Integrated Circuit)</a></li>
@@ -80,7 +85,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Cocket Nova Development Board</a>
+          <a href="index.html">Cocket Nova Development Board Programming Guide C/C++</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -100,88 +105,115 @@
              
   <section id="ch55x-with-sdcc-and-windows">
 <h1>CH55x with SDCC and Windows<a class="headerlink" href="#ch55x-with-sdcc-and-windows" title="Link to this heading"></a></h1>
+<p>This section provides a step-by-step guide to setting up the SDCC compiler on Windows operating systems. It also includes instructions for installing the necessary tools and configuring the environment variables. Additionally, it covers the installation of the pyusb library and updating the driver using Zadig.</p>
 <section id="compiler-installation">
 <h2>Compiler Installation<a class="headerlink" href="#compiler-installation" title="Link to this heading"></a></h2>
-<p>Follow the steps below to install the necessary tools</p>
+<p>Follow the steps below to install the necessary tools:</p>
 <ul class="simple">
-<li><dl class="simple">
-<dt>Installing Git for Windows</dt><dd><p>Download and install <a class="reference external" href="https://git-scm.com/downloads">Git</a> for Windows from the official Git website.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Installing SDCC</dt><dd><p>Download and install the latest version of SDCC. You can find the latest version on the SDCC downloads page.
-<a class="reference external" href="https://sourceforge.net/projects/sdcc/">here a alternative</a></p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Installing MinGW</dt><dd><p>Install MinGW, which is a set of tools for software development on Windows. You can download the installer from the official MinGW website.
-<a class="reference external" href="https://sourceforge.net/projects/mingw/">here a alternative</a></p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Installig Zadig</dt><dd><p>Download the latest version of <a class="reference external" href="https://zadig.akeo.ie/">Zadig</a>. You can download in a official website.</p>
-</dd>
-</dl>
-</li>
+<li><p><strong>Installing Git for Windows</strong>
+Download and install <a class="reference external" href="https://git-scm.com/download">Git for Windows</a> from the official Git website.</p></li>
+<li><p><strong>Installing SDCC</strong>
+Download and install the latest version of SDCC. You can find the latest version on the <a class="reference external" href="https://sourceforge.net/projects/sdcc/">SDCC downloads page</a>.</p></li>
+<li><p><strong>Installing MinGW</strong>
+Install MinGW, which is a set of tools for software development on Windows. You can download the installer from the <a class="reference external" href="https://sourceforge.net/projects/mingw/">official MinGW website</a>.</p></li>
+<li><p><strong>Installing Zadig</strong>
+Download the latest version of <a class="reference external" href="https://zadig.akeo.ie/">Zadig</a>. You can download it from the official website.</p></li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is recommended to install the tools in the order listed above.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Remember to restart your computer after installing the tools.</p>
+</div>
 </section>
-<section id="configuring-make">
-<h2>Configuring MAKE<a class="headerlink" href="#configuring-make" title="Link to this heading"></a></h2>
+<section id="environment-variable-configuration">
+<h2>Environment Variable Configuration<a class="headerlink" href="#environment-variable-configuration" title="Link to this heading"></a></h2>
 <p>Remember that for Windows operating systems, an extra step is necessary, which is to open the environment variable -&gt; Edit environment variable:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">MinGW</span>\<span class="nb">bin</span>
 </pre></div>
 </div>
-<p>Locate the file</p>
-<figure class="align-center" id="id2">
-<span id="make-file"></span><a class="reference internal image-reference" href="_images/make_file.png"><img alt="GitHub build status reporting for pull requests." src="_images/make_file.png" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">make file</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p>Rename it:</p>
-<figure class="align-center" id="id3">
-<span id="rename"></span><a class="reference internal image-reference" href="_images/rename.png"><img alt="rename make" src="_images/rename.png" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">rename make</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Sometimes, it is necessary to create a copy of the file and rename it to make.exe.</p>
-</div>
-<p>path:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">MinGW</span>\<span class="nb">bin</span>\<span class="n">make</span>
-</pre></div>
-</div>
-<figure class="align-center" id="id4">
-<span id="var-env"></span><a class="reference internal image-reference" href="_images/var_env.png"><img alt="GitHub build status reporting for pull requests." src="_images/var_env.png" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">var_env</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
-</figcaption>
-</figure>
 </section>
 <section id="install-pyusb">
 <h2>Install pyusb<a class="headerlink" href="#install-pyusb" title="Link to this heading"></a></h2>
 <p>Verify the installation with <cite>python –version</cite>.</p>
-<p>If not installed, download and install:
-- <a class="reference external" href="https://www.python.org/downloads/">Python</a></p>
-<p>Use pip for install py usb:</p>
+<p>If not installed, download and install:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.python.org/downloads/">Python</a></p></li>
+</ul>
+<p>Use pip to install pyusb:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyusb</span>
 </pre></div>
 </div>
 </section>
-<section id="update-driver">
-<h2>Update driver<a class="headerlink" href="#update-driver" title="Link to this heading"></a></h2>
-<p>The current loading tool can utilize the default driver and coexist with the official WCHISPTool. In case the driver encounters issues, it is advisable to switch the driver version to libusb-win32 using Zadig.</p>
-<figure class="align-center" id="id5">
-<span id="driver"></span><a class="reference internal image-reference" href="_images/driver.png"><img alt="GitHub build status reporting for pull requests." src="_images/driver.png" style="width: 100%;" /></a>
+<section id="locate-the-file">
+<h2>Locate the file<a class="headerlink" href="#locate-the-file" title="Link to this heading"></a></h2>
+<p>After installing MinGW, you will need to locate the <cite>mingw32-make.exe</cite> file. This file is typically found in the <cite>C:MinGWbin</cite> directory. Once located, rename the file to <cite>make.exe</cite>.</p>
+<figure class="align-center" id="id2">
+<span id="make-file"></span><a class="reference internal image-reference" href="_images/make_file.png"><img alt="Locating the mingw32-make.exe file." src="_images/make_file.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">driver</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Locating the <cite>mingw32-make.exe</cite> file</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+</section>
+<section id="rename-it">
+<h2>Rename it<a class="headerlink" href="#rename-it" title="Link to this heading"></a></h2>
+<p>After locating <cite>mingw32-make.exe</cite>, rename it to <cite>make.exe</cite>. This change is necessary for compatibility with many build scripts that expect the command to be named <cite>make</cite>.</p>
+<figure class="align-center" id="id3">
+<span id="rename"></span><a class="reference internal image-reference" href="_images/rename.png"><img alt="Renaming mingw32-make.exe to make.exe." src="_images/rename.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Renaming <cite>mingw32-make.exe</cite> to <cite>make.exe</cite></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you encounter any issues, create a copy of the file and then rename the copy to <cite>make.exe</cite>.</p>
+</div>
+</section>
+<section id="add-the-path-to-the-environment-variable">
+<h2>Add the path to the environment variable<a class="headerlink" href="#add-the-path-to-the-environment-variable" title="Link to this heading"></a></h2>
+<p>Next, you need to add the path to the MinGW bin directory to your system’s environment variables. This allows the <cite>make</cite> command to be recognized from any command prompt.</p>
+<ol class="arabic simple">
+<li><p>Open the Start Search, type in “env”, and select “Edit the system environment variables”.</p></li>
+<li><p>In the System Properties window, click on the “Environment Variables” button.</p></li>
+<li><p>In the Environment Variables window, under “System variables”, select the “Path” variable and click “Edit”.</p></li>
+<li><p>In the Edit Environment Variable window, click “New” and add the path <cite>C:MinGWbin</cite>.</p></li>
+</ol>
+<figure class="align-center" id="id4">
+<span id="var-env"></span><a class="reference internal image-reference" href="_images/var_env.png"><img alt="Adding MinGW bin directory to environment variables." src="_images/var_env.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Adding MinGW bin directory to environment variables</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="verify-the-installation">
+<h2>Verify the installation<a class="headerlink" href="#verify-the-installation" title="Link to this heading"></a></h2>
+<p>To verify that the <cite>make</cite> command is correctly set up, open a new command prompt and type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>You should see the version information for <cite>make</cite>, indicating that it is correctly installed and recognized by the system.</p>
+<figure class="align-center" id="id5">
+<span id="verify"></span><a class="reference internal image-reference" href="_images/make_version.png"><img alt="Verifying the installation of make." src="_images/make_version.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Verifying the installation of <cite>make</cite></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="update-driver">
+<h2>Update driver<a class="headerlink" href="#update-driver" title="Link to this heading"></a></h2>
+<p>The current loading tool can utilize the default driver and coexist with the official WCHISPTool. In case the driver encounters issues, it is advisable to switch the driver version to libusb-win32 using <a class="reference external" href="https://zadig.akeo.ie/">Zadig</a>.</p>
+<figure class="align-center" id="id6">
+<span id="driver"></span><a class="reference internal image-reference" href="_images/driver.png"><img alt="GitHub build status reporting for pull requests." src="_images/driver.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">driver</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The use of Zadig is at your own risk. if you are not familiar with the tool, it is recommended to seek assistance from someone who is. In the case of changing the driver any device  , it is important to have the original driver available to revert the changes.</p>
+</div>
 </section>
 </section>
 

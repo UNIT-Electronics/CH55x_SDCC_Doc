@@ -1,10 +1,11 @@
 
-project = 'Cocket Nova Development Board'
+project = 'Cocket Nova Development Board Programming Guide C/C++'
 copyright = '2024, Unit Electronics'
 author = 'Cesar Bautista'
-release = '0.0.1'
+release = '0.1.0'
 
 extensions = [
+
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',

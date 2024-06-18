@@ -24,18 +24,20 @@ All pin configurations are defined in the `config.h` file. The I2C pins are defi
      - P30
 
 SSD1306 Display
-~~~~~~~~~~~~~~~
+----------------
+
+The OLED display is a 128x64 pixel monochrome display that uses the I2C protocol for communication.
 
 .. _figura-ssd1306-display:
 
 .. figure:: /_static/oled.jpg
    :align: center
    :alt: ssd1306 display
-   :width: 50%
+   :width: 40%
 
    SSD1306 Display
 
-The OLED display is a 128x64 pixel monochrome display that uses the I2C protocol for communication::
+The following code snippet shows how to initialize the OLED display and print a message on the screen::
              
     void beep(void) {
     uint8_t i;
@@ -62,3 +64,6 @@ The OLED display is a 128x64 pixel monochrome display that uses the I2C protocol
 
     }
     }
+
+.. tip::
+  Remember to includes library corresponding to the OLED display in the file.

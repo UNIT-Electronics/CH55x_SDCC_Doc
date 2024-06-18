@@ -1,7 +1,6 @@
 CH55x with SDCC and Ubuntu 
 ===================================
-Ubuntu 23.10 Installer Environment
----------------
+
 
 .. caution::
 
@@ -21,12 +20,12 @@ Install `make`, `binutils` and `sdcc`::
 
 Clone the examples with the main code::
 
-    git clone https://github.com/Cesarbautista10/CH55x_SDCC_Examples.git
+    git clone https://github.com/UNIT-Electronics/CH55x_SDCC_Examples.git
 
 
 Navigate to the path::
 
-    cd CH55x_SDCC_Examples/Software/examples/0_Blink
+    cd CH55x_SDCC_Examples/Software/examples/Blink
 
 
 Execute the command::

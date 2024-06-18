@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cocket Nova Getting Started Guide &mdash; Cocket Nova Development Board 0.0.1 documentation</title>
+  <title>Cocket Nova Getting Started Guide &mdash; Cocket Nova Development Board Programming Guide C/C++ 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
@@ -17,7 +17,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script>let toggleHintShow = 'Click to show';</script>
@@ -30,7 +30,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="About the Cocket Nova CH552 Guide" href="about.html" /> 
+    <link rel="next" title="Cocket Nova CH552 Guide" href="about.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,7 +42,7 @@
           
           
           <a href="#" class="icon icon-home">
-            Cocket Nova Development Board
+            Cocket Nova Development Board Programming Guide C/C++
               <img src="_static/Logo-UNIT_Web-04-800x182.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -53,11 +53,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="about.html">About the Cocket Nova CH552 Guide</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Cocket Nova CH552 Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_linux.html">CH55x with SDCC and Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_windows.html">CH55x with SDCC and Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html#software-development-prototype">Software Development Prototype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generalboardcontrol.html">General Board Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog to Digital Converter (ADC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="i2c.html">I2C (Inter-Integrated Circuit)</a></li>
@@ -72,7 +74,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Cocket Nova Development Board</a>
+          <a href="#">Cocket Nova Development Board Programming Guide C/C++</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -92,6 +94,10 @@
              
   <section id="cocket-nova-getting-started-guide">
 <h1>Cocket Nova Getting Started Guide<a class="headerlink" href="#cocket-nova-getting-started-guide" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This project is under active development.</p>
+</div>
 <p>The Coket Nova guide is an instructional manual for utilizing the compiler SDCC. It serves various purposes, allowing users to explore different features and obtain new projects and
 configurations.
 The Cocket Nova CH552 boards are incredibly easy to use. The projects focus on innovation and
@@ -102,27 +108,31 @@ present various alternatives for usage.</p>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Cocket Nova CH552 Desing graphic</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This project is under active development.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The codes examples in github are available in the following link: <a class="reference external" href="https://github.com/UNIT-Electronics/CH55x_SDCC_Examples">CH55x_SDCC_Examples Github</a></p>
 </div>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="about.html">About the Cocket Nova CH552 Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Cocket Nova CH552 Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="about.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about.html#pinout">PinOut</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="install_linux.html">CH55x with SDCC and Ubuntu</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install_linux.html#ubuntu-23-10-installer-environment">Ubuntu 23.10 Installer Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install_linux.html#install-pyusb">Install pyusb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install_linux.html#error-with-pip">Error with pip</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="install_windows.html">CH55x with SDCC and Windows</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install_windows.html#compiler-installation">Compiler Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install_windows.html#configuring-make">Configuring MAKE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_windows.html#environment-variable-configuration">Environment Variable Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install_windows.html#install-pyusb">Install pyusb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_windows.html#locate-the-file">Locate the file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_windows.html#rename-it">Rename it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_windows.html#add-the-path-to-the-environment-variable">Add the path to the environment variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_windows.html#verify-the-installation">Verify the installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install_windows.html#update-driver">Update driver</a></li>
 </ul>
 </li>
@@ -131,14 +141,15 @@ present various alternatives for usage.</p>
 <li class="toctree-l2"><a class="reference internal" href="compile.html#flashing-the-program">Flashing the Program</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="generalboardcontrol.html">General Board Control</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="generalboardcontrol.html#recommended-operating-conditions">Recommended Operating Conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generalboardcontrol.html#operating-mode">Operating Mode</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="generalboardcontrol.html#voltage-selector">Voltage Selector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generalboardcontrol.html#jst-connectors">JST Connectors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generalboardcontrol.html#built-in-leds">Built-In LEDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html#software-development-prototype">Software Development Prototype</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compile.html#loadupch">Loadupch</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="generalboardcontrol.html">General Board Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generalboardcontrol.html#recommended-operating-conditions">Recommended Operating Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generalboardcontrol.html#voltage-selector">Voltage Selector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generalboardcontrol.html#jst-connectors">JST Connectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generalboardcontrol.html#built-in-leds">Built-In LEDs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog to Digital Converter (ADC)</a></li>
@@ -161,7 +172,7 @@ present various alternatives for usage.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="about.html" class="btn btn-neutral float-right" title="About the Cocket Nova CH552 Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="about.html" class="btn btn-neutral float-right" title="Cocket Nova CH552 Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
