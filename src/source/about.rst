@@ -2,9 +2,11 @@ Cocket Nova CH552 Guide
 =====
 
 
-This is an excellent guide for beginner programmers, focused on using the SDCC compiler in both Windows and Linux environments. 
+This is an excellent guide for beginner programmers, focused on using the SDCC compiler in both Windows and Linux environments.
+SDCC is a free and open-source compiler for the C programming language, which is widely used in embedded systems development.
 Here, you can find excellent references and examples along with comprehensive documentation focusing on developing technology for embedded systems. 
-This course covers everything from installation and setting up the compiler to managing project dependencies and developing code. It's a valuable resource that will guide you through the development process using high-quality technology, ensuring long-lasting and robust projects.
+This course covers everything from installation and setting up the compiler to managing project dependencies and developing code. 
+It's a valuable resource that will guide you through the development process using high-quality technology, ensuring long-lasting and robust projects.
 
 .. _ch552:
 
