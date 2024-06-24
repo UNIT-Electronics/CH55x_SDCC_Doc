@@ -1,5 +1,5 @@
-CH55x with SDCC and Ubuntu 
-===================================
+Environment Setup on Ubuntu
+============================
 
 
 .. caution::
@@ -39,7 +39,6 @@ You will see::
     make all     compile, build, and keep all files
     make hex     compile and build blink.hex
     make bin     compile and build blink.bin
-    make flash   compile, build, and upload blink.bin to the device
     make clean   remove all build files
 
 
@@ -56,37 +55,5 @@ The device will be shown with this description::
     Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub   
 
 
-Install pyusb
----------------
-
-Verify the installation with `python --version`. If not installed, run::
-
-    sudo apt install python3-pip
-
-
-Then verify the installation::
-
-    python3 -m pip show pyusb
-
-Error with pip
----------------
-
-If you encounter this error, we recommend installing the Python environment::
-
-
-    sudo apt install python3-venv
-
-
-Create an environment::
-
-    python3 -m venv .venv
-
-Activate the environment::
-
-    source .venv/bin/activate
-
-And install `pyusb`::
-
-    pip install pyusb
 
 
