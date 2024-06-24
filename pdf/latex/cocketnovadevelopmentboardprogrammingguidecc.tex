@@ -64,7 +64,7 @@
 
 
 \title{Cocket Nova Development Board Programming Guide C/C++}
-\date{Jun 14, 2024}
+\date{Jun 24, 2024}
 \release{0.1.0}
 \author{Cesar Bautista}
 \newcommand{\sphinxlogo}{\sphinxincludegraphics{Logo-UNIT_Web-04-800x182.png}\par}
@@ -1431,6 +1431,186 @@ P3.3
 \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
+
+\sphinxstepscope
+
+
+\chapter{Communication Serial CDC}
+\label{\detokenize{cdc:communication-serial-cdc}}\label{\detokenize{cdc::doc}}
+\sphinxAtStartPar
+Cocket Nova development board  is compatible with the USB CDC (Communication Device Class) protocol. This allows the Cocket Nova
+to be used as a virtual serial port. The CDC protocol is supported by most operating systems, including
+Windows, Linux, and macOS.
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+The CDC protocol is implemented using the USB peripheral of the microcontroller. The USB peripheral is
+configured as a virtual serial port, which allows the microcontroller to communicate with the host computer
+using the USB cable.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+The following code snippet shows how to configure the USB peripheral as a virtual serial port and this method
+only recive information from the host
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{c+c1}{// Setup}
+\PYG{n}{CLK\PYGZus{}config}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                           }\PYG{c+c1}{// configure system clock}
+\PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                              }\PYG{c+c1}{// wait for clock to stabilize}
+\PYG{n}{CDC\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                             }\PYG{c+c1}{// init USB CDC}
+
+\PYG{c+c1}{// Loop}
+\PYG{k}{while}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{if}\PYG{p}{(}\PYG{n}{CDC\PYGZus{}available}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{                 }\PYG{c+c1}{// something coming in?}
+\PYG{+w}{    }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{CDC\PYGZus{}read}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                }\PYG{c+c1}{// read the character ...}
+\PYG{+w}{    }\PYG{n}{CDC\PYGZus{}writeflush}\PYG{p}{(}\PYG{n}{c}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                  }\PYG{c+c1}{// ... and send it back}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\section{USB CDC Serial Configuration for CH55x Microcontrollers}
+\label{\detokenize{cdc:usb-cdc-serial-configuration-for-ch55x-microcontrollers}}
+
+\subsection{USB Passthrough for CH55x Microcontrollers}
+\label{\detokenize{cdc:usb-passthrough-for-ch55x-microcontrollers}}
+\sphinxAtStartPar
+This project implements a simple USB passthrough functionality using CH551, CH552, or CH554 microcontrollers. The microcontroller acts as a USB Communication Device Class (CDC), enabling serial communication over USB. Data received via USB is immediately sent back to the host computer.
+Wiring
+
+\sphinxAtStartPar
+Connect the CH55x development board to your PC via USB. It should be automatically detected as a CDC device.
+Compilation Instructions:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{Chip}\PYG{p}{:} \PYG{n}{CH551}\PYG{p}{,} \PYG{n}{CH552}\PYG{p}{,} \PYG{o+ow}{or} \PYG{n}{CH554}
+\PYG{n}{Clock}\PYG{p}{:} \PYG{l+m+mi}{16} \PYG{n}{MHz} \PYG{n}{internal}
+\PYG{n}{Adjust} \PYG{n}{firmware} \PYG{n}{parameters} \PYG{o+ow}{in} \PYG{n}{src}\PYG{o}{/}\PYG{n}{config}\PYG{o}{.}\PYG{n}{h} \PYG{k}{if} \PYG{n}{necessary}\PYG{o}{.}
+\PYG{n}{Ensure} \PYG{n}{SDCC} \PYG{n}{toolchain} \PYG{o+ow}{and} \PYG{n}{Python3} \PYG{k}{with} \PYG{n}{PyUSB} \PYG{n}{are} \PYG{n}{installed}\PYG{o}{.}
+\PYG{n}{Press} \PYG{n}{the} \PYG{n}{BOOT} \PYG{n}{button} \PYG{n}{on} \PYG{n}{the} \PYG{n}{board} \PYG{o+ow}{and} \PYG{n}{keep} \PYG{n}{it} \PYG{n}{pressed} \PYG{k}{while} \PYG{n}{connecting} \PYG{n}{it} \PYG{n}{via} \PYG{n}{USB} \PYG{n}{to} \PYG{n}{your} \PYG{n}{PC}\PYG{o}{.}
+\PYG{n}{Run} \PYG{n}{make} \PYG{n}{flash} \PYG{n}{immediately} \PYG{n}{afterwards} \PYG{n}{to} \PYG{n}{flash} \PYG{n}{the} \PYG{n}{firmware}\PYG{o}{.}
+\PYG{n}{For} \PYG{n}{compilation} \PYG{n}{using} \PYG{n}{Arduino} \PYG{n}{IDE}\PYG{p}{,} \PYG{n}{refer} \PYG{n}{to} \PYG{n}{instructions} \PYG{o+ow}{in} \PYG{n}{the} \PYG{o}{.}\PYG{n}{ino} \PYG{n}{file}\PYG{o}{.}
+\end{sphinxVerbatim}
+
+
+\subsection{USB CDC PWM Controller for CH55x Microcontrollers}
+\label{\detokenize{cdc:usb-cdc-pwm-controller-for-ch55x-microcontrollers}}
+\sphinxAtStartPar
+This project implements a USB CDC controlled PWM functionality using CH551, CH552, or CH554 microcontrollers. The microcontroller acts as a USB Communication Device Class (CDC), allowing serial communication over USB. Data received via USB is used to set the PWM value (0\sphinxhyphen{}255).
+Wiring
+
+\sphinxAtStartPar
+Connect the CH55x development board to your PC via USB. It should be automatically detected as a CDC device.
+Compilation Instructions:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{Chip}\PYG{p}{:} \PYG{n}{CH551}\PYG{p}{,} \PYG{n}{CH552}\PYG{p}{,} \PYG{o+ow}{or} \PYG{n}{CH554}
+\PYG{n}{Clock}\PYG{p}{:} \PYG{l+m+mi}{16} \PYG{n}{MHz} \PYG{n}{internal}
+\PYG{n}{Adjust} \PYG{n}{firmware} \PYG{n}{parameters} \PYG{o+ow}{in} \PYG{n}{src}\PYG{o}{/}\PYG{n}{config}\PYG{o}{.}\PYG{n}{h} \PYG{k}{if} \PYG{n}{necessary}\PYG{o}{.}
+\PYG{n}{Ensure} \PYG{n}{SDCC} \PYG{n}{toolchain} \PYG{o+ow}{and} \PYG{n}{Python3} \PYG{k}{with} \PYG{n}{PyUSB} \PYG{n}{are} \PYG{n}{installed}\PYG{o}{.}
+\PYG{n}{Press} \PYG{n}{the} \PYG{n}{BOOT} \PYG{n}{button} \PYG{n}{on} \PYG{n}{the} \PYG{n}{board} \PYG{o+ow}{and} \PYG{n}{keep} \PYG{n}{it} \PYG{n}{pressed} \PYG{k}{while} \PYG{n}{connecting} \PYG{n}{it} \PYG{n}{via} \PYG{n}{USB} \PYG{n}{to} \PYG{n}{your} \PYG{n}{PC}\PYG{o}{.}
+\PYG{n}{Run} \PYG{n}{make} \PYG{n}{flash} \PYG{n}{immediately} \PYG{n}{afterwards} \PYG{n}{to} \PYG{n}{flash} \PYG{n}{the} \PYG{n}{firmware}\PYG{o}{.}
+\PYG{n}{For} \PYG{n}{compilation} \PYG{n}{using} \PYG{n}{Arduino} \PYG{n}{IDE}\PYG{p}{,} \PYG{n}{refer} \PYG{n}{to} \PYG{n}{instructions} \PYG{o+ow}{in} \PYG{n}{the} \PYG{o}{.}\PYG{n}{ino} \PYG{n}{file}\PYG{o}{.}
+\end{sphinxVerbatim}
+
+
+\subsection{Linux Configuration for USB CDC Devices}
+\label{\detokenize{cdc:linux-configuration-for-usb-cdc-devices}}
+\sphinxAtStartPar
+To configure permissions for USB CDC devices (/dev/ttyACM0), follow these steps:
+
+\sphinxAtStartPar
+Create a new udev rule file:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+sudo\PYG{+w}{ }nano\PYG{+w}{ }/etc/udev/rules.d/99\PYGZhy{}custom\PYGZhy{}usb.rules
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Add the following rule to the file (replace idVendor and idProduct with your device’s actual IDs):
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nv}{SUBSYSTEM}\PYG{o}{=}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}tty\PYGZdq{}},\PYG{+w}{ }ATTRS\PYG{o}{\PYGZob{}}idVendor\PYG{o}{\PYGZcb{}}\PYG{o}{=}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}1209\PYGZdq{}},\PYG{+w}{ }ATTRS\PYG{o}{\PYGZob{}}idProduct\PYG{o}{\PYGZcb{}}\PYG{o}{=}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}27dd\PYGZdq{}},\PYG{+w}{ }\PYG{n+nv}{GROUP}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}dialout\PYGZdq{}},\PYG{+w}{ }\PYG{n+nv}{MODE}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}0666\PYGZdq{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Save the file (Ctrl + O in nano, then Enter) and exit nano (Ctrl + X).
+
+\sphinxAtStartPar
+Reload udev rules for changes to take effect:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+sudo\PYG{+w}{ }udevadm\PYG{+w}{ }control\PYG{+w}{ }\PYGZhy{}\PYGZhy{}reload\PYGZhy{}rules
+\end{sphinxVerbatim}
+
+
+\subsection{Example Commands for Serial Communication}
+\label{\detokenize{cdc:example-commands-for-serial-communication}}
+\sphinxAtStartPar
+Send data to USB device:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYGZhy{}e\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}Hello World!\PYGZbs{}n\PYGZsq{}}\PYG{+w}{ }\PYGZgt{}\PYG{+w}{ }/dev/ttyACM0
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Read data from USB device:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+cat\PYG{+w}{ }/dev/ttyACM0
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+These commands allow you to interact with USB CDC devices connected to your Linux system. Adjust the device path (/dev/ttyACM0) as per your setup.
+
+
+\section{Windows Configuration for USB CDC Devices}
+\label{\detokenize{cdc:windows-configuration-for-usb-cdc-devices}}
+\sphinxAtStartPar
+To configure permissions for USB CDC devices in Windows, follow these steps:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Identify the device’s COM port number in Device Manager.
+
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{cdc_serial_vid_pid}.png}
+\caption{CDC Serial Device Manager}\label{\detokenize{cdc:id1}}\label{\detokenize{cdc:figura-device-manager}}\end{figure}
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\setcounter{enumi}{1}
+\item {} 
+\sphinxAtStartPar
+Right\sphinxhyphen{}click on the device and select Properties.
+
+\item {} 
+\sphinxAtStartPar
+Open Zadig (\sphinxurl{https://zadig.akeo.ie/}).
+
+\item {} 
+\sphinxAtStartPar
+Go to Options \textgreater{} List All Devices.
+
+\item {} 
+\sphinxAtStartPar
+Select the device from the drop\sphinxhyphen{}down list.
+
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{cdc_serial}.png}
+\caption{Zadig CDC Device Selection}\label{\detokenize{cdc:id2}}\label{\detokenize{cdc:figura-zadig}}\end{figure}
 
 
 
