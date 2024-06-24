@@ -45,4 +45,5 @@ present various alternatives for usage.
    interrupts
    pwm
    ws2812
+   cdc
    

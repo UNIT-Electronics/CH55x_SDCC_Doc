@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Communication Serial CDC &mdash; Cocket Nova Development Board Programming Guide C/C++ 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6217da0c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="WS2812" href="ws2812.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Cocket Nova Development Board Programming Guide C/C++
+              <img src="_static/Logo-UNIT_Web-04-800x182.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">Cocket Nova CH552 Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_linux.html">CH55x with SDCC and Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_windows.html">CH55x with SDCC and Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html#software-development-prototype">Software Development Prototype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generalboardcontrol.html">General Board Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adc.html">Analog to Digital Converter (ADC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="i2c.html">I2C (Inter-Integrated Circuit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interrupts.html">Interrupts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwm.html">PWM (Pulse Width Modulation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ws2812.html">WS2812</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Communication Serial CDC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#usb-cdc-serial-configuration-for-ch55x-microcontrollers">USB CDC Serial Configuration for CH55x Microcontrollers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usb-passthrough-for-ch55x-microcontrollers">USB Passthrough for CH55x Microcontrollers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usb-cdc-pwm-controller-for-ch55x-microcontrollers">USB CDC PWM Controller for CH55x Microcontrollers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux-configuration-for-usb-cdc-devices">Linux Configuration for USB CDC Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-commands-for-serial-communication">Example Commands for Serial Communication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#windows-configuration-for-usb-cdc-devices">Windows Configuration for USB CDC Devices</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Cocket Nova Development Board Programming Guide C/C++</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Communication Serial CDC</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/cdc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="communication-serial-cdc">
+<h1>Communication Serial CDC<a class="headerlink" href="#communication-serial-cdc" title="Link to this heading"></a></h1>
+<p>Cocket Nova development board  is compatible with the USB CDC (Communication Device Class) protocol. This allows the Cocket Nova
+to be used as a virtual serial port. The CDC protocol is supported by most operating systems, including
+Windows, Linux, and macOS.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The CDC protocol is implemented using the USB peripheral of the microcontroller. The USB peripheral is
+configured as a virtual serial port, which allows the microcontroller to communicate with the host computer
+using the USB cable.</p>
+</div>
+<p>The following code snippet shows how to configure the USB peripheral as a virtual serial port and this method
+only recive information from the host</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// Setup</span>
+<span class="n">CLK_config</span><span class="p">();</span><span class="w">                           </span><span class="c1">// configure system clock</span>
+<span class="n">DLY_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">                              </span><span class="c1">// wait for clock to stabilize</span>
+<span class="n">CDC_init</span><span class="p">();</span><span class="w">                             </span><span class="c1">// init USB CDC</span>
+
+<span class="c1">// Loop</span>
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">CDC_available</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">                 </span><span class="c1">// something coming in?</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CDC_read</span><span class="p">();</span><span class="w">                </span><span class="c1">// read the character ...</span>
+<span class="w">    </span><span class="n">CDC_writeflush</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w">                  </span><span class="c1">// ... and send it back</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="usb-cdc-serial-configuration-for-ch55x-microcontrollers">
+<h2>USB CDC Serial Configuration for CH55x Microcontrollers<a class="headerlink" href="#usb-cdc-serial-configuration-for-ch55x-microcontrollers" title="Link to this heading"></a></h2>
+<section id="usb-passthrough-for-ch55x-microcontrollers">
+<h3>USB Passthrough for CH55x Microcontrollers<a class="headerlink" href="#usb-passthrough-for-ch55x-microcontrollers" title="Link to this heading"></a></h3>
+<p>This project implements a simple USB passthrough functionality using CH551, CH552, or CH554 microcontrollers. The microcontroller acts as a USB Communication Device Class (CDC), enabling serial communication over USB. Data received via USB is immediately sent back to the host computer.
+Wiring</p>
+<p>Connect the CH55x development board to your PC via USB. It should be automatically detected as a CDC device.
+Compilation Instructions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chip</span><span class="p">:</span> <span class="n">CH551</span><span class="p">,</span> <span class="n">CH552</span><span class="p">,</span> <span class="ow">or</span> <span class="n">CH554</span>
+<span class="n">Clock</span><span class="p">:</span> <span class="mi">16</span> <span class="n">MHz</span> <span class="n">internal</span>
+<span class="n">Adjust</span> <span class="n">firmware</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">src</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">h</span> <span class="k">if</span> <span class="n">necessary</span><span class="o">.</span>
+<span class="n">Ensure</span> <span class="n">SDCC</span> <span class="n">toolchain</span> <span class="ow">and</span> <span class="n">Python3</span> <span class="k">with</span> <span class="n">PyUSB</span> <span class="n">are</span> <span class="n">installed</span><span class="o">.</span>
+<span class="n">Press</span> <span class="n">the</span> <span class="n">BOOT</span> <span class="n">button</span> <span class="n">on</span> <span class="n">the</span> <span class="n">board</span> <span class="ow">and</span> <span class="n">keep</span> <span class="n">it</span> <span class="n">pressed</span> <span class="k">while</span> <span class="n">connecting</span> <span class="n">it</span> <span class="n">via</span> <span class="n">USB</span> <span class="n">to</span> <span class="n">your</span> <span class="n">PC</span><span class="o">.</span>
+<span class="n">Run</span> <span class="n">make</span> <span class="n">flash</span> <span class="n">immediately</span> <span class="n">afterwards</span> <span class="n">to</span> <span class="n">flash</span> <span class="n">the</span> <span class="n">firmware</span><span class="o">.</span>
+<span class="n">For</span> <span class="n">compilation</span> <span class="n">using</span> <span class="n">Arduino</span> <span class="n">IDE</span><span class="p">,</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">instructions</span> <span class="ow">in</span> <span class="n">the</span> <span class="o">.</span><span class="n">ino</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="usb-cdc-pwm-controller-for-ch55x-microcontrollers">
+<h3>USB CDC PWM Controller for CH55x Microcontrollers<a class="headerlink" href="#usb-cdc-pwm-controller-for-ch55x-microcontrollers" title="Link to this heading"></a></h3>
+<p>This project implements a USB CDC controlled PWM functionality using CH551, CH552, or CH554 microcontrollers. The microcontroller acts as a USB Communication Device Class (CDC), allowing serial communication over USB. Data received via USB is used to set the PWM value (0-255).
+Wiring</p>
+<p>Connect the CH55x development board to your PC via USB. It should be automatically detected as a CDC device.
+Compilation Instructions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chip</span><span class="p">:</span> <span class="n">CH551</span><span class="p">,</span> <span class="n">CH552</span><span class="p">,</span> <span class="ow">or</span> <span class="n">CH554</span>
+<span class="n">Clock</span><span class="p">:</span> <span class="mi">16</span> <span class="n">MHz</span> <span class="n">internal</span>
+<span class="n">Adjust</span> <span class="n">firmware</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">src</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">h</span> <span class="k">if</span> <span class="n">necessary</span><span class="o">.</span>
+<span class="n">Ensure</span> <span class="n">SDCC</span> <span class="n">toolchain</span> <span class="ow">and</span> <span class="n">Python3</span> <span class="k">with</span> <span class="n">PyUSB</span> <span class="n">are</span> <span class="n">installed</span><span class="o">.</span>
+<span class="n">Press</span> <span class="n">the</span> <span class="n">BOOT</span> <span class="n">button</span> <span class="n">on</span> <span class="n">the</span> <span class="n">board</span> <span class="ow">and</span> <span class="n">keep</span> <span class="n">it</span> <span class="n">pressed</span> <span class="k">while</span> <span class="n">connecting</span> <span class="n">it</span> <span class="n">via</span> <span class="n">USB</span> <span class="n">to</span> <span class="n">your</span> <span class="n">PC</span><span class="o">.</span>
+<span class="n">Run</span> <span class="n">make</span> <span class="n">flash</span> <span class="n">immediately</span> <span class="n">afterwards</span> <span class="n">to</span> <span class="n">flash</span> <span class="n">the</span> <span class="n">firmware</span><span class="o">.</span>
+<span class="n">For</span> <span class="n">compilation</span> <span class="n">using</span> <span class="n">Arduino</span> <span class="n">IDE</span><span class="p">,</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">instructions</span> <span class="ow">in</span> <span class="n">the</span> <span class="o">.</span><span class="n">ino</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="linux-configuration-for-usb-cdc-devices">
+<h3>Linux Configuration for USB CDC Devices<a class="headerlink" href="#linux-configuration-for-usb-cdc-devices" title="Link to this heading"></a></h3>
+<p>To configure permissions for USB CDC devices (/dev/ttyACM0), follow these steps:</p>
+<p>Create a new udev rule file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/udev/rules.d/99-custom-usb.rules
+</pre></div>
+</div>
+<p>Add the following rule to the file (replace idVendor and idProduct with your device’s actual IDs):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;tty&quot;</span>,<span class="w"> </span>ATTRS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&quot;1209&quot;</span>,<span class="w"> </span>ATTRS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">&quot;27dd&quot;</span>,<span class="w"> </span><span class="nv">GROUP</span><span class="o">=</span><span class="s2">&quot;dialout&quot;</span>,<span class="w"> </span><span class="nv">MODE</span><span class="o">=</span><span class="s2">&quot;0666&quot;</span>
+</pre></div>
+</div>
+<p>Save the file (Ctrl + O in nano, then Enter) and exit nano (Ctrl + X).</p>
+<p>Reload udev rules for changes to take effect:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
+</pre></div>
+</div>
+</section>
+<section id="example-commands-for-serial-communication">
+<h3>Example Commands for Serial Communication<a class="headerlink" href="#example-commands-for-serial-communication" title="Link to this heading"></a></h3>
+<p>Send data to USB device:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;Hello World!\n&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/ttyACM0
+</pre></div>
+</div>
+<p>Read data from USB device:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/dev/ttyACM0
+</pre></div>
+</div>
+<p>These commands allow you to interact with USB CDC devices connected to your Linux system. Adjust the device path (/dev/ttyACM0) as per your setup.</p>
+</section>
+</section>
+<section id="windows-configuration-for-usb-cdc-devices">
+<h2>Windows Configuration for USB CDC Devices<a class="headerlink" href="#windows-configuration-for-usb-cdc-devices" title="Link to this heading"></a></h2>
+<p>To configure permissions for USB CDC devices in Windows, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Identify the device’s COM port number in Device Manager.</p></li>
+</ol>
+<figure class="align-center" id="id1">
+<span id="figura-device-manager"></span><img alt="CDC Serial Device Manager" src="_images/cdc_serial_vid_pid.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">CDC Serial Device Manager</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Right-click on the device and select Properties.</p></li>
+<li><p>Open Zadig (<a class="reference external" href="https://zadig.akeo.ie/">https://zadig.akeo.ie/</a>).</p></li>
+<li><p>Go to Options &gt; List All Devices.</p></li>
+<li><p>Select the device from the drop-down list.</p></li>
+</ol>
+<figure class="align-center" id="id2">
+<span id="figura-zadig"></span><img alt="Zadig CDC" src="_images/cdc_serial.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Zadig CDC Device Selection</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ws2812.html" class="btn btn-neutral float-left" title="WS2812" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Unit Electronics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
