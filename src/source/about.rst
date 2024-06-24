@@ -1,7 +1,6 @@
 Cocket Nova Developmet Board CH552 Guide
 ========================================
 
-
 This is an excellent guide for beginner programmers, focused on using the SDCC compiler in both Windows and Linux environments.
 Here, you can find excellent references and examples along with comprehensive documentation focusing on developing technology for embedded systems. 
 This course covers everything from installation and setting up the compiler to managing project dependencies and developing code. 
@@ -42,7 +41,7 @@ High-level Language
 
 High-level languages simplify programming by abstracting away the intricate details of the microcontroller’s architecture. These languages use familiar words and statements, making them easier to learn and use. Examples of high-level languages include BASIC, C, Pascal, C++, and Java. Programs written in high-level languages are translated into machine code by a compiler, bridging the gap between human-friendly code and machine-understandable instructions.
 
-By understanding these different levels of programming languages, you can choose the most appropriate one for your project, balancing ease of use with the level of control you need over the hardware.
+By understanding these `different levels of programming languages <https://gmostofabd.github.io/8051-Assembly-Programming/>`_ , you can choose the most appropriate one for your project, balancing ease of use with the level of control you need over the hardware.
 
 
 
@@ -58,7 +57,7 @@ Requirements
 
 
 PinOut
-------------
+------
 
 The CH552 microcontroller development board has a total of 16 pins, each with a specific function. The following is a list of the pins and their respective functions:
 

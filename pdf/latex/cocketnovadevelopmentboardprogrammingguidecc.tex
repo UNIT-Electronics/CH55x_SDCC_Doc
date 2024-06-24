@@ -173,7 +173,7 @@ Assembly language is a step above machine language, providing a more human\sphin
 High\sphinxhyphen{}level languages simplify programming by abstracting away the intricate details of the microcontroller’s architecture. These languages use familiar words and statements, making them easier to learn and use. Examples of high\sphinxhyphen{}level languages include BASIC, C, Pascal, C++, and Java. Programs written in high\sphinxhyphen{}level languages are translated into machine code by a compiler, bridging the gap between human\sphinxhyphen{}friendly code and machine\sphinxhyphen{}understandable instructions.
 
 \sphinxAtStartPar
-By understanding these different levels of programming languages, you can choose the most appropriate one for your project, balancing ease of use with the level of control you need over the hardware.
+By understanding these \sphinxhref{https://gmostofabd.github.io/8051-Assembly-Programming/}{different levels of programming languages} , you can choose the most appropriate one for your project, balancing ease of use with the level of control you need over the hardware.
 
 
 \section{Requirements}
@@ -213,8 +213,8 @@ The CH552 microcontroller development board has a total of 16 pins, each with a 
 \sphinxstepscope
 
 
-\chapter{CH55x with SDCC and Ubuntu}
-\label{\detokenize{install_linux:ch55x-with-sdcc-and-ubuntu}}\label{\detokenize{install_linux::doc}}
+\chapter{Environment Setup on Ubuntu}
+\label{\detokenize{install_linux:environment-setup-on-ubuntu}}\label{\detokenize{install_linux::doc}}
 \begin{sphinxadmonition}{caution}{Caution:}
 \sphinxAtStartPar
 This project is under active development. The information provided here is subject to change.
@@ -265,7 +265,6 @@ You will see:
 \PYG{n}{make} \PYG{n+nb}{all}     \PYG{n+nb}{compile}\PYG{p}{,} \PYG{n}{build}\PYG{p}{,} \PYG{o+ow}{and} \PYG{n}{keep} \PYG{n+nb}{all} \PYG{n}{files}
 \PYG{n}{make} \PYG{n+nb}{hex}     \PYG{n+nb}{compile} \PYG{o+ow}{and} \PYG{n}{build} \PYG{n}{blink}\PYG{o}{.}\PYG{n}{hex}
 \PYG{n}{make} \PYG{n+nb}{bin}     \PYG{n+nb}{compile} \PYG{o+ow}{and} \PYG{n}{build} \PYG{n}{blink}\PYG{o}{.}\PYG{n}{bin}
-\PYG{n}{make} \PYG{n}{flash}   \PYG{n+nb}{compile}\PYG{p}{,} \PYG{n}{build}\PYG{p}{,} \PYG{o+ow}{and} \PYG{n}{upload} \PYG{n}{blink}\PYG{o}{.}\PYG{n}{bin} \PYG{n}{to} \PYG{n}{the} \PYG{n}{device}
 \PYG{n}{make} \PYG{n}{clean}   \PYG{n}{remove} \PYG{n+nb}{all} \PYG{n}{build} \PYG{n}{files}
 \end{sphinxVerbatim}
 
@@ -286,59 +285,11 @@ Bus 001 Device 002: ID 4348:55e0 WinChipHead
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 \end{sphinxVerbatim}
 
-
-\section{Install pyusb}
-\label{\detokenize{install_linux:install-pyusb}}
-\sphinxAtStartPar
-Verify the installation with \sphinxtitleref{python \textendash{}version}. If not installed, run:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{sudo} \PYG{n}{apt} \PYG{n}{install} \PYG{n}{python3}\PYG{o}{\PYGZhy{}}\PYG{n}{pip}
-\end{sphinxVerbatim}
-
-\sphinxAtStartPar
-Then verify the installation:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{python3} \PYG{o}{\PYGZhy{}}\PYG{n}{m} \PYG{n}{pip} \PYG{n}{show} \PYG{n}{pyusb}
-\end{sphinxVerbatim}
-
-
-\section{Error with pip}
-\label{\detokenize{install_linux:error-with-pip}}
-\sphinxAtStartPar
-If you encounter this error, we recommend installing the Python environment:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{sudo} \PYG{n}{apt} \PYG{n}{install} \PYG{n}{python3}\PYG{o}{\PYGZhy{}}\PYG{n}{venv}
-\end{sphinxVerbatim}
-
-\sphinxAtStartPar
-Create an environment:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{python3} \PYG{o}{\PYGZhy{}}\PYG{n}{m} \PYG{n}{venv} \PYG{o}{.}\PYG{n}{venv}
-\end{sphinxVerbatim}
-
-\sphinxAtStartPar
-Activate the environment:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{source} \PYG{o}{.}\PYG{n}{venv}\PYG{o}{/}\PYG{n+nb}{bin}\PYG{o}{/}\PYG{n}{activate}
-\end{sphinxVerbatim}
-
-\sphinxAtStartPar
-And install \sphinxtitleref{pyusb}:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{pip} \PYG{n}{install} \PYG{n}{pyusb}
-\end{sphinxVerbatim}
-
 \sphinxstepscope
 
 
-\chapter{CH55x with SDCC and Windows}
-\label{\detokenize{install_windows:ch55x-with-sdcc-and-windows}}\label{\detokenize{install_windows::doc}}
+\chapter{Environment Setup on Windows}
+\label{\detokenize{install_windows:environment-setup-on-windows}}\label{\detokenize{install_windows::doc}}
 \sphinxAtStartPar
 This section provides a step\sphinxhyphen{}by\sphinxhyphen{}step guide to setting up the SDCC compiler on Windows operating systems. It also includes instructions for installing the necessary tools and configuring the environment variables. Additionally, it covers the installation of the pyusb library and updating the driver using Zadig.
 
@@ -388,28 +339,6 @@ Remember that for Windows operating systems, an extra step is necessary, which i
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{C}\PYG{p}{:}\PYGZbs{}\PYG{n}{MinGW}\PYGZbs{}\PYG{n+nb}{bin}
-\end{sphinxVerbatim}
-
-
-\section{Install pyusb}
-\label{\detokenize{install_windows:install-pyusb}}
-\sphinxAtStartPar
-Verify the installation with \sphinxtitleref{python \textendash{}version}.
-
-\sphinxAtStartPar
-If not installed, download and install:
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\sphinxhref{https://www.python.org/downloads/}{Python}
-
-\end{itemize}
-
-\sphinxAtStartPar
-Use pip to install pyusb:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{pip} \PYG{n}{install} \PYG{n}{pyusb}
 \end{sphinxVerbatim}
 
 
@@ -576,6 +505,54 @@ This command will compile the project, resulting in the generation of files with
 
 \noindent\sphinxincludegraphics[width=0.800\linewidth]{{files}.png}
 \caption{Compilation output files}\label{\detokenize{compile:id2}}\label{\detokenize{compile:files}}\end{figure}
+
+
+\section{Install pyusb}
+\label{\detokenize{compile:install-pyusb}}
+\sphinxAtStartPar
+Verify the installation with \sphinxtitleref{python \textendash{}version}. If not installed, run:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{sudo} \PYG{n}{apt} \PYG{n}{install} \PYG{n}{python3}\PYG{o}{\PYGZhy{}}\PYG{n}{pip}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Then verify the installation:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{python3} \PYG{o}{\PYGZhy{}}\PYG{n}{m} \PYG{n}{pip} \PYG{n}{show} \PYG{n}{pyusb}
+\end{sphinxVerbatim}
+
+
+\section{Error with pip}
+\label{\detokenize{compile:error-with-pip}}
+\sphinxAtStartPar
+If you encounter this error, we recommend installing the Python environment:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{sudo} \PYG{n}{apt} \PYG{n}{install} \PYG{n}{python3}\PYG{o}{\PYGZhy{}}\PYG{n}{venv}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Create an environment:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{python3} \PYG{o}{\PYGZhy{}}\PYG{n}{m} \PYG{n}{venv} \PYG{o}{.}\PYG{n}{venv}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Activate the environment:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{source} \PYG{o}{.}\PYG{n}{venv}\PYG{o}{/}\PYG{n+nb}{bin}\PYG{o}{/}\PYG{n}{activate}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+And install \sphinxtitleref{pyusb}:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{pip} \PYG{n}{install} \PYG{n}{pyusb}
+\end{sphinxVerbatim}
 
 
 \section{Flashing the Program}
