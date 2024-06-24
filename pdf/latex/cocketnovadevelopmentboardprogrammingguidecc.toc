@@ -37,6 +37,6 @@
 \contentsline {section}{\numberline {12.1}USB CDC Serial Configuration for CH55x Microcontrollers}{31}{section.12.1}%
 \contentsline {subsection}{\numberline {12.1.1}USB Passthrough for CH55x Microcontrollers}{31}{subsection.12.1.1}%
 \contentsline {subsection}{\numberline {12.1.2}USB CDC PWM Controller for CH55x Microcontrollers}{32}{subsection.12.1.2}%
-\contentsline {subsection}{\numberline {12.1.3}Linux Configuration for USB CDC Devices}{32}{subsection.12.1.3}%
-\contentsline {subsection}{\numberline {12.1.4}Example Commands for Serial Communication}{33}{subsection.12.1.4}%
-\contentsline {section}{\numberline {12.2}Windows Configuration for USB CDC Devices}{33}{section.12.2}%
+\contentsline {section}{\numberline {12.2}Linux Configuration for USB CDC Devices}{32}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Example Commands for Serial Communication}{33}{subsection.12.2.1}%
+\contentsline {section}{\numberline {12.3}Windows Configuration for USB CDC Devices}{33}{section.12.3}%
