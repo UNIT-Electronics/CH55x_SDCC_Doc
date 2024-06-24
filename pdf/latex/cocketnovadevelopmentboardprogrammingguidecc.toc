@@ -33,3 +33,10 @@
 \contentsline {section}{\numberline {9.2}External Interrupts}{26}{section.9.2}%
 \contentsline {chapter}{\numberline {10}PWM (Pulse Width Modulation)}{27}{chapter.10}%
 \contentsline {chapter}{\numberline {11}WS2812}{29}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Communication Serial CDC}{31}{chapter.12}%
+\contentsline {section}{\numberline {12.1}USB CDC Serial Configuration for CH55x Microcontrollers}{31}{section.12.1}%
+\contentsline {subsection}{\numberline {12.1.1}USB Passthrough for CH55x Microcontrollers}{31}{subsection.12.1.1}%
+\contentsline {subsection}{\numberline {12.1.2}USB CDC PWM Controller for CH55x Microcontrollers}{32}{subsection.12.1.2}%
+\contentsline {section}{\numberline {12.2}Linux Configuration for USB CDC Devices}{32}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Example Commands for Serial Communication}{33}{subsection.12.2.1}%
+\contentsline {section}{\numberline {12.3}Windows Configuration for USB CDC Devices}{33}{section.12.3}%
