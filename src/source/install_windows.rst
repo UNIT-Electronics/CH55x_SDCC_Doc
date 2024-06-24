@@ -1,4 +1,4 @@
-CH55x with SDCC and Windows
+Environment Setup on Windows
 ===================================
 This section provides a step-by-step guide to setting up the SDCC compiler on Windows operating systems. It also includes instructions for installing the necessary tools and configuring the environment variables. Additionally, it covers the installation of the pyusb library and updating the driver using Zadig.
 
@@ -33,18 +33,6 @@ Remember that for Windows operating systems, an extra step is necessary, which i
     C:\MinGW\bin
 
 
-Install pyusb
----------------
-
-Verify the installation with `python --version`.
-
-If not installed, download and install:
-
-- `Python <https://www.python.org/downloads/>`_
-
-Use pip to install pyusb::
-
-    pip install pyusb
 
 Locate the file
 ---------------
