@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CH55x with SDCC and Windows &mdash; Cocket Nova Development Board Programming Guide C/C++ 0.1.0 documentation</title>
+  <title>Environment Setup on Windows &mdash; Cocket Nova Development Board Programming Guide C/C++ 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
@@ -31,7 +31,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Compile and Flash CH55x with SDCC" href="compile.html" />
-    <link rel="prev" title="CH55x with SDCC and Ubuntu" href="install_linux.html" /> 
+    <link rel="prev" title="Environment Setup on Ubuntu" href="install_linux.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,11 +57,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="about.html">Cocket Nova Developmet Board CH552 Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_linux.html">CH55x with SDCC and Ubuntu</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CH55x with SDCC and Windows</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="install_linux.html">Environment Setup on Ubuntu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment Setup on Windows</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#compiler-installation">Compiler Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#environment-variable-configuration">Environment Variable Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-pyusb">Install pyusb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#locate-the-file">Locate the file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rename-it">Rename it</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#add-the-path-to-the-environment-variable">Add the path to the environment variable</a></li>
@@ -94,7 +93,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">CH55x with SDCC and Windows</li>
+      <li class="breadcrumb-item active">Environment Setup on Windows</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/install_windows.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -104,8 +103,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ch55x-with-sdcc-and-windows">
-<h1>CH55x with SDCC and Windows<a class="headerlink" href="#ch55x-with-sdcc-and-windows" title="Link to this heading"></a></h1>
+  <section id="environment-setup-on-windows">
+<h1>Environment Setup on Windows<a class="headerlink" href="#environment-setup-on-windows" title="Link to this heading"></a></h1>
 <p>This section provides a step-by-step guide to setting up the SDCC compiler on Windows operating systems. It also includes instructions for installing the necessary tools and configuring the environment variables. Additionally, it covers the installation of the pyusb library and updating the driver using Zadig.</p>
 <section id="compiler-installation">
 <h2>Compiler Installation<a class="headerlink" href="#compiler-installation" title="Link to this heading"></a></h2>
@@ -133,18 +132,6 @@ Download the latest version of <a class="reference external" href="https://zadig
 <h2>Environment Variable Configuration<a class="headerlink" href="#environment-variable-configuration" title="Link to this heading"></a></h2>
 <p>Remember that for Windows operating systems, an extra step is necessary, which is to open the environment variable -&gt; Edit environment variable:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">MinGW</span>\<span class="nb">bin</span>
-</pre></div>
-</div>
-</section>
-<section id="install-pyusb">
-<h2>Install pyusb<a class="headerlink" href="#install-pyusb" title="Link to this heading"></a></h2>
-<p>Verify the installation with <cite>python –version</cite>.</p>
-<p>If not installed, download and install:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.python.org/downloads/">Python</a></p></li>
-</ul>
-<p>Use pip to install pyusb:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyusb</span>
 </pre></div>
 </div>
 </section>
@@ -222,7 +209,7 @@ Download the latest version of <a class="reference external" href="https://zadig
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="install_linux.html" class="btn btn-neutral float-left" title="CH55x with SDCC and Ubuntu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="install_linux.html" class="btn btn-neutral float-left" title="Environment Setup on Ubuntu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="compile.html" class="btn btn-neutral float-right" title="Compile and Flash CH55x with SDCC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

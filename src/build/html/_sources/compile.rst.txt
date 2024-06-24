@@ -45,6 +45,41 @@ To run the program, you will need to use a bash terminal. Follow these steps to 
 
    Compilation output files
 
+
+Install pyusb
+---------------
+
+Verify the installation with `python --version`. If not installed, run::
+
+    sudo apt install python3-pip
+
+
+Then verify the installation::
+
+    python3 -m pip show pyusb
+
+Error with pip
+---------------
+
+If you encounter this error, we recommend installing the Python environment::
+
+
+    sudo apt install python3-venv
+
+
+Create an environment::
+
+    python3 -m venv .venv
+
+Activate the environment::
+
+    source .venv/bin/activate
+
+And install `pyusb`::
+
+    pip install pyusb
+
+
 Flashing the Program 
 --------------------
 
