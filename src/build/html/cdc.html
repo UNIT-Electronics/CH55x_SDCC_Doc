@@ -70,7 +70,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#usb-cdc-serial-configuration-for-ch55x-microcontrollers">USB CDC Serial Configuration for CH55x Microcontrollers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#usb-passthrough-for-ch55x-microcontrollers">USB Passthrough for CH55x Microcontrollers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#usb-cdc-pwm-controller-for-ch55x-microcontrollers">USB CDC PWM Controller for CH55x Microcontrollers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#linux-configuration-for-usb-cdc-devices">Linux Configuration for USB CDC Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#linux-configuration-for-usb-cdc-devices">Linux Configuration for USB CDC Devices</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#example-commands-for-serial-communication">Example Commands for Serial Communication</a></li>
 </ul>
 </li>
@@ -166,8 +168,9 @@ Compilation Instructions:</p>
 </pre></div>
 </div>
 </section>
+</section>
 <section id="linux-configuration-for-usb-cdc-devices">
-<h3>Linux Configuration for USB CDC Devices<a class="headerlink" href="#linux-configuration-for-usb-cdc-devices" title="Link to this heading"></a></h3>
+<h2>Linux Configuration for USB CDC Devices<a class="headerlink" href="#linux-configuration-for-usb-cdc-devices" title="Link to this heading"></a></h2>
 <p>To configure permissions for USB CDC devices (/dev/ttyACM0), follow these steps:</p>
 <p>Create a new udev rule file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/udev/rules.d/99-custom-usb.rules
@@ -182,7 +185,6 @@ Compilation Instructions:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
 </pre></div>
 </div>
-</section>
 <section id="example-commands-for-serial-communication">
 <h3>Example Commands for Serial Communication<a class="headerlink" href="#example-commands-for-serial-communication" title="Link to this heading"></a></h3>
 <p>Send data to USB device:</p>

@@ -73,7 +73,7 @@ Compilation Instructions::
 
 
 Linux Configuration for USB CDC Devices
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------
 
 To configure permissions for USB CDC devices (/dev/ttyACM0), follow these steps:
 
