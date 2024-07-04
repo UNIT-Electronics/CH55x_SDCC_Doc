@@ -64,7 +64,7 @@
 
 
 \title{Cocket Nova Development Board Programming Guide C/C++}
-\date{Jun 24, 2024}
+\date{Jul 04, 2024}
 \release{0.1.0}
 \author{Cesar Bautista}
 \newcommand{\sphinxlogo}{\sphinxincludegraphics{Logo-UNIT_Web-04-800x182.png}\par}
@@ -297,29 +297,45 @@ This section provides a step\sphinxhyphen{}by\sphinxhyphen{}step guide to settin
 \section{Compiler Installation}
 \label{\detokenize{install_windows:compiler-installation}}
 \sphinxAtStartPar
-Follow the steps below to install the necessary tools:
-\begin{itemize}
+Follow these steps to install the necessary tools:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{Installing Git for Windows}
-Download and install \sphinxhref{https://git-scm.com/download}{Git for Windows} from the official Git website.
+\sphinxstylestrong{Install Git for Windows}
+Download and install Git for Windows from the \sphinxhref{https://git-scm.com/download}{official Git website}.
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{Installing SDCC}
-Download and install the latest version of SDCC. You can find the latest version on the \sphinxhref{https://sourceforge.net/projects/sdcc/}{SDCC downloads page}.
+\sphinxstylestrong{Install SDCC}
+Download and install the latest version of SDCC from the \sphinxhref{https://sourceforge.net/projects/sdcc/}{SDCC downloads page}.
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{Installing MinGW}
-Install MinGW, which is a set of tools for software development on Windows. You can download the installer from the \sphinxhref{https://sourceforge.net/projects/mingw/}{official MinGW website}.
+\sphinxstylestrong{Install MinGW}
+Download and install MinGW, a set of development tools for Windows, from the \sphinxhref{https://sourceforge.net/projects/mingw/}{official MinGW website}.
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{Installing Zadig}
-Download the latest version of \sphinxhref{https://zadig.akeo.ie/}{Zadig}. You can download it from the official website.
+\sphinxstylestrong{Install CH372 Driver}
+Download the latest version of the CH372 driver from the \sphinxhref{https://www.wch-ic.com/downloads/CH372DRV\_EXE.html}{official website}.
 
-\end{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Install Zadig}
+Download and install the latest version of Zadig from the \sphinxhref{https://zadig.akeo.ie/}{official website}.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Install Filter Wizard}
+Download the latest version of libusb\sphinxhyphen{}win32 from the \sphinxhref{https://sourceforge.net/projects/libusb-win32/files/libusb-win32-releases/1.2.7.3/}{official website}. This driver is used by the Loadupch tool to communicate with the device.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Install Python}
+Download and install the latest version of Python from the \sphinxhref{https://www.python.org/downloads/}{official Python website}.
+
+\end{enumerate}
 
 \begin{sphinxadmonition}{tip}{Tip:}
 \sphinxAtStartPar
@@ -352,7 +368,7 @@ After installing MinGW, you will need to locate the \sphinxtitleref{mingw32\sphi
 \capstart
 
 \noindent\sphinxincludegraphics[width=0.900\linewidth]{{make_file}.png}
-\caption{Locating the \sphinxtitleref{mingw32\sphinxhyphen{}make.exe} file}\label{\detokenize{install_windows:id2}}\label{\detokenize{install_windows:make-file}}\end{figure}
+\caption{Locating the \sphinxtitleref{mingw32\sphinxhyphen{}make.exe} file}\label{\detokenize{install_windows:id3}}\label{\detokenize{install_windows:make-file}}\end{figure}
 
 
 \section{Rename it}
@@ -365,7 +381,7 @@ After locating \sphinxtitleref{mingw32\sphinxhyphen{}make.exe}, rename it to \sp
 \capstart
 
 \noindent\sphinxincludegraphics[width=0.900\linewidth]{{rename}.png}
-\caption{Renaming \sphinxtitleref{mingw32\sphinxhyphen{}make.exe} to \sphinxtitleref{make.exe}}\label{\detokenize{install_windows:id3}}\label{\detokenize{install_windows:rename}}\end{figure}
+\caption{Renaming \sphinxtitleref{mingw32\sphinxhyphen{}make.exe} to \sphinxtitleref{make.exe}}\label{\detokenize{install_windows:id4}}\label{\detokenize{install_windows:rename}}\end{figure}
 
 \begin{sphinxadmonition}{warning}{Warning:}
 \sphinxAtStartPar
@@ -393,7 +409,11 @@ In the Environment Variables window, under “System variables”, select the �
 
 \item {} 
 \sphinxAtStartPar
-In the Edit Environment Variable window, click “New” and add the path \sphinxtitleref{C:MinGWbin}.
+In the Edit Environment Variable window, click “New” and add the path:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{C}\PYG{p}{:}\PYGZbs{}\PYG{n}{MinGW}\PYGZbs{}\PYG{n+nb}{bin}
+\end{sphinxVerbatim}
 
 \end{enumerate}
 
@@ -402,7 +422,7 @@ In the Edit Environment Variable window, click “New” and add the path \sphin
 \capstart
 
 \noindent\sphinxincludegraphics[width=0.600\linewidth]{{var_env}.png}
-\caption{Adding MinGW bin directory to environment variables}\label{\detokenize{install_windows:id4}}\label{\detokenize{install_windows:var-env}}\end{figure}
+\caption{Adding MinGW bin directory to environment variables}\label{\detokenize{install_windows:id5}}\label{\detokenize{install_windows:var-env}}\end{figure}
 
 
 \section{Verify the installation}
@@ -422,7 +442,7 @@ You should see the version information for \sphinxtitleref{make}, indicating tha
 \capstart
 
 \noindent\sphinxincludegraphics[width=0.900\linewidth]{{make_version}.png}
-\caption{Verifying the installation of \sphinxtitleref{make}}\label{\detokenize{install_windows:id5}}\label{\detokenize{install_windows:verify}}\end{figure}
+\caption{Verifying the installation of \sphinxtitleref{make}}\label{\detokenize{install_windows:id6}}\label{\detokenize{install_windows:verify}}\end{figure}
 
 
 \section{Update driver}
@@ -435,7 +455,7 @@ The current loading tool can utilize the default driver and coexist with the off
 \capstart
 
 \noindent\sphinxincludegraphics[width=1.000\linewidth]{{driver}.png}
-\caption{driver}\label{\detokenize{install_windows:id6}}\label{\detokenize{install_windows:driver}}\end{figure}
+\caption{driver}\label{\detokenize{install_windows:id7}}\label{\detokenize{install_windows:driver}}\end{figure}
 
 \begin{sphinxadmonition}{warning}{Warning:}
 \sphinxAtStartPar
@@ -504,23 +524,33 @@ This command will compile the project, resulting in the generation of files with
 \capstart
 
 \noindent\sphinxincludegraphics[width=0.800\linewidth]{{files}.png}
-\caption{Compilation output files}\label{\detokenize{compile:id2}}\label{\detokenize{compile:files}}\end{figure}
+\caption{Compilation output files}\label{\detokenize{compile:id18}}\label{\detokenize{compile:files}}\end{figure}
 
 
 \section{Install pyusb}
 \label{\detokenize{compile:install-pyusb}}
 \sphinxAtStartPar
-Verify the installation with \sphinxtitleref{python \textendash{}version}. If not installed, run:
+pyusb is a Python module necessary for flashing the CH55x microcontroller. To install pyusb, follow these steps:
+
+\sphinxAtStartPar
+Install \sphinxtitleref{pyusb} on using pip
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{sudo} \PYG{n}{apt} \PYG{n}{install} \PYG{n}{python3}\PYG{o}{\PYGZhy{}}\PYG{n}{pip}
+python3\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{ }pip\PYG{+w}{ }install\PYG{+w}{ }pyusb
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-Then verify the installation:
+Then verify the installation
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{python3} \PYG{o}{\PYGZhy{}}\PYG{n}{m} \PYG{n}{pip} \PYG{n}{show} \PYG{n}{pyusb}
+python3\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{ }pip\PYG{+w}{ }show\PYG{+w}{ }pyusb
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+For Windows, you can use the following command:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+pip\PYG{+w}{ }install\PYG{+w}{ }pyusb
 \end{sphinxVerbatim}
 
 
@@ -557,6 +587,47 @@ And install \sphinxtitleref{pyusb}:
 
 \section{Flashing the Program}
 \label{\detokenize{compile:flashing-the-program}}
+\begin{sphinxuseclass}{sphinx-tabs}
+\sphinxAtStartPar
+\sphinxstylestrong{chprog.py}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Project:} chprog \sphinxhyphen{} Programming Tool for CH55x Microcontrollers
+
+\sphinxAtStartPar
+\sphinxstylestrong{Version:} v1.2 (2022)
+
+\sphinxAtStartPar
+\sphinxstylestrong{Author:} Stefan Wagner
+
+\sphinxAtStartPar
+\sphinxstylestrong{GitHub:} \sphinxhref{https://github.com/wagiminator}{wagiminator}
+
+\sphinxAtStartPar
+\sphinxstylestrong{License:} MIT License
+
+\sphinxAtStartPar
+\sphinxstylestrong{Description:}
+Developed chprog, a Python tool for easily flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
+
+\sphinxAtStartPar
+\sphinxstylestrong{References:}
+Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius Wang:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://ATCnetz.de}{ATCnetz}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://github.com/atc1441/chflasher}{chflasher on GitHub}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://github.com/juliuswwj/wchprog}{wchprog on GitHub}
+
+\end{itemize}
+
 \sphinxAtStartPar
 Once the project is compiled, you need to flash the program onto the CH55x device. Follow these steps:
 \begin{enumerate}
@@ -576,11 +647,8 @@ Ensure your CH55x device is connected and the BOOT button is pressed, as done du
 Execute the following command to flash the compiled program onto the microcontroller:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-make\PYG{+w}{ }flash
+python\PYG{+w}{ }../../tools/chprog.py\PYG{+w}{  }main.bin
 \end{sphinxVerbatim}
-
-\sphinxAtStartPar
-If the flashing process is successful, the code will generate a blinking effect on the connected LED, indicating that the program is running correctly.
 
 \end{enumerate}
 
@@ -589,27 +657,28 @@ If the flashing process is successful, the code will generate a blinking effect 
 \capstart
 
 \noindent\sphinxincludegraphics[width=0.800\linewidth]{{led}.png}
-\caption{LED blinking effect}\label{\detokenize{compile:id3}}\label{\detokenize{compile:led}}\end{figure}
+\caption{LED blinking effect}\label{\detokenize{compile:id19}}\label{\detokenize{compile:id5}}\end{figure}
 
-
-\chapter{Software Development Prototype}
-\label{\detokenize{compile:software-development-prototype}}
-
-\section{Loadupch}
-\label{\detokenize{compile:loadupch}}
+\begin{sphinxadmonition}{note}{Note:}
 \sphinxAtStartPar
-The Loadupch is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller. It is a user\sphinxhyphen{}friendly tool that provides a graphical interface, making it easier for users to upload their code. The Loadupch tool is compatible with both Windows and Linux operating systems.
+Requires the \sphinxtitleref{libusb\sphinxhyphen{}win32} driver to be installed using Zadig.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Loadupch}
+
+\sphinxAtStartPar
+The \sphinxhref{https://pypi.org/project/loadupch/}{Loadupch} is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
+It is a user\sphinxhyphen{}friendly tool that provides a graphical interface, making it easier for users to upload their code.
+Based on chprog, Loadupch is a Python tool that simplifies the process of flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
 
 \begin{figure}[htbp]
 \centering
 \capstart
 
 \noindent\sphinxincludegraphics[width=0.500\linewidth]{{loadupch}.png}
-\caption{Loadupch tool interface}\label{\detokenize{compile:id4}}\label{\detokenize{compile:id1}}\end{figure}
+\caption{Loadupch tool interface}\label{\detokenize{compile:id20}}\label{\detokenize{compile:id9}}\end{figure}
 
-
-\subsection{Installing Loadupch}
-\label{\detokenize{compile:installing-loadupch}}
 \begin{sphinxadmonition}{warning}{Warning:}
 \sphinxAtStartPar
 The Loadupch tool is currently under development and may contain bugs. Use it at your own risk.
@@ -624,7 +693,7 @@ To install the Loadupch tool, you can use \sphinxtitleref{pypi}. Follow these st
 \sphinxstylestrong{Install Loadupch}
 
 \sphinxAtStartPar
-Use the following command to install the Loadupch tool via pip:
+Use the following command to install the \sphinxhref{https://github.com/UNIT-Electronics/ue\_loadupch\_Loader\_Firmware-}{Loadupch}. tool via pip:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 pip\PYG{+w}{ }install\PYG{+w}{ }loadupch
@@ -641,6 +710,11 @@ After installation, you can run the Loadupch tool with the following command:
 python\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{ }loadupch
 \end{sphinxVerbatim}
 
+\begin{sphinxadmonition}{caution}{Caution:}
+\sphinxAtStartPar
+To recognize the device, you only need to install the \sphinxcode{\sphinxupquote{libusb\sphinxhyphen{}win32}} driver using Zadig.
+\end{sphinxadmonition}
+
 \sphinxAtStartPar
 This will launch the graphical interface of the Loadupch tool, allowing you to upload code to your CH552 microcontroller easily.
 
@@ -655,6 +729,112 @@ pip\PYG{+w}{ }uninstall\PYG{+w}{ }loadupch
 \end{sphinxVerbatim}
 \end{sphinxadmonition}
 
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+Requires the \sphinxtitleref{libusb\sphinxhyphen{}win32} driver to be installed using Zadig.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Arduino IDE}
+
+\sphinxAtStartPar
+Arduino IDE is a popular development environment for programming microcontrollers.
+You can use the Arduino IDE to program the CH55x microcontrollers by following these steps:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Install Arduino IDE}
+
+\sphinxAtStartPar
+Download and install the \sphinxhref{https://www.arduino.cc/en/software}{Arduino IDE} on your computer.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Install CH55x Board Support}
+
+\sphinxAtStartPar
+Open the Arduino IDE and navigate to \sphinxcode{\sphinxupquote{File \textgreater{} Preferences}}. In the Additional Boards Manager URLs field, add the following URL:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+https://raw.githubusercontent.com/Cesarbautista10/Uelectronics\PYGZhy{}CH552\PYGZhy{}Arduino\PYGZhy{}Package\PYGZhy{}v3/main/package\PYGZus{}duino\PYGZus{}mcs51\PYGZus{}index.json
+\end{sphinxVerbatim}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Install CH55x Board}
+
+\sphinxAtStartPar
+Go to \sphinxcode{\sphinxupquote{Tools \textgreater{} Board \textgreater{} Boards Manager}} and search for \sphinxcode{\sphinxupquote{Cocket Nova}}. Install the CH55x board support package.
+
+\end{enumerate}
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+Requires the \sphinxhref{https://www.wch-ic.com/downloads/CH372DRV\_EXE.html}{ch372} driver to be installed.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+\sphinxstylestrong{WCHISPTool}
+
+\sphinxAtStartPar
+The WCHISPTool is an official programming tool provided by WCH. It is a Windows\sphinxhyphen{}based tool that allows users to flash firmware onto CH55x microcontrollers.
+To use the WCHISPTool, follow these steps:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Download the WCHISPTool}
+
+\sphinxAtStartPar
+Download the \sphinxhref{https://www.wch-ic.com/downloads/WCHISPTool\_Setup\_exe.html}{WCHISPTool} from the official WCH website.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Install the WCHISPTool}
+
+\sphinxAtStartPar
+Install the WCHISPTool on your Windows computer by following the on\sphinxhyphen{}screen instructions.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Connect the Device}
+
+\sphinxAtStartPar
+Connect your CH55x device to your computer using a USB cable. Ensure that the BOOT button is pressed while connecting the device.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Flash the Program}
+
+\sphinxAtStartPar
+Open the WCHISPTool and select the appropriate firmware file. Click the “Download” button to flash the program onto the microcontroller.
+
+\end{enumerate}
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+The WCHISPTool is a Windows\sphinxhyphen{}based tool and may not be compatible with other operating systems.
+\end{sphinxadmonition}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[width=0.800\linewidth]{{wchisptool}.png}
+\caption{WCHISPTool interface}\label{\detokenize{compile:id21}}\label{\detokenize{compile:id16}}\end{figure}
+
+\begin{sphinxadmonition}{warning}{Warning:}
+\sphinxAtStartPar
+The WCHISPTool is an official tool provided by WCH and may have limitations compared to other flashing methods.
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+Requires the \sphinxhref{https://www.wch-ic.com/downloads/CH372DRV\_EXE.html}{ch372} driver to be installed.
+\end{sphinxadmonition}
+
+\end{sphinxuseclass}
 \sphinxstepscope
 
 
@@ -1620,7 +1800,7 @@ Right\sphinxhyphen{}click on the device and select Properties.
 
 \item {} 
 \sphinxAtStartPar
-Open Zadig (\sphinxurl{https://zadig.akeo.ie/}).
+Open \sphinxhref{https://zadig.akeo.ie/}{Zadig}.
 
 \item {} 
 \sphinxAtStartPar
@@ -1638,6 +1818,47 @@ Select the device from the drop\sphinxhyphen{}down list.
 
 \noindent\sphinxincludegraphics{{cdc_serial}.png}
 \caption{Zadig CDC Device Selection}\label{\detokenize{cdc:id2}}\label{\detokenize{cdc:figura-zadig}}\end{figure}
+
+\sphinxstepscope
+
+
+\chapter{How generarate report of errors}
+\label{\detokenize{report:how-generarate-report-of-errors}}\label{\detokenize{report::doc}}
+\sphinxAtStartPar
+This is a guide to generate report of errors.
+
+\sphinxAtStartPar
+Unit Electronics is a company that produces electronic devices. The company has a quality control
+department that is responsible for checking the quality of the devices designed.
+
+\sphinxAtStartPar
+you can get the report of errors by following the steps below:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Got to the Unit Electronics github repository.
+
+\item {} 
+\sphinxAtStartPar
+Click on the issues tab.
+
+\item {} 
+\sphinxAtStartPar
+Click on the new issue button.
+
+\item {} 
+\sphinxAtStartPar
+Fill in the title and description of the issue.
+
+\item {} 
+\sphinxAtStartPar
+Click on the submit button.
+
+\end{enumerate}
+
+\sphinxAtStartPar
+The quality control department will review the issue and take the necessary action to resolve it.
 
 
 

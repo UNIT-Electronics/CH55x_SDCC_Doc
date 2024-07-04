@@ -49,14 +49,27 @@ To run the program, you will need to use a bash terminal. Follow these steps to 
 Install pyusb
 ---------------
 
-Verify the installation with `python --version`. If not installed, run::
+pyusb is a Python module necessary for flashing the CH55x microcontroller. To install pyusb, follow these steps:
 
-    sudo apt install python3-pip
+Install `pyusb` on using pip
 
+.. code-block:: bash
+   
+      python3 -m pip install pyusb
 
-Then verify the installation::
+Then verify the installation
+
+.. code-block:: bash
 
     python3 -m pip show pyusb
+
+For Windows, you can use the following command:
+
+.. code-block:: bash
+
+    pip install pyusb
+   
+
 
 Error with pip
 ---------------
@@ -82,80 +95,187 @@ And install `pyusb`::
 
 Flashing the Program 
 --------------------
+.. tabs::
+   .. tab:: **chprog.py**
 
-Once the project is compiled, you need to flash the program onto the CH55x device. Follow these steps:
 
-1. **Connect the Device**
+      **Project:** chprog - Programming Tool for CH55x Microcontrollers  
 
-   Ensure your CH55x device is connected and the BOOT button is pressed, as done during the compilation step.
+      **Version:** v1.2 (2022)  
 
-2. **Flash the Program**
+      **Author:** Stefan Wagner  
 
-   Execute the following command to flash the compiled program onto the microcontroller:
+      **GitHub:** `wagiminator <https://github.com/wagiminator>`_  
 
-   .. code-block:: bash
+      **License:** MIT License  
 
-      make flash
+      **Description:**  
+      Developed chprog, a Python tool for easily flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
 
-   If the flashing process is successful, the code will generate a blinking effect on the connected LED, indicating that the program is running correctly.
+      **References:**  
+      Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius Wang:
+         - `ATCnetz <https://ATCnetz.de>`_
+         - `chflasher on GitHub <https://github.com/atc1441/chflasher>`_
+         - `wchprog on GitHub <https://github.com/juliuswwj/wchprog>`_
 
-.. _led:
+      Once the project is compiled, you need to flash the program onto the CH55x device. Follow these steps:
 
-.. figure:: /_static/led.png
-   :width: 80%
-   :align: center
-   :alt: LED blinking
+      1. **Connect the Device**
 
-   LED blinking effect
+         Ensure your CH55x device is connected and the BOOT button is pressed, as done during the compilation step.
 
-Software Development Prototype
-==============================
+      2. **Flash the Program**
 
-Loadupch
---------
+         Execute the following command to flash the compiled program onto the microcontroller:
 
-The Loadupch is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller. It is a user-friendly tool that provides a graphical interface, making it easier for users to upload their code. The Loadupch tool is compatible with both Windows and Linux operating systems.
 
-.. _loadupch:
+         .. code-block:: bash
 
-.. figure:: /_static/loadupch.png
-   :width: 50%
-   :align: center
-   :alt: Loadupch tool
+            python ../../tools/chprog.py  main.bin
+         
 
-   Loadupch tool interface
 
-Installing Loadupch
-~~~~~~~~~~~~~~~~~~~
+ 
+      .. _led:
 
-.. warning::
+      .. figure:: /_static/led.png
+         :width: 80%
+         :align: center
+         :alt: LED blinking
 
-   The Loadupch tool is currently under development and may contain bugs. Use it at your own risk.
+         LED blinking effect
 
-To install the Loadupch tool, you can use `pypi`. Follow these steps:
 
-1. **Install Loadupch**
+      .. note::
 
-   Use the following command to install the Loadupch tool via pip:
+         Requires the `libusb-win32` driver to be installed using Zadig.
 
-   .. code-block:: bash
+   .. tab:: **Loadupch**
 
-      pip install loadupch
+      
+      The `Loadupch <https://pypi.org/project/loadupch/>`_ is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
+      It is a user-friendly tool that provides a graphical interface, making it easier for users to upload their code. 
+      Based on chprog, Loadupch is a Python tool that simplifies the process of flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
 
-2. **Run Loadupch**
+      .. _loadupch:
 
-   After installation, you can run the Loadupch tool with the following command:
+      .. figure:: /_static/loadupch.png
+         :width: 50%
+         :align: center
+         :alt: Loadupch tool
 
-   .. code-block:: bash
+         Loadupch tool interface
 
-      python -m loadupch
+      Installing Loadupch
+      ~~~~~~~~~~~~~~~~~~~
 
-   This will launch the graphical interface of the Loadupch tool, allowing you to upload code to your CH552 microcontroller easily.
+      .. warning::
 
-.. tip::
+         The Loadupch tool is currently under development and may contain bugs. Use it at your own risk.
 
-   If you need to uninstall the Loadupch tool for any reason, use the following command:
+      To install the Loadupch tool, you can use `pypi`. Follow these steps:
 
-   .. code-block:: bash
+      1. **Install Loadupch**
 
-      pip uninstall loadupch
+         Use the following command to install the `Loadupch <https://github.com/UNIT-Electronics/ue_loadupch_Loader_Firmware->`_. tool via pip:
+
+         .. code-block:: bash
+
+            pip install loadupch
+
+      2. **Run Loadupch**
+
+         After installation, you can run the Loadupch tool with the following command:
+
+         .. code-block:: bash
+
+            python -m loadupch
+
+         .. caution::
+
+            To recognize the device, you only need to install the ``libusb-win32`` driver using Zadig.
+
+         This will launch the graphical interface of the Loadupch tool, allowing you to upload code to your CH552 microcontroller easily.
+
+      .. tip::
+
+         If you need to uninstall the Loadupch tool for any reason, use the following command:
+
+         .. code-block:: bash
+
+            pip uninstall loadupch
+
+      .. note::
+
+         Requires the `libusb-win32` driver to be installed using Zadig.
+
+   .. tab:: **Arduino IDE**
+
+      Arduino IDE is a popular development environment for programming microcontrollers. 
+      You can use the Arduino IDE to program the CH55x microcontrollers by following these steps:
+
+      1. **Install Arduino IDE**
+
+         Download and install the `Arduino IDE <https://www.arduino.cc/en/software>`_ on your computer.
+
+      2. **Install CH55x Board Support**
+
+         Open the Arduino IDE and navigate to ``File > Preferences``. In the Additional Boards Manager URLs field, add the following URL:
+
+         .. code-block:: bash
+
+            https://raw.githubusercontent.com/Cesarbautista10/Uelectronics-CH552-Arduino-Package-v3/main/package_duino_mcs51_index.json
+
+      3. **Install CH55x Board**
+
+         Go to ``Tools > Board > Boards Manager`` and search for ``Cocket Nova``. Install the CH55x board support package.
+
+
+      .. note::
+
+         Requires the `ch372 <https://www.wch-ic.com/downloads/CH372DRV_EXE.html>`_ driver to be installed.
+
+   .. tab:: **WCHISPTool** 
+
+      The WCHISPTool is an official programming tool provided by WCH. It is a Windows-based tool that allows users to flash firmware onto CH55x microcontrollers. 
+      To use the WCHISPTool, follow these steps:
+
+      1. **Download the WCHISPTool**
+
+         Download the `WCHISPTool <https://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html>`_ from the official WCH website.
+
+      2. **Install the WCHISPTool**
+
+         Install the WCHISPTool on your Windows computer by following the on-screen instructions.
+
+      3. **Connect the Device**
+
+         Connect your CH55x device to your computer using a USB cable. Ensure that the BOOT button is pressed while connecting the device.
+
+      4. **Flash the Program**
+
+         Open the WCHISPTool and select the appropriate firmware file. Click the "Download" button to flash the program onto the microcontroller.
+
+      .. note::
+
+         The WCHISPTool is a Windows-based tool and may not be compatible with other operating systems.
+
+      .. _wchisptool:
+
+      .. figure:: /_static/wchisptool.png
+         :width: 80%
+         :align: center
+         :alt: WCHISPTool interface
+
+         WCHISPTool interface
+
+      .. warning::
+
+         The WCHISPTool is an official tool provided by WCH and may have limitations compared to other flashing methods.
+
+      .. note::
+
+         Requires the `ch372 <https://www.wch-ic.com/downloads/CH372DRV_EXE.html>`_ driver to be installed.
+
+
+      

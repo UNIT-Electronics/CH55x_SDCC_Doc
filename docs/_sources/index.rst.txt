@@ -46,4 +46,4 @@ present various alternatives for usage.
    pwm
    ws2812
    cdc
-   
+   report

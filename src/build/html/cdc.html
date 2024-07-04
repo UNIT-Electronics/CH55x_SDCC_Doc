@@ -8,6 +8,7 @@
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6217da0c" />
 
   
@@ -30,6 +31,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How generarate report of errors" href="report.html" />
     <link rel="prev" title="WS2812" href="ws2812.html" /> 
 </head>
 
@@ -59,7 +61,6 @@
 <li class="toctree-l1"><a class="reference internal" href="install_linux.html">Environment Setup on Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_windows.html">Environment Setup on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compile.html#software-development-prototype">Software Development Prototype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generalboardcontrol.html">General Board Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog to Digital Converter (ADC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="i2c.html">I2C (Inter-Integrated Circuit)</a></li>
@@ -79,6 +80,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#windows-configuration-for-usb-cdc-devices">Windows Configuration for USB CDC Devices</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="report.html">How generarate report of errors</a></li>
 </ul>
 
         </div>
@@ -207,19 +209,19 @@ Compilation Instructions:</p>
 <figure class="align-center" id="id1">
 <span id="figura-device-manager"></span><img alt="CDC Serial Device Manager" src="_images/cdc_serial_vid_pid.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">CDC Serial Device Manager</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">CDC Serial Device Manager</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple" start="2">
 <li><p>Right-click on the device and select Properties.</p></li>
-<li><p>Open Zadig (<a class="reference external" href="https://zadig.akeo.ie/">https://zadig.akeo.ie/</a>).</p></li>
+<li><p>Open <a class="reference external" href="https://zadig.akeo.ie/">Zadig</a>.</p></li>
 <li><p>Go to Options &gt; List All Devices.</p></li>
 <li><p>Select the device from the drop-down list.</p></li>
 </ol>
 <figure class="align-center" id="id2">
 <span id="figura-zadig"></span><img alt="Zadig CDC" src="_images/cdc_serial.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Zadig CDC Device Selection</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Zadig CDC Device Selection</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -230,6 +232,7 @@ Compilation Instructions:</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="ws2812.html" class="btn btn-neutral float-left" title="WS2812" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="report.html" class="btn btn-neutral float-right" title="How generarate report of errors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

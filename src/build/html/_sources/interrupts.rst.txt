@@ -1,5 +1,5 @@
 Interrupts
-========
+===========
 
 The CH552 microcontroller supports 14 sets of interrupt signal sources. These include 6 sets of interrupts 
 (INT0, T0, INT1, T1, UART0, and T2), which are compatible with the standard MCS51, and 8 sets of extended 

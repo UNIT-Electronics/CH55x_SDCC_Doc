@@ -133,7 +133,7 @@ To configure permissions for USB CDC devices in Windows, follow these steps:
 
 2. Right-click on the device and select Properties.
 
-3. Open Zadig (https://zadig.akeo.ie/). 
+3. Open `Zadig <https://zadig.akeo.ie/>`_. 
 
 4. Go to Options > List All Devices.
 

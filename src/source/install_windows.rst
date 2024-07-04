@@ -2,22 +2,31 @@ Environment Setup on Windows
 ===================================
 This section provides a step-by-step guide to setting up the SDCC compiler on Windows operating systems. It also includes instructions for installing the necessary tools and configuring the environment variables. Additionally, it covers the installation of the pyusb library and updating the driver using Zadig.
 
-Compiler Installation 
----------------
+Compiler Installation
+---------------------
 
-Follow the steps below to install the necessary tools:
+Follow these steps to install the necessary tools:
 
-- **Installing Git for Windows**  
-  Download and install `Git for Windows <https://git-scm.com/download>`_ from the official Git website.
+1. **Install Git for Windows**
+   Download and install Git for Windows from the `official Git website <https://git-scm.com/download>`_.
 
-- **Installing SDCC**  
-  Download and install the latest version of SDCC. You can find the latest version on the `SDCC downloads page <https://sourceforge.net/projects/sdcc/>`_.
+2. **Install SDCC**
+   Download and install the latest version of SDCC from the `SDCC downloads page <https://sourceforge.net/projects/sdcc/>`_.
 
-- **Installing MinGW**  
-  Install MinGW, which is a set of tools for software development on Windows. You can download the installer from the `official MinGW website <https://sourceforge.net/projects/mingw/>`_.
+3. **Install MinGW**
+   Download and install MinGW, a set of development tools for Windows, from the `official MinGW website <https://sourceforge.net/projects/mingw/>`_.
 
-- **Installing Zadig**  
-  Download the latest version of `Zadig <https://zadig.akeo.ie/>`_. You can download it from the official website.
+4. **Install CH372 Driver**
+   Download the latest version of the CH372 driver from the `official website <https://www.wch-ic.com/downloads/CH372DRV_EXE.html>`_.
+
+5. **Install Zadig**
+   Download and install the latest version of Zadig from the `official website <https://zadig.akeo.ie/>`_.
+
+6. **Install Filter Wizard**
+   Download the latest version of libusb-win32 from the `official website <https://sourceforge.net/projects/libusb-win32/files/libusb-win32-releases/1.2.7.3/>`_. This driver is used by the Loadupch tool to communicate with the device.
+
+7. **Install Python**
+   Download and install the latest version of Python from the `official Python website <https://www.python.org/downloads/>`_.
 
 .. tip::  
     It is recommended to install the tools in the order listed above.
@@ -63,12 +72,15 @@ After locating `mingw32-make.exe`, rename it to `make.exe`. This change is neces
 
 Add the path to the environment variable
 ----------------------------------------
+
 Next, you need to add the path to the MinGW bin directory to your system's environment variables. This allows the `make` command to be recognized from any command prompt.
 
 1. Open the Start Search, type in "env", and select "Edit the system environment variables".
 2. In the System Properties window, click on the "Environment Variables" button.
 3. In the Environment Variables window, under "System variables", select the "Path" variable and click "Edit".
-4. In the Edit Environment Variable window, click "New" and add the path `C:\MinGW\bin`.
+4. In the Edit Environment Variable window, click "New" and add the path::
+
+    C:\MinGW\bin
 
 .. _var_env:
 .. figure:: /_static/var_env.png

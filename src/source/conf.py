@@ -5,7 +5,6 @@ author = 'Cesar Bautista'
 release = '0.1.0'
 
 extensions = [
-
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
@@ -18,6 +17,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx_togglebutton',
     'rst2pdf.pdfbuilder',
+    'sphinx_tabs.tabs',
 ]
 
 templates_path = ['_templates']
