@@ -64,7 +64,7 @@
 
 
 \title{Cocket Nova Development Board Programming Guide C/C++}
-\date{Jul 04, 2024}
+\date{Jul 08, 2024}
 \release{0.1.0}
 \author{Cesar Bautista}
 \newcommand{\sphinxlogo}{\sphinxincludegraphics{Logo-UNIT_Web-04-800x182.png}\par}
@@ -1699,6 +1699,47 @@ Compilation Instructions:
 \PYG{n}{Press} \PYG{n}{the} \PYG{n}{BOOT} \PYG{n}{button} \PYG{n}{on} \PYG{n}{the} \PYG{n}{board} \PYG{o+ow}{and} \PYG{n}{keep} \PYG{n}{it} \PYG{n}{pressed} \PYG{k}{while} \PYG{n}{connecting} \PYG{n}{it} \PYG{n}{via} \PYG{n}{USB} \PYG{n}{to} \PYG{n}{your} \PYG{n}{PC}\PYG{o}{.}
 \PYG{n}{Run} \PYG{n}{make} \PYG{n}{flash} \PYG{n}{immediately} \PYG{n}{afterwards} \PYG{n}{to} \PYG{n}{flash} \PYG{n}{the} \PYG{n}{firmware}\PYG{o}{.}
 \PYG{n}{For} \PYG{n}{compilation} \PYG{n}{using} \PYG{n}{Arduino} \PYG{n}{IDE}\PYG{p}{,} \PYG{n}{refer} \PYG{n}{to} \PYG{n}{instructions} \PYG{o+ow}{in} \PYG{n}{the} \PYG{o}{.}\PYG{n}{ino} \PYG{n}{file}\PYG{o}{.}
+\end{sphinxVerbatim}
+
+
+\subsection{USB CDC Serial to UART Bridge for CH55x Microcontrollers}
+\label{\detokenize{cdc:usb-cdc-serial-to-uart-bridge-for-ch55x-microcontrollers}}
+\sphinxAtStartPar
+This project implements a USB CDC to UART bridge functionality using ch552. The microcontroller acts as a USB
+Communication Device Class (CDC), allowing serial communication over USB. Data received via USB is sent to the
+UART interface and vice versa.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Prototypes for used interrupts}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{USB\PYGZus{}interrupt}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{p}{;}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{USB\PYGZus{}ISR}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{\PYGZus{}\PYGZus{}interrupt}\PYG{p}{(}\PYG{n}{INT\PYGZus{}NO\PYGZus{}USB}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{n}{USB\PYGZus{}interrupt}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{UART\PYGZus{}interrupt}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{p}{;}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{UART\PYGZus{}ISR}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{\PYGZus{}\PYGZus{}interrupt}\PYG{p}{(}\PYG{n}{INT\PYGZus{}NO\PYGZus{}UART0}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{n}{UART\PYGZus{}interrupt}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{// ===================================================================================}
+\PYG{c+c1}{// Main Function}
+\PYG{c+c1}{// ===================================================================================}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{c+c1}{// Setup}
+\PYG{n}{CLK\PYGZus{}config}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                             }\PYG{c+c1}{// configure system clock}
+\PYG{n}{DLY\PYGZus{}ms}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                               }\PYG{c+c1}{// wait for clock to settle}
+\PYG{n}{UART\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                              }\PYG{c+c1}{// init UART}
+\PYG{n}{CDC\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                               }\PYG{c+c1}{// init virtual COM}
+
+\PYG{c+c1}{// Loop}
+\PYG{k}{while}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{c+c1}{// Handle virtual COM}
+\PYG{+w}{    }\PYG{k}{if}\PYG{p}{(}\PYG{n}{CDC\PYGZus{}available}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{UART\PYGZus{}ready}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{UART\PYGZus{}write}\PYG{p}{(}\PYG{n}{CDC\PYGZus{}read}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{p}{(}\PYG{n}{UART\PYGZus{}available}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{CDC\PYGZus{}getDTR}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{while}\PYG{p}{(}\PYG{n}{UART\PYGZus{}available}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{CDC\PYGZus{}write}\PYG{p}{(}\PYG{n}{UART\PYGZus{}read}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{CDC\PYGZus{}flush}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
 
 
