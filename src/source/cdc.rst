@@ -53,6 +53,46 @@ Compilation Instructions::
     Run make flash immediately afterwards to flash the firmware.
     For compilation using Arduino IDE, refer to instructions in the .ino file.
 
+USB CDC Serial to UART Bridge for CH55x Microcontrollers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This project implements a USB CDC to UART bridge functionality using ch552. The microcontroller acts as a USB
+Communication Device Class (CDC), allowing serial communication over USB. Data received via USB is sent to the 
+UART interface and vice versa.
+
+.. code-block:: c
+
+    // Prototypes for used interrupts
+    void USB_interrupt(void);
+    void USB_ISR(void) __interrupt(INT_NO_USB) {
+    USB_interrupt();
+    }
+
+    void UART_interrupt(void);
+    void UART_ISR(void) __interrupt(INT_NO_UART0) {
+    UART_interrupt();
+    }
+    // ===================================================================================
+    // Main Function
+    // ===================================================================================
+    void main(void) {
+    // Setup
+    CLK_config();                             // configure system clock
+    DLY_ms(10);                               // wait for clock to settle
+    UART_init();                              // init UART
+    CDC_init();                               // init virtual COM
+
+    // Loop
+    while(1) {
+        // Handle virtual COM
+        if(CDC_available() && UART_ready()) UART_write(CDC_read());
+        if(UART_available() && CDC_getDTR()) {
+        while(UART_available()) CDC_write(UART_read());
+        CDC_flush();
+        }
+    }
+    }
+
 USB CDC PWM Controller for CH55x Microcontrollers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
