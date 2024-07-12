@@ -96,118 +96,6 @@ And install `pyusb`::
 Flashing the Program 
 --------------------
 .. tabs::
-   .. tab:: **chprog.py**
-
-
-      **Project:** chprog - Programming Tool for CH55x Microcontrollers  
-
-      **Version:** v1.2 (2022)  
-
-      **Author:** Stefan Wagner  
-
-      **GitHub:** `wagiminator <https://github.com/wagiminator>`_  
-
-      **License:** MIT License  
-
-      **Description:**  
-      Developed chprog, a Python tool for easily flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
-
-      **References:**  
-      Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius Wang:
-         - `ATCnetz <https://ATCnetz.de>`_
-         - `chflasher on GitHub <https://github.com/atc1441/chflasher>`_
-         - `wchprog on GitHub <https://github.com/juliuswwj/wchprog>`_
-
-      Once the project is compiled, you need to flash the program onto the CH55x device. Follow these steps:
-
-      1. **Connect the Device**
-
-         Ensure your CH55x device is connected and the BOOT button is pressed, as done during the compilation step.
-
-      2. **Flash the Program**
-
-         Execute the following command to flash the compiled program onto the microcontroller:
-
-
-         .. code-block:: bash
-
-            python ../../tools/chprog.py  main.bin
-         
-
-
- 
-      .. _led:
-
-      .. figure:: /_static/led.png
-         :width: 80%
-         :align: center
-         :alt: LED blinking
-
-         LED blinking effect
-
-
-      .. note::
-
-         Requires the `libusb-win32` driver to be installed using Zadig.
-
-   .. tab:: **Loadupch**
-
-      
-      The `Loadupch <https://pypi.org/project/loadupch/>`_ is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
-      It is a user-friendly tool that provides a graphical interface, making it easier for users to upload their code. 
-      Based on chprog, Loadupch is a Python tool that simplifies the process of flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
-
-      .. _loadupch:
-
-      .. figure:: /_static/loadupch.png
-         :width: 50%
-         :align: center
-         :alt: Loadupch tool
-
-         Loadupch tool interface
-
-      Installing Loadupch
-      ~~~~~~~~~~~~~~~~~~~
-
-      .. warning::
-
-         The Loadupch tool is currently under development and may contain bugs. Use it at your own risk.
-
-      To install the Loadupch tool, you can use `pypi`. Follow these steps:
-
-      1. **Install Loadupch**
-
-         Use the following command to install the `Loadupch <https://github.com/UNIT-Electronics/ue_loadupch_Loader_Firmware->`_. tool via pip:
-
-         .. code-block:: bash
-
-            pip install loadupch
-
-      2. **Run Loadupch**
-
-         After installation, you can run the Loadupch tool with the following command:
-
-         .. code-block:: bash
-
-            python -m loadupch
-
-         .. caution::
-
-            To recognize the device, you only need to install the ``libusb-win32`` driver using Zadig.
-
-         This will launch the graphical interface of the Loadupch tool, allowing you to upload code to your CH552 microcontroller easily.
-
-      .. tip::
-
-         If you need to uninstall the Loadupch tool for any reason, use the following command:
-
-         .. code-block:: bash
-
-            pip uninstall loadupch
-
-      .. note::
-
-         Requires the `libusb-win32` driver to be installed using Zadig.
 
    .. tab:: **Arduino IDE**
 
@@ -277,5 +165,127 @@ Flashing the Program
 
          Requires the `ch372 <https://www.wch-ic.com/downloads/CH372DRV_EXE.html>`_ driver to be installed.
 
+   .. tab:: **chprog.py**
 
+
+      **Project:** chprog - Programming Tool for CH55x Microcontrollers  
+
+      **Version:** v1.2 (2022)  
+
+      **Author:** Stefan Wagner  
+
+      **GitHub:** `wagiminator <https://github.com/wagiminator>`_  
+
+      **License:** MIT License  
+
+      **Description:**  
+      Developed chprog, a Python tool for easily flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
+
+
+      .. caution:: 
+
+         Support available up to bootloader version 2.4.0, windows only.
+
+
+
+      **References:**  
+      Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius Wang:
+         - `ATCnetz <https://ATCnetz.de>`_
+         - `chflasher on GitHub <https://github.com/atc1441/chflasher>`_
+         - `wchprog on GitHub <https://github.com/juliuswwj/wchprog>`_
+
+      Once the project is compiled, you need to flash the program onto the CH55x device. Follow these steps:
+
+      1. **Connect the Device**
+
+         Ensure your CH55x device is connected and the BOOT button is pressed, as done during the compilation step.
+
+      2. **Flash the Program**
+
+         Execute the following command to flash the compiled program onto the microcontroller:
+
+
+         .. code-block:: bash
+
+            python ../../tools/chprog.py  main.bin
+         
+
+
+ 
+      .. _led:
+
+      .. figure:: /_static/led.png
+         :width: 80%
+         :align: center
+         :alt: LED blinking
+
+         LED blinking effect
+
+
+      .. note::
+
+         Requires the `libusb-win32` driver to be installed using Zadig.
+
+   .. tab:: **Loadupch**
+
+      
+      The `Loadupch <https://pypi.org/project/loadupch/>`_ is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
+      It is a user-friendly tool that provides a graphical interface, making it easier for users to upload their code. 
+      Based on chprog, Loadupch is a Python tool that simplifies the process of flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
+
+      .. caution:: 
+
+         Support available up to bootloader version 2.4.0, windows only.
+
+      .. _loadupch:
+
+      .. figure:: /_static/loadupch.png
+         :width: 50%
+         :align: center
+         :alt: Loadupch tool
+
+         Loadupch tool interface
+
+      Installing Loadupch
+      ~~~~~~~~~~~~~~~~~~~
+
+      .. warning::
+
+         The Loadupch tool is currently under development and may contain bugs. Use it at your own risk.
+
+      To install the Loadupch tool, you can use `pypi`. Follow these steps:
+
+      1. **Install Loadupch**
+
+         Use the following command to install the `Loadupch <https://github.com/UNIT-Electronics/ue_loadupch_Loader_Firmware->`_. tool via pip:
+
+         .. code-block:: bash
+
+            pip install loadupch
+
+      2. **Run Loadupch**
+
+         After installation, you can run the Loadupch tool with the following command:
+
+         .. code-block:: bash
+
+            python -m loadupch
+
+         .. caution::
+
+            To recognize the device, you only need to install the ``libusb-win32`` driver using Zadig.
+
+         This will launch the graphical interface of the Loadupch tool, allowing you to upload code to your CH552 microcontroller easily.
+
+      .. tip::
+
+         If you need to uninstall the Loadupch tool for any reason, use the following command:
+
+         .. code-block:: bash
+
+            pip uninstall loadupch
+
+      .. note::
+
+         Requires the `libusb-win32` driver to be installed using Zadig.
       

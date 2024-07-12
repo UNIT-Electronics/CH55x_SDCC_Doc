@@ -64,7 +64,7 @@
 
 
 \title{Cocket Nova Development Board Programming Guide C/C++}
-\date{Jul 08, 2024}
+\date{Jul 10, 2024}
 \release{0.1.0}
 \author{Cesar Bautista}
 \newcommand{\sphinxlogo}{\sphinxincludegraphics{Logo-UNIT_Web-04-800x182.png}\par}
@@ -589,152 +589,6 @@ And install \sphinxtitleref{pyusb}:
 \label{\detokenize{compile:flashing-the-program}}
 \begin{sphinxuseclass}{sphinx-tabs}
 \sphinxAtStartPar
-\sphinxstylestrong{chprog.py}
-
-\sphinxAtStartPar
-\sphinxstylestrong{Project:} chprog \sphinxhyphen{} Programming Tool for CH55x Microcontrollers
-
-\sphinxAtStartPar
-\sphinxstylestrong{Version:} v1.2 (2022)
-
-\sphinxAtStartPar
-\sphinxstylestrong{Author:} Stefan Wagner
-
-\sphinxAtStartPar
-\sphinxstylestrong{GitHub:} \sphinxhref{https://github.com/wagiminator}{wagiminator}
-
-\sphinxAtStartPar
-\sphinxstylestrong{License:} MIT License
-
-\sphinxAtStartPar
-\sphinxstylestrong{Description:}
-Developed chprog, a Python tool for easily flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
-
-\sphinxAtStartPar
-\sphinxstylestrong{References:}
-Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius Wang:
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\sphinxhref{https://ATCnetz.de}{ATCnetz}
-
-\item {} 
-\sphinxAtStartPar
-\sphinxhref{https://github.com/atc1441/chflasher}{chflasher on GitHub}
-
-\item {} 
-\sphinxAtStartPar
-\sphinxhref{https://github.com/juliuswwj/wchprog}{wchprog on GitHub}
-
-\end{itemize}
-
-\sphinxAtStartPar
-Once the project is compiled, you need to flash the program onto the CH55x device. Follow these steps:
-\begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
-\item {} 
-\sphinxAtStartPar
-\sphinxstylestrong{Connect the Device}
-
-\sphinxAtStartPar
-Ensure your CH55x device is connected and the BOOT button is pressed, as done during the compilation step.
-
-\item {} 
-\sphinxAtStartPar
-\sphinxstylestrong{Flash the Program}
-
-\sphinxAtStartPar
-Execute the following command to flash the compiled program onto the microcontroller:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-python\PYG{+w}{ }../../tools/chprog.py\PYG{+w}{  }main.bin
-\end{sphinxVerbatim}
-
-\end{enumerate}
-
-\begin{figure}[htbp]
-\centering
-\capstart
-
-\noindent\sphinxincludegraphics[width=0.800\linewidth]{{led}.png}
-\caption{LED blinking effect}\label{\detokenize{compile:id19}}\label{\detokenize{compile:id5}}\end{figure}
-
-\begin{sphinxadmonition}{note}{Note:}
-\sphinxAtStartPar
-Requires the \sphinxtitleref{libusb\sphinxhyphen{}win32} driver to be installed using Zadig.
-\end{sphinxadmonition}
-
-\sphinxAtStartPar
-\sphinxstylestrong{Loadupch}
-
-\sphinxAtStartPar
-The \sphinxhref{https://pypi.org/project/loadupch/}{Loadupch} is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
-It is a user\sphinxhyphen{}friendly tool that provides a graphical interface, making it easier for users to upload their code.
-Based on chprog, Loadupch is a Python tool that simplifies the process of flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
-
-\begin{figure}[htbp]
-\centering
-\capstart
-
-\noindent\sphinxincludegraphics[width=0.500\linewidth]{{loadupch}.png}
-\caption{Loadupch tool interface}\label{\detokenize{compile:id20}}\label{\detokenize{compile:id9}}\end{figure}
-
-\begin{sphinxadmonition}{warning}{Warning:}
-\sphinxAtStartPar
-The Loadupch tool is currently under development and may contain bugs. Use it at your own risk.
-\end{sphinxadmonition}
-
-\sphinxAtStartPar
-To install the Loadupch tool, you can use \sphinxtitleref{pypi}. Follow these steps:
-\begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
-\item {} 
-\sphinxAtStartPar
-\sphinxstylestrong{Install Loadupch}
-
-\sphinxAtStartPar
-Use the following command to install the \sphinxhref{https://github.com/UNIT-Electronics/ue\_loadupch\_Loader\_Firmware-}{Loadupch}. tool via pip:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-pip\PYG{+w}{ }install\PYG{+w}{ }loadupch
-\end{sphinxVerbatim}
-
-\item {} 
-\sphinxAtStartPar
-\sphinxstylestrong{Run Loadupch}
-
-\sphinxAtStartPar
-After installation, you can run the Loadupch tool with the following command:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-python\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{ }loadupch
-\end{sphinxVerbatim}
-
-\begin{sphinxadmonition}{caution}{Caution:}
-\sphinxAtStartPar
-To recognize the device, you only need to install the \sphinxcode{\sphinxupquote{libusb\sphinxhyphen{}win32}} driver using Zadig.
-\end{sphinxadmonition}
-
-\sphinxAtStartPar
-This will launch the graphical interface of the Loadupch tool, allowing you to upload code to your CH552 microcontroller easily.
-
-\end{enumerate}
-
-\begin{sphinxadmonition}{tip}{Tip:}
-\sphinxAtStartPar
-If you need to uninstall the Loadupch tool for any reason, use the following command:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-pip\PYG{+w}{ }uninstall\PYG{+w}{ }loadupch
-\end{sphinxVerbatim}
-\end{sphinxadmonition}
-
-\begin{sphinxadmonition}{note}{Note:}
-\sphinxAtStartPar
-Requires the \sphinxtitleref{libusb\sphinxhyphen{}win32} driver to be installed using Zadig.
-\end{sphinxadmonition}
-
-\sphinxAtStartPar
 \sphinxstylestrong{Arduino IDE}
 
 \sphinxAtStartPar
@@ -822,7 +676,7 @@ The WCHISPTool is a Windows\sphinxhyphen{}based tool and may not be compatible w
 \capstart
 
 \noindent\sphinxincludegraphics[width=0.800\linewidth]{{wchisptool}.png}
-\caption{WCHISPTool interface}\label{\detokenize{compile:id21}}\label{\detokenize{compile:id16}}\end{figure}
+\caption{WCHISPTool interface}\label{\detokenize{compile:id19}}\label{\detokenize{compile:id6}}\end{figure}
 
 \begin{sphinxadmonition}{warning}{Warning:}
 \sphinxAtStartPar
@@ -832,6 +686,162 @@ The WCHISPTool is an official tool provided by WCH and may have limitations comp
 \begin{sphinxadmonition}{note}{Note:}
 \sphinxAtStartPar
 Requires the \sphinxhref{https://www.wch-ic.com/downloads/CH372DRV\_EXE.html}{ch372} driver to be installed.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+\sphinxstylestrong{chprog.py}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Project:} chprog \sphinxhyphen{} Programming Tool for CH55x Microcontrollers
+
+\sphinxAtStartPar
+\sphinxstylestrong{Version:} v1.2 (2022)
+
+\sphinxAtStartPar
+\sphinxstylestrong{Author:} Stefan Wagner
+
+\sphinxAtStartPar
+\sphinxstylestrong{GitHub:} \sphinxhref{https://github.com/wagiminator}{wagiminator}
+
+\sphinxAtStartPar
+\sphinxstylestrong{License:} MIT License
+
+\sphinxAtStartPar
+\sphinxstylestrong{Description:}
+Developed chprog, a Python tool for easily flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
+
+\begin{sphinxadmonition}{caution}{Caution:}
+\sphinxAtStartPar
+Support available up to bootloader version 2.4.0, windows only.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+\sphinxstylestrong{References:}
+Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius Wang:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://ATCnetz.de}{ATCnetz}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://github.com/atc1441/chflasher}{chflasher on GitHub}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://github.com/juliuswwj/wchprog}{wchprog on GitHub}
+
+\end{itemize}
+
+\sphinxAtStartPar
+Once the project is compiled, you need to flash the program onto the CH55x device. Follow these steps:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Connect the Device}
+
+\sphinxAtStartPar
+Ensure your CH55x device is connected and the BOOT button is pressed, as done during the compilation step.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Flash the Program}
+
+\sphinxAtStartPar
+Execute the following command to flash the compiled program onto the microcontroller:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+python\PYG{+w}{ }../../tools/chprog.py\PYG{+w}{  }main.bin
+\end{sphinxVerbatim}
+
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[width=0.800\linewidth]{{led}.png}
+\caption{LED blinking effect}\label{\detokenize{compile:id20}}\label{\detokenize{compile:id12}}\end{figure}
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+Requires the \sphinxtitleref{libusb\sphinxhyphen{}win32} driver to be installed using Zadig.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Loadupch}
+
+\sphinxAtStartPar
+The \sphinxhref{https://pypi.org/project/loadupch/}{Loadupch} is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
+It is a user\sphinxhyphen{}friendly tool that provides a graphical interface, making it easier for users to upload their code.
+Based on chprog, Loadupch is a Python tool that simplifies the process of flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
+
+\begin{sphinxadmonition}{caution}{Caution:}
+\sphinxAtStartPar
+Support available up to bootloader version 2.4.0, windows only.
+\end{sphinxadmonition}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[width=0.500\linewidth]{{loadupch}.png}
+\caption{Loadupch tool interface}\label{\detokenize{compile:id21}}\label{\detokenize{compile:id16}}\end{figure}
+
+\begin{sphinxadmonition}{warning}{Warning:}
+\sphinxAtStartPar
+The Loadupch tool is currently under development and may contain bugs. Use it at your own risk.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+To install the Loadupch tool, you can use \sphinxtitleref{pypi}. Follow these steps:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Install Loadupch}
+
+\sphinxAtStartPar
+Use the following command to install the \sphinxhref{https://github.com/UNIT-Electronics/ue\_loadupch\_Loader\_Firmware-}{Loadupch}. tool via pip:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+pip\PYG{+w}{ }install\PYG{+w}{ }loadupch
+\end{sphinxVerbatim}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Run Loadupch}
+
+\sphinxAtStartPar
+After installation, you can run the Loadupch tool with the following command:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+python\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{ }loadupch
+\end{sphinxVerbatim}
+
+\begin{sphinxadmonition}{caution}{Caution:}
+\sphinxAtStartPar
+To recognize the device, you only need to install the \sphinxcode{\sphinxupquote{libusb\sphinxhyphen{}win32}} driver using Zadig.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+This will launch the graphical interface of the Loadupch tool, allowing you to upload code to your CH552 microcontroller easily.
+
+\end{enumerate}
+
+\begin{sphinxadmonition}{tip}{Tip:}
+\sphinxAtStartPar
+If you need to uninstall the Loadupch tool for any reason, use the following command:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+pip\PYG{+w}{ }uninstall\PYG{+w}{ }loadupch
+\end{sphinxVerbatim}
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+Requires the \sphinxtitleref{libusb\sphinxhyphen{}win32} driver to be installed using Zadig.
 \end{sphinxadmonition}
 
 \end{sphinxuseclass}

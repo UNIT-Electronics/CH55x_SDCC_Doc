@@ -174,13 +174,71 @@
 <section id="flashing-the-program">
 <h2>Flashing the Program<a class="headerlink" href="#flashing-the-program" title="Link to this heading"></a></h2>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0"><strong>chprog.py</strong></button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1"><strong>Loadupch</strong></button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1"><strong>Arduino IDE</strong></button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1"><strong>WCHISPTool</strong></button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p><strong>Project:</strong> chprog - Programming Tool for CH55x Microcontrollers</p>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0"><strong>Arduino IDE</strong></button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1"><strong>WCHISPTool</strong></button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1"><strong>chprog.py</strong></button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1"><strong>Loadupch</strong></button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Arduino IDE is a popular development environment for programming microcontrollers.
+You can use the Arduino IDE to program the CH55x microcontrollers by following these steps:</p>
+<ol class="arabic">
+<li><p><strong>Install Arduino IDE</strong></p>
+<p>Download and install the <a class="reference external" href="https://www.arduino.cc/en/software">Arduino IDE</a> on your computer.</p>
+</li>
+<li><p><strong>Install CH55x Board Support</strong></p>
+<p>Open the Arduino IDE and navigate to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Preferences</span></code>. In the Additional Boards Manager URLs field, add the following URL:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://raw.githubusercontent.com/Cesarbautista10/Uelectronics-CH552-Arduino-Package-v3/main/package_duino_mcs51_index.json
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install CH55x Board</strong></p>
+<p>Go to <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Board</span> <span class="pre">&gt;</span> <span class="pre">Boards</span> <span class="pre">Manager</span></code> and search for <code class="docutils literal notranslate"><span class="pre">Cocket</span> <span class="pre">Nova</span></code>. Install the CH55x board support package.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Requires the <a class="reference external" href="https://www.wch-ic.com/downloads/CH372DRV_EXE.html">ch372</a> driver to be installed.</p>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>The WCHISPTool is an official programming tool provided by WCH. It is a Windows-based tool that allows users to flash firmware onto CH55x microcontrollers.
+To use the WCHISPTool, follow these steps:</p>
+<ol class="arabic">
+<li><p><strong>Download the WCHISPTool</strong></p>
+<p>Download the <a class="reference external" href="https://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html">WCHISPTool</a> from the official WCH website.</p>
+</li>
+<li><p><strong>Install the WCHISPTool</strong></p>
+<p>Install the WCHISPTool on your Windows computer by following the on-screen instructions.</p>
+</li>
+<li><p><strong>Connect the Device</strong></p>
+<p>Connect your CH55x device to your computer using a USB cable. Ensure that the BOOT button is pressed while connecting the device.</p>
+</li>
+<li><p><strong>Flash the Program</strong></p>
+<p>Open the WCHISPTool and select the appropriate firmware file. Click the “Download” button to flash the program onto the microcontroller.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The WCHISPTool is a Windows-based tool and may not be compatible with other operating systems.</p>
+</div>
+<figure class="align-center" id="id6">
+<span id="id1"></span><a class="reference internal image-reference" href="_images/wchisptool.png"><img alt="WCHISPTool interface" src="_images/wchisptool.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">WCHISPTool interface</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The WCHISPTool is an official tool provided by WCH and may have limitations compared to other flashing methods.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Requires the <a class="reference external" href="https://www.wch-ic.com/downloads/CH372DRV_EXE.html">ch372</a> driver to be installed.</p>
+</div>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p><strong>Project:</strong> chprog - Programming Tool for CH55x Microcontrollers</p>
 <p><strong>Version:</strong> v1.2 (2022)</p>
 <p><strong>Author:</strong> Stefan Wagner</p>
 <p><strong>GitHub:</strong> <a class="reference external" href="https://github.com/wagiminator">wagiminator</a></p>
 <p><strong>License:</strong> MIT License</p>
 <p><strong>Description:</strong>
 Developed chprog, a Python tool for easily flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Support available up to bootloader version 2.4.0, windows only.</p>
+</div>
 <p><strong>References:</strong>
 Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius Wang:</p>
 <blockquote>
@@ -202,23 +260,27 @@ Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius W
 </div>
 </li>
 </ol>
-<figure class="align-center" id="id6">
+<figure class="align-center" id="id7">
 <span id="led"></span><a class="reference internal image-reference" href="_images/led.png"><img alt="LED blinking" src="_images/led.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">LED blinking effect</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">LED blinking effect</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Requires the <cite>libusb-win32</cite> driver to be installed using Zadig.</p>
 </div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>The <a class="reference external" href="https://pypi.org/project/loadupch/">Loadupch</a> is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
+</div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><p>The <a class="reference external" href="https://pypi.org/project/loadupch/">Loadupch</a> is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
 It is a user-friendly tool that provides a graphical interface, making it easier for users to upload their code.
 Based on chprog, Loadupch is a Python tool that simplifies the process of flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.</p>
-<figure class="align-center" id="id7">
-<span id="id1"></span><a class="reference internal image-reference" href="_images/loadupch.png"><img alt="Loadupch tool" src="_images/loadupch.png" style="width: 50%;" /></a>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Support available up to bootloader version 2.4.0, windows only.</p>
+</div>
+<figure class="align-center" id="id8">
+<span id="id3"></span><a class="reference internal image-reference" href="_images/loadupch.png"><img alt="Loadupch tool" src="_images/loadupch.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Loadupch tool interface</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Loadupch tool interface</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -255,60 +317,6 @@ Based on chprog, Loadupch is a Python tool that simplifies the process of flashi
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Requires the <cite>libusb-win32</cite> driver to be installed using Zadig.</p>
-</div>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>Arduino IDE is a popular development environment for programming microcontrollers.
-You can use the Arduino IDE to program the CH55x microcontrollers by following these steps:</p>
-<ol class="arabic">
-<li><p><strong>Install Arduino IDE</strong></p>
-<p>Download and install the <a class="reference external" href="https://www.arduino.cc/en/software">Arduino IDE</a> on your computer.</p>
-</li>
-<li><p><strong>Install CH55x Board Support</strong></p>
-<p>Open the Arduino IDE and navigate to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Preferences</span></code>. In the Additional Boards Manager URLs field, add the following URL:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://raw.githubusercontent.com/Cesarbautista10/Uelectronics-CH552-Arduino-Package-v3/main/package_duino_mcs51_index.json
-</pre></div>
-</div>
-</li>
-<li><p><strong>Install CH55x Board</strong></p>
-<p>Go to <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Board</span> <span class="pre">&gt;</span> <span class="pre">Boards</span> <span class="pre">Manager</span></code> and search for <code class="docutils literal notranslate"><span class="pre">Cocket</span> <span class="pre">Nova</span></code>. Install the CH55x board support package.</p>
-</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Requires the <a class="reference external" href="https://www.wch-ic.com/downloads/CH372DRV_EXE.html">ch372</a> driver to be installed.</p>
-</div>
-</div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><p>The WCHISPTool is an official programming tool provided by WCH. It is a Windows-based tool that allows users to flash firmware onto CH55x microcontrollers.
-To use the WCHISPTool, follow these steps:</p>
-<ol class="arabic">
-<li><p><strong>Download the WCHISPTool</strong></p>
-<p>Download the <a class="reference external" href="https://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html">WCHISPTool</a> from the official WCH website.</p>
-</li>
-<li><p><strong>Install the WCHISPTool</strong></p>
-<p>Install the WCHISPTool on your Windows computer by following the on-screen instructions.</p>
-</li>
-<li><p><strong>Connect the Device</strong></p>
-<p>Connect your CH55x device to your computer using a USB cable. Ensure that the BOOT button is pressed while connecting the device.</p>
-</li>
-<li><p><strong>Flash the Program</strong></p>
-<p>Open the WCHISPTool and select the appropriate firmware file. Click the “Download” button to flash the program onto the microcontroller.</p>
-</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The WCHISPTool is a Windows-based tool and may not be compatible with other operating systems.</p>
-</div>
-<figure class="align-center" id="id8">
-<span id="id3"></span><a class="reference internal image-reference" href="_images/wchisptool.png"><img alt="WCHISPTool interface" src="_images/wchisptool.png" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">WCHISPTool interface</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The WCHISPTool is an official tool provided by WCH and may have limitations compared to other flashing methods.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Requires the <a class="reference external" href="https://www.wch-ic.com/downloads/CH372DRV_EXE.html">ch372</a> driver to be installed.</p>
 </div>
 </div></div>
 </section>
