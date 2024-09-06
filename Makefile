@@ -20,7 +20,8 @@ all: build
 
 build:
 	@rm -rf docs && mkdir docs
-	@cd src && ./make.bat clean && ./make.bat html
+	# @cd src && ./make.bat clean && ./make.bat html
+	@cd src && make clean && make html
 	@cp -R src/build/html/* docs && touch docs/.nojekyll
 	@echo "Documentation built and copied to docs"
 	@echo "All files removed"
@@ -33,9 +34,9 @@ build:
 	
 
 
-pdfr:
+pdfx:
 	@rm -rf pdf && mkdir pdf
-	@cd src && ./make.bat clean && sphinx-build -M latexpdf source ../pdf	
+	@cd src && make clean && sphinx-build -M latexpdf source ../pdf	
 	@echo "PDF built and copied to docs"
 	@make build
 

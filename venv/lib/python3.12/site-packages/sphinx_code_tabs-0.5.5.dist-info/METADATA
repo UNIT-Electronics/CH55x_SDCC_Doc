@@ -1,0 +1,267 @@
+Metadata-Version: 2.1
+Name: sphinx-code-tabs
+Version: 0.5.5
+Summary: Sphinx extension for adding alternative code-blocks as selectable tabs
+Home-page: https://github.com/coldfix/sphinx-code-tabs
+Download-URL: https://pypi.org/project/sphinx_code_tabs
+Author: Thomas Gläßle
+Author-email: thomas@coldfix.de
+License: Unlicense
+Project-URL: Source Code, https://github.com/coldfix/sphinx-code-tabs
+Project-URL: Bug Tracker, https://github.com/coldfix/sphinx-code-tabs/issues
+Project-URL: Documentation, https://sphinx-code-tabs.readthedocs.io
+Keywords: sphinx extension alternative code-block tab notebook
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: The Unlicense (Unlicense)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Documentation :: Sphinx
+Requires-Python: >=3.5
+Description-Content-Type: text/x-rst
+License-File: UNLICENSE
+Requires-Dist: sphinx (>=3)
+Requires-Dist: importlib-resources ; python_version < "3.7"
+Provides-Extra: doc
+Requires-Dist: sphinx-rtd-theme ; extra == 'doc'
+
+sphinx code tabs
+================
+
+|Version| |License| |Documentation|
+
+This is a Sphinx extension that adds a ``tabs`` directive for creating a
+tabbed widget, allowing the user to switch between them. The individual tabs
+can be code blocks or general content.
+
+This can be used to e.g. show a snippet in multiple languages, display
+instructions for alternative platforms, or switch between code and output.
+
+|Screenshot|
+
+
+Installation
+------------
+
+.. code-block:: bash
+
+    pip install sphinx_code_tabs
+
+To enable the extension in sphinx, simply add the package name in your
+``conf.py`` to the list of ``extensions``:
+
+.. code-block:: python
+
+    extensions = [
+        ...
+        'sphinx_code_tabs',
+    ]
+
+
+Usage
+-----
+
+By enabling the extension you get access to the ``tabs`` directive that
+declares a notebook of code block alternatives.
+
+The individual tabs are created with the ``tab`` or ``code-tab`` directives. A
+``tab`` can contain arbitrary restructuredText, while a ``code-tab`` acts like
+a ``code-block`` and accepts all corresponding arguments. Both types of tabs
+can appear in the same notebook.
+
+The ``:selected:`` option allows to switch to a specified tab at start. By
+default, the first tab is used.
+
+For example, this is the source of above example:
+
+.. code-block:: rst
+
+    .. tabs::
+
+        .. code-tab:: bash
+
+            echo "Hello, *World*!"
+
+        .. code-tab:: c
+            :caption: C/C++
+            :emphasize-lines: 2
+
+            #include <stdio.h>
+            int main() { printf("Hello, *World*!\n"); }
+
+        .. code-tab:: python
+
+            print("Hello, *World*!")
+
+        .. tab:: Output
+            :selected:
+
+            Hello, *World*!
+
+
+Grouped tabs
+~~~~~~~~~~~~
+
+The ``tabs`` directive takes an optional argument that identifies its *tab
+group*. Within a given tab group, all notebooks will automatically be switched
+to the same tab number if the tab is switched in one member of the group.
+It is your responsibility to make sure that each member of the group has the
+same number and ordering of tabs. Example:
+
+|Tabgroup|
+
+Source:
+
+.. code-block:: rst
+
+    .. tabs:: lang
+
+        .. code-tab:: bash
+
+            echo "Hello, group!"
+
+        .. code-tab:: python
+
+            print("Hello, group!")
+
+
+    .. tabs:: lang
+
+        .. code-tab:: bash
+
+            echo "Goodbye, group!"
+
+        .. code-tab:: python
+
+            print("Goodbye, group!")
+
+
+Alternatives
+------------
+
+After creating this package, I found other packages which are functionally
+similar or equivalent. You may want to check them out if sphinx-code-tabs
+doesn't fit your needs:
+
+- sphinx_tabs_
+- sphinx_inline_tabs_
+
+.. _sphinx_tabs: https://pypi.org/project/sphinx-tabs/
+.. _sphinx_inline_tabs: https://pypi.org/project/sphinx-inline-tabs/
+
+
+.. |Documentation| image::  https://readthedocs.org/projects/sphinx-code-tabs/badge/?version=latest
+   :target:                 https://sphinx-code-tabs.readthedocs.io/en/latest/
+   :alt:                    Documentation
+
+.. |License| image::    https://img.shields.io/pypi/l/sphinx-code-tabs.svg
+   :target:             https://github.com/coldfix/sphinx-code-tabs/blob/main/UNLICENSE
+   :alt:                License: Unlicense
+
+.. |Version| image::    https://img.shields.io/pypi/v/sphinx-code-tabs.svg
+   :target:             https://pypi.org/project/sphinx-code-tabs
+   :alt:                Latest Version
+
+.. |Screenshot| image:: https://raw.githubusercontent.com/coldfix/sphinx-code-tabs/main/screenshot1.webp
+   :target:             https://sphinx-code-tabs.readthedocs.io/en/latest/#usage
+   :alt:                Code tabs screenshot
+
+.. |Tabgroup| image::   https://raw.githubusercontent.com/coldfix/sphinx-code-tabs/main/screenshot2.webp
+   :target:             https://sphinx-code-tabs.readthedocs.io/en/latest/#grouped-tabs
+   :alt:                Grouped tabs screenshot
+
+CHANGES
+-------
+
+v0.5.4
+~~~~~~
+Date: 13.07.2023
+
+- no changes, release needed to trigger a new build
+
+
+v0.5.4
+~~~~~~
+Date: 28.06.2023
+
+- declare extension as safe for parallel reads (#6)
+
+
+v0.5.3
+~~~~~~
+Date: 28.11.2021
+
+- fix CHANGES to appear in long description
+
+
+v0.5.2
+~~~~~~
+Date: 28.11.2021
+
+- fix ImportError triggered on readthedocs due to ancient sphinx version (v1.8)
+
+
+v0.5.1
+~~~~~~
+Date: 28.11.2021
+
+- update description for landing page
+
+
+v0.5.0
+~~~~~~
+Date: 28.11.2021
+
+- add ``tab`` directive for arbitrary (non-code) content
+- add ``tabs`` directive and make ``code-tabs`` a backward-compatibility alias
+  of ``tabs``, to account for the new more general tab containers
+- make the ``:title:`` option no longer required (wasn't enforced anyway by
+  sphinx)
+- add grouped tabs
+- make non-code tabs look better in latex output by boxing them like listings
+
+
+v0.4.0
+~~~~~~
+Date: 27.11.2021
+
+- fix bug that selects all tab buttons on click (introduced in prerender
+  commit)
+
+
+v0.3.0
+~~~~~~
+Date: 27.11.2021
+
+- fix AssertionError if :title: option is missing (see #3)
+- increase css specificity to fix big margins that have appeared due to some
+  CSS change in sphinx or rtd
+- fix exception when building pdf documents (#1, #4)
+- prerender tab hidden/selected state to avoid content reflow on page (re-)load
+
+
+v0.2.0
+~~~~~~
+Date: 21.06.2021
+
+- update css for sphinx 4
+
+
+v0.1.0
+~~~~~~
+Date: 10.10.2020
+
+- fix missing assets when using the extension on readthedocs
+- add documentation along with visual example on readthedocs
+
+
+v0.0.1
+~~~~~~
+Date: 10.10.2020
+
+Initial version with basic functionality:
+
+- all rendering is done by JS, no prerendering
+- so far no "notebook-groups" that switch the language simultaneously
