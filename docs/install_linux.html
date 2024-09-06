@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Environment Setup on Ubuntu &mdash; Cocket Nova Development Board Programming Guide C/C++ 0.1.0 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6217da0c" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -56,7 +58,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="about.html">Cocket Nova Developmet Board CH552 Guide</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment Setup on Ubuntu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment Setup on Ubuntu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linux-configuration-for-usb">Linux Configuration for USB</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="install_windows.html">Environment Setup on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generalboardcontrol.html">General Board Control</a></li>
@@ -107,6 +112,22 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">make</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">binutils</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">sdcc</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">usb</span>
+</pre></div>
+</div>
+<section id="linux-configuration-for-usb">
+<h2>Linux Configuration for USB<a class="headerlink" href="#linux-configuration-for-usb" title="Link to this heading"></a></h2>
+<p>Create a new file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">udev</span><span class="o">/</span><span class="n">rules</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="mi">99</span><span class="o">-</span><span class="n">ch55x</span><span class="o">.</span><span class="n">rules</span>
+</pre></div>
+</div>
+<p>Add the following content:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;usb&quot;</span><span class="p">,</span> <span class="n">ATTR</span><span class="p">{</span><span class="n">idVendor</span><span class="p">}</span><span class="o">==</span><span class="s2">&quot;4348&quot;</span><span class="p">,</span> <span class="n">ATTR</span><span class="p">{</span><span class="n">idProduct</span><span class="p">}</span><span class="o">==</span><span class="s2">&quot;55e0&quot;</span><span class="p">,</span> <span class="n">MODE</span><span class="o">=</span><span class="s2">&quot;0666&quot;</span>
+</pre></div>
+</div>
+<p>update the rules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">udevadm</span> <span class="n">control</span> <span class="o">--</span><span class="n">reload</span><span class="o">-</span><span class="n">rules</span>
+<span class="n">sudo</span> <span class="n">udevadm</span> <span class="n">trigger</span>
 </pre></div>
 </div>
 <p>Clone the examples with the main code:</p>
@@ -140,6 +161,31 @@ Bus 001 Device 002: ID 4348:55e0 WinChipHead
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 </pre></div>
 </div>
+<p>Compile the code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="nb">bin</span>
+</pre></div>
+</div>
+<p>Flash the code, remember to change the device path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">python3</span> <span class="o">../../</span><span class="n">tools</span><span class="o">/</span><span class="n">chprog</span><span class="o">.</span><span class="n">py</span> <span class="n">main</span><span class="o">.</span><span class="n">bin</span>
+</pre></div>
+</div>
+<p>Success:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pc@LAPTOP:~$ sudo python3 ../../tools/chprog.py main.bin
+[sudo] password for pc:
+FOUND: CH552 with bootloader v2.4.0.
+Erasing chip ...
+Flashing main.bin to CH552 ...
+SUCCESS: 374 bytes written.
+Verifying ...
+SUCCESS: 374 bytes verified.
+DONE.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>chprog.py is a python script that allows you to flash the code to the device.</p>
+</div>
+</section>
 </section>
 
 

@@ -37,7 +37,7 @@ applications. The choice of this microcontroller is based on its affordability, 
 
 [Documentation Official Website](https://unit-electronics.github.io/CH55x_SDCC_Doc/)
 
-[Documentation Official PDF Version 0.1.0](./pdf/latex/cocketnovadevelopmentboardprogrammingguidecc.pdf)
+[Documentation Official PDF lastest version](./pdf/cocketnovadevelopmentboardprogrammingguidecc.pdf)
 
 ## License
 
