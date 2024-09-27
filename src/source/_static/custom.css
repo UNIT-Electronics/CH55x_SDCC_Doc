@@ -7,3 +7,7 @@
 .wy-side-nav-search .wy-dropdown>a, .wy-side-nav-search>a {
     color: #1c1c1c; /* Azul */
 }
+
+:root {
+    color-scheme: light;
+  }
