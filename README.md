@@ -4,32 +4,8 @@
 
 
 
-
-
-<img src="./src/source/_static/CH552_Sq.png" alt="CH552" width="250px">
-
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 
-</div>
-
-<div align="center">
-
-The **Cocket Nova Getting Started Guide** is an instructional manual designed to help you utilize the **SDCC** compiler effectively. This guide serves multiple purposes, allowing users to explore different features, work on new projects, and configure their **Cocket Nova CH552** boards with ease. These boards are known for their simplicity and versatility, making them an excellent choice for innovative projects that present a wide range of usage scenarios.
-
-The **CH552** microcontroller, notable for its compact size, native USB connectivity, and 16 KB memory (14 KB usable), allows for the creation of simple yet powerful programs. Its affordability, ease of connection, and compatibility with various operating systems make it an ideal choice for a broad spectrum of applications.
-
-</div>
-
-## Cocket Nova Development Board
-
-
-<div align="center">
-
-| Symbol | Description               | Range        |
-|--------|---------------------------|--------------|
-| **VUSB**   | Voltage supply via USB    | 3.14 to 5.25 V |
-| **VIn**    | Voltage supply from pins  | 2.7 to 5.5 V   |
-| **Top**    | Operating temperature     | -40 to 85 °C   |
 
 </div>
 
@@ -41,9 +17,20 @@ The **CH552** microcontroller, notable for its compact size, native USB connecti
 
 </div>
 
-## Repositories
-
 <div align="center">
+
+The **Cocket Nova Getting Started Guide** is an instructional manual designed to help you utilize the **SDCC** compiler effectively. This guide serves multiple purposes, allowing users to explore different features, work on new projects, and configure their **Cocket Nova CH552** boards with ease. These boards are known for their simplicity and versatility, making them an excellent choice for innovative projects that present a wide range of usage scenarios.
+
+The **CH552** microcontroller, notable for its compact size, native USB connectivity, and 16 KB memory (14 KB usable), allows for the creation of simple yet powerful programs. Its affordability, ease of connection, and compatibility with various operating systems make it an ideal choice for a broad spectrum of applications.
+
+</div>
+
+
+
+
+
+
+## Repositories
 
 Explore the repositories below to get the most out of your **Cocket Nova** development board:
 
@@ -59,19 +46,18 @@ Explore the repositories below to get the most out of your **Cocket Nova** devel
 
 5. **[Cocket Nova Hardware Resources](https://github.com/UNIT-Electronics/Cocket-Nova_CH552G-Development-Board/tree/main/Hardware)**: Explore the hardware documentation, including the pinout, schematics, and diagrams of the Cocket Nova board. This section provides essential resources to understand the board's physical design and hardware configuration.
 
-</div>
 
 ## License
 
-<div align="center">
+
 
 This project is licensed under the **GPL-3.0 License** - see the [License File](./LICENSE) for details.
 
-</div>
+
 
 ## Acknowledgments
 
-<div align="center">
+
 
 We would like to extend our gratitude to the following contributors for their invaluable support:
 
@@ -79,4 +65,4 @@ We would like to extend our gratitude to the following contributors for their in
 
 For further information and updates, visit our [GitHub repository](https://github.com/UNIT-Electronics).
 
-</div>
+
