@@ -6,6 +6,15 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 
+
+</div>
+
+<div align="center">
+
+### [Documentation Official Website](https://unit-electronics.github.io/CH55x_SDCC_Doc/)
+
+### [Download Latest PDF Documentation](./pdf/cocketnovadevelopmentboardprogrammingguidecc.pdf)
+
 </div>
 
 <div align="center">
@@ -16,17 +25,10 @@ The **CH552** microcontroller, notable for its compact size, native USB connecti
 
 </div>
 
-## Cocket Nova Development Board
 
 
 
-<div align="center">
 
-### [Documentation Official Website](https://unit-electronics.github.io/CH55x_SDCC_Doc/)
-
-### [Download Latest PDF Documentation](./pdf/cocketnovadevelopmentboardprogrammingguidecc.pdf)
-
-</div>
 
 ## Repositories
 
