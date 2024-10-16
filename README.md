@@ -11,7 +11,7 @@
 
 <div align="center">
 
-### [Documentation Official Website](https://unit-electronics.github.io/CH55x_SDCC_Doc/)
+### [Official documentation Website](https://unit-electronics.github.io/CH55x_SDCC_Doc/)
 
 ### [Download Latest PDF Documentation](./pdf/cocketnovadevelopmentboardprogrammingguidecc.pdf)
 
