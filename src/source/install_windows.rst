@@ -31,8 +31,7 @@ Follow these steps to install the necessary tools:
 8. **Install Editor Code**
    Download and install the latest version of your preferred text editor. Some popular choices include `Visual Studio Code <https://code.visualstudio.com/Download>`_, Sublime Text, and Notepad++.
 
-   .. tip::
-      This guide uses Visual Studio Code as the text editor.
+
 
 .. tip::  
     It is recommended to install the tools in the order listed above.
