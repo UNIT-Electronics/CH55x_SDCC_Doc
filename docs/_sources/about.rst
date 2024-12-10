@@ -1,10 +1,16 @@
 Cocket Nova Developmet Board CH552 Guide
 ========================================
 
+
+.. tip::
+   This  guide is tailored for individuals with a basic understanding of programming and electronics. It's ideal for those interested in diving into embedded systems and programming microcontrollers.
+
+
 This is an excellent guide for beginner programmers, focused on using the SDCC compiler in both Windows and Linux environments.
 Here, you can find excellent references and examples along with comprehensive documentation focusing on developing technology for embedded systems. 
 This course covers everything from installation and setting up the compiler to managing project dependencies and developing code. 
 It's a valuable resource that will guide you through the development process using high-quality technology, ensuring long-lasting and robust projects.
+
 
 Why Use the SDCC Compiler?
 ----------------------------
@@ -52,8 +58,6 @@ Requirements
 - Utilization of Operating System Controllers
 - Understanding of Basic Electronics
 
-.. tip::
-   This  guide is tailored for individuals with a basic understanding of programming and electronics. It's ideal for those interested in diving into embedded systems and programming microcontrollers.
 
 
 PinOut

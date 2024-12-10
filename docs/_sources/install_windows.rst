@@ -28,6 +28,12 @@ Follow these steps to install the necessary tools:
 7. **Install Python**
    Download and install the latest version of Python from the `official Python website <https://www.python.org/downloads/>`_.
 
+8. **Install Editor Code**
+   Download and install the latest version of your preferred text editor. Some popular choices include `Visual Studio Code <https://code.visualstudio.com/Download>`_, Sublime Text, and Notepad++.
+
+   .. tip::
+      This guide uses Visual Studio Code as the text editor.
+
 .. tip::  
     It is recommended to install the tools in the order listed above.
 
@@ -45,7 +51,7 @@ Remember that for Windows operating systems, an extra step is necessary, which i
 
 Locate the file
 ---------------
-After installing MinGW, you will need to locate the `mingw32-make.exe` file. This file is typically found in the `C:\MinGW\bin` directory. Once located, rename the file to `make.exe`.
+After installing MinGW, you will need to locate the `mingw32-make.exe` file. This file is typically found in the `C:/MinGW/bin` directory. Once located, rename the file to `make.exe`.
 
 .. _make_file:
 .. figure:: /_static/make_file.png
@@ -111,10 +117,12 @@ You should see the version information for `make`, indicating that it is correct
 Update driver
 ---------------
 
+.. warning::
+    The use of Zadig is at your own risk. if you are not familiar with the tool, it is recommended to seek assistance from someone who is. In the case of changing the driver any device, it is important to have the original driver available to revert the changes.
+
+
 
 The current loading tool can utilize the default driver and coexist with the official WCHISPTool. In case the driver encounters issues, it is advisable to switch the driver version to libusb-win32 using `Zadig <https://zadig.akeo.ie/>`_.
-
-
 
 
 .. _driver:
@@ -127,5 +135,3 @@ The current loading tool can utilize the default driver and coexist with the off
    driver
 
 
-.. warning::
-    The use of Zadig is at your own risk. if you are not familiar with the tool, it is recommended to seek assistance from someone who is. In the case of changing the driver any device  , it is important to have the original driver available to revert the changes.

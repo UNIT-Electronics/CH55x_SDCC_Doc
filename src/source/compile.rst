@@ -4,11 +4,12 @@ Compile and Flash CH55x with SDCC
 Running a Program
 -----------------
 
-To run the program, you will need to use a bash terminal. Follow these steps to clone the examples repository, navigate to the appropriate directory, and compile the project.
+
+To execute the program, open a Bash terminal or **Git Bash terminal on Windows**. Follow these steps to clone the examples repository, navigate to the desired directory, and compile the project.
 
 1. **Clone the Examples Repository**
 
-   Begin by cloning the examples repository which contains the main code. Open your bash terminal and execute the following command:
+   Begin by cloning the examples repository which contains the main code. Open your bash terminal  and execute the following command:
 
    .. code-block:: bash
 
