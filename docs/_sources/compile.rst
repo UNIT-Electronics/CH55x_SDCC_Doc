@@ -112,7 +112,8 @@ You can use the Arduino IDE to program the CH55x microcontrollers by following t
 
    .. code-block:: bash
 
-      https://raw.githubusercontent.com/Cesarbautista10/Uelectronics-CH552-Arduino-Package-v3/main/package_duino_mcs51_index.json
+     https://raw.githubusercontent.com/UNIT-Electronics/Uelectronics-CH552-Arduino-Package/refs/heads/develop/package_duino_mcs51_index.json
+
 
 3. **Install CH55x Board**
 
