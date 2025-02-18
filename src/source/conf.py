@@ -26,7 +26,13 @@ extensions = [
 
 templates_path = ['_templates']
 html_theme_options = {
-    "theme_switcher": False,  # Desactiva el interruptor de cambio de tema
+   "repository_url": "https://github.com/UNIT-Electronics/CH55x_SDCC_Doc",
+    "repository_branch": "main",  # Rama principal de tu repositorio
+      "path_to_docs": "docs/",  # Ruta a la documentación dentro del repositorio
+    "use_repository_button": True,  # Muestra un botón que enlaza al repositorio
+    "use_issues_button": True,  # Muestra un botón que enlaza a la sección de issues
+    "use_edit_page_button": True,  # Muestra un botón para editar la página actual
+
 }
 exclude_patterns = []
 master_doc = 'index'
