@@ -18,7 +18,11 @@ extensions = [
     'sphinx_togglebutton',
     'rst2pdf.pdfbuilder',
     'sphinx_tabs.tabs',
+    'sphinx_copybutton',  # Add this extension
+
+
 ]
+
 
 templates_path = ['_templates']
 html_theme_options = {

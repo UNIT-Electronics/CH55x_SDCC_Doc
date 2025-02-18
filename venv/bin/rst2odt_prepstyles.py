@@ -1,4 +1,4 @@
-#!/home/mr/Documents/github_updates/CH55x_SDCC_Doc/venv/bin/python3
+#!/home/mr/Documents/github/CH55x_SDCC_Doc/venv/bin/python3
 
 # Copyright: This module has been placed in the public domain.
 

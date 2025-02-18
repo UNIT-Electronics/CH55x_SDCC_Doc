@@ -1,4 +1,4 @@
-#!/home/mr/Documents/github_updates/CH55x_SDCC_Doc/venv/bin/python3
+#!/home/mr/Documents/github/CH55x_SDCC_Doc/venv/bin/python3
 # :Copyright: © 2015 Günter Milde.
 # :License: Released under the terms of the `2-Clause BSD license`_, in short:
 #

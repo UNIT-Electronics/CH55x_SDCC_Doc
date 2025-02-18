@@ -1,4 +1,4 @@
-#!/home/mr/Documents/github_updates/CH55x_SDCC_Doc/venv/bin/python3
+#!/home/mr/Documents/github/CH55x_SDCC_Doc/venv/bin/python3
 
 # $Id: rstpep2html.py 9115 2022-07-28 17:06:24Z milde $
 # Author: David Goodger <goodger@python.org>
