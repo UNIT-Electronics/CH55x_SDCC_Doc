@@ -22,13 +22,10 @@ Follow these steps to install the necessary tools:
 5. **Install Zadig**
    Download and install the latest version of Zadig from the `official website <https://zadig.akeo.ie/>`_.
 
-6. **Install Filter Wizard**
-   Download the latest version of libusb-win32 from the `official website <https://sourceforge.net/projects/libusb-win32/files/libusb-win32-releases/1.2.7.3/>`_. This driver is used by the Loadupch tool to communicate with the device.
-
-7. **Install Python**
+6. **Install Python**
    Download and install the latest version of Python from the `official Python website <https://www.python.org/downloads/>`_.
 
-8. **Install Editor Code**
+7. **Install Editor Code**
    Download and install the latest version of your preferred text editor. Some popular choices include `Visual Studio Code <https://code.visualstudio.com/Download>`_, Sublime Text, and Notepad++.
 
 
