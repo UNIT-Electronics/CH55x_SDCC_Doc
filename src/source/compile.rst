@@ -5,23 +5,23 @@ Running a Program
 -----------------
 
 
-To execute the program, open a Bash terminal or **Git Bash terminal on Windows**. Follow these steps to clone the examples repository, navigate to the desired directory, and compile the project.
+To execute the program, open a Bash terminal or **Git Bash terminal on Windows**. Follow these steps to clone the SDK repository, navigate to the Blink example, and compile the project.
 
-1. **Clone the Examples Repository**
+1. **Clone the SDK Repository**
 
-   Begin by cloning the examples repository which contains the main code. Open your bash terminal  and execute the following command:
+   Begin by cloning the SDK repository which contains the examples. Open your bash terminal and execute the following command:
 
    .. code-block:: bash
 
-      git clone https://github.com/UNIT-Electronics/CH55x_SDCC_Examples
+      git clone git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
 
 2. **Navigate to the Example Path**
 
-   Once the repository is cloned, navigate to the path where the example programs are located. Use the following command to change the directory:
+   Once the repository is cloned, navigate to the Blink example:
 
    .. code-block:: bash
 
-      cd ~/CH55x_SDCC_Examples/Software/examples/Blink/
+      cd unit_ch55x_docker_sdk/examples/blink
 
 3. **Connect the Device**
 
@@ -150,7 +150,7 @@ To use the WCHISPTool, follow these steps:
 
    The WCHISPTool is a Windows-based tool and may not be compatible with other operating systems.
 
-.. _wchisptool:
+.. _wchisptool-interface:
 
 .. figure:: /_static/wchisptool.png
    :width: 80%
@@ -193,9 +193,10 @@ Developed chprog, a Python tool for easily flashing CH55x series microcontroller
 
 **References:**  
 Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius Wang:
-   - `ATCnetz <https://ATCnetz.de>`_
-   - `chflasher on GitHub <https://github.com/atc1441/chflasher>`_
-   - `wchprog on GitHub <https://github.com/juliuswwj/wchprog>`_
+
+- `ATCnetz <https://ATCnetz.de>`_
+- `chflasher on GitHub <https://github.com/atc1441/chflasher>`_
+- `wchprog on GitHub <https://github.com/juliuswwj/wchprog>`_
 
 Once the project is compiled, you need to flash the program onto the CH55x device. Follow these steps:
 
@@ -232,7 +233,7 @@ Once the project is compiled, you need to flash the program onto the CH55x devic
 Loadupch
 ~~~~~~~~~~~~~~~~
 
-The `Loadupch <https://pypi.org/project/loadupch/>`_ is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
+The `Loadupch package <https://pypi.org/project/loadupch/>`_ is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
 It is a user-friendly tool that provides a graphical interface, making it easier for users to upload their code. 
 Based on chprog, Loadupch is a Python tool that simplifies the process of flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.
 
@@ -240,7 +241,7 @@ Based on chprog, Loadupch is a Python tool that simplifies the process of flashi
 
    Support available up to bootloader version 2.4.0, windows only.
 
-.. _loadupch:
+.. _loadupch-interface:
 
 .. figure:: /_static/loadupch.png
    :width: 50%
@@ -260,7 +261,7 @@ To install the Loadupch tool, you can use `pypi`. Follow these steps:
 
 1. **Install Loadupch**
 
-   Use the following command to install the `Loadupch <https://github.com/UNIT-Electronics/ue_loadupch_Loader_Firmware->`_. tool via pip:
+   Use the following command to install the `Loadupch loader <https://github.com/UNIT-Electronics/ue_loadupch_Loader_Firmware->`_ tool via pip:
 
    .. code-block:: bash
 
@@ -291,4 +292,3 @@ To install the Loadupch tool, you can use `pypi`. Follow these steps:
 .. note::
 
    Requires the `libusb-win32` driver to be installed using Zadig.
-      

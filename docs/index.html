@@ -171,6 +171,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="about.html">Cocket Nova Developmet Board CH552 Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platformio.html">PlatformIO Support for CH55x</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_linux.html">Environment Setup on Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_windows.html">Environment Setup on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
@@ -406,6 +407,17 @@ document.write(`
 configurations.
 The Cocket Nova CH552 boards are incredibly easy to use. The projects focus on innovation and
 present various alternatives for usage.</p>
+<p>Choose one development workflow:</p>
+<ul class="simple">
+<li><p>Use <a class="reference internal" href="platformio.html"><span class="doc">PlatformIO Support for CH55x</span></a> for the supported Ubuntu and Windows setup. This option
+does not require installing SDCC, Make or the manual toolchain described in
+the Linux and Windows setup pages. It uses the
+<a class="reference external" href="https://github.com/UNIT-Electronics-MX/unit_ch55x_docker_sdk">unit_ch55x_docker_sdk</a>
+repository as the SDK base.</p></li>
+<li><p>Use <a class="reference internal" href="install_linux.html"><span class="doc">Environment Setup on Ubuntu</span></a> or <a class="reference internal" href="install_windows.html"><span class="doc">Environment Setup on Windows</span></a> only for the legacy manual
+SDCC and Make workflow. That previous workflow is kept as reference while
+support moves to the PlatformIO SDK base.</p></li>
+</ul>
 <figure class="align-center" id="id1">
 <span id="ch552"></span><a class="reference internal image-reference" href="_images/CH552_Sq.png"><img alt="ch552 img" src="_images/CH552_Sq.png" style="width: 80%;" /></a>
 <figcaption>
@@ -414,7 +426,10 @@ present various alternatives for usage.</p>
 </figure>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The codes examples in github are available in the following link: <a class="reference external" href="https://github.com/UNIT-Electronics/CH55x_SDCC_Examples">CH55x_SDCC_Examples Github</a></p>
+<p>The supported SDK examples are available in the
+<a class="reference external" href="https://github.com/UNIT-Electronics-MX/unit_ch55x_docker_sdk/tree/main/examples">unit_ch55x_docker_sdk examples</a>
+directory. The Blink example is available at
+<a class="reference external" href="https://github.com/UNIT-Electronics-MX/unit_ch55x_docker_sdk/tree/main/examples/blink">examples/blink</a>.</p>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
@@ -424,6 +439,15 @@ present various alternatives for usage.</p>
 <li class="toctree-l2"><a class="reference internal" href="about.html#understanding-programming-languages-in-embedded-systems">Understanding Programming Languages in Embedded Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about.html#pinout">PinOut</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="platformio.html">PlatformIO Support for CH55x</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="platformio.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platformio.html#build-a-platformio-example">Build a PlatformIO Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platformio.html#upload-firmware">Upload Firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platformio.html#platformio-configuration">PlatformIO Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platformio.html#supported-boards">Supported Boards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platformio.html#create-a-new-sdk-project">Create a New SDK Project</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="install_linux.html">Environment Setup on Ubuntu</a><ul>

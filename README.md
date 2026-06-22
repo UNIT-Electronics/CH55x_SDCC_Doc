@@ -42,7 +42,7 @@ Explore the repositories below to get the most out of your **Cocket Nova** devel
 
 3. **[Cocket Nova Getting Started Guide](https://github.com/UNIT-Electronics/CH55x_SDCC_Doc)**: A manual for using the SDCC compiler with the CH55x microcontroller. It helps users explore features, start projects, and configure settings. Compatible with Cocket Nova CH552 boards for easy and innovative project implementation.
 
-4. **[Cocket Nova CH552 Examples using SDCC](https://github.com/UNIT-Electronics/CH55x_SDCC_Examples)**: Examples for CH55x microcontroller development in C with the SDCC compiler. Covers various topics including Blink, ADC, PWM, Timer, Interrupts, and I2C. Updated regularly to improve project development.
+4. **[CH55x Docker SDK](https://github.com/UNIT-Electronics-MX/unit_ch55x_docker_sdk)**: SDK base for CH55x development with PlatformIO and SDCC. The Blink example is available in [`examples/blink`](https://github.com/UNIT-Electronics-MX/unit_ch55x_docker_sdk/tree/main/examples/blink).
 
 5. **[Cocket Nova Hardware Resources](https://github.com/UNIT-Electronics/Cocket-Nova_CH552G-Development-Board/tree/main/Hardware)**: Explore the hardware documentation, including the pinout, schematics, and diagrams of the Cocket Nova board. This section provides essential resources to understand the board's physical design and hardware configuration.
 
@@ -64,5 +64,4 @@ We would like to extend our gratitude to the following contributors for their in
 - The **SDCC community** for their ongoing development and support of the compiler.
 
 For further information and updates, visit our [GitHub repository](https://github.com/UNIT-Electronics).
-
 

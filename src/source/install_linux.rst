@@ -36,14 +36,14 @@ update the rules::
     sudo udevadm trigger
 
 
-Clone the examples with the main code::
+Clone the SDK repository with the examples::
 
-    git clone https://github.com/UNIT-Electronics/CH55x_SDCC_Examples.git
+    git clone git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
 
 
 Navigate to the path::
 
-    cd CH55x_SDCC_Examples/Software/examples/Blink
+    cd unit_ch55x_docker_sdk/examples/blink
 
 
 Execute the command::
@@ -96,7 +96,6 @@ Success::
 .. note::
 
     chprog.py is a python script that allows you to flash the code to the device.
-
 
 
 

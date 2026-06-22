@@ -170,6 +170,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="about.html">Cocket Nova Developmet Board CH552 Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platformio.html">PlatformIO Support for CH55x</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_linux.html">Environment Setup on Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_windows.html">Environment Setup on Windows</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Compile and Flash CH55x with SDCC</a></li>
@@ -419,17 +420,17 @@ document.write(`
 <h1>Compile and Flash CH55x with SDCC<a class="headerlink" href="#compile-and-flash-ch55x-with-sdcc" title="Link to this heading">#</a></h1>
 <section id="running-a-program">
 <h2>Running a Program<a class="headerlink" href="#running-a-program" title="Link to this heading">#</a></h2>
-<p>To execute the program, open a Bash terminal or <strong>Git Bash terminal on Windows</strong>. Follow these steps to clone the examples repository, navigate to the desired directory, and compile the project.</p>
+<p>To execute the program, open a Bash terminal or <strong>Git Bash terminal on Windows</strong>. Follow these steps to clone the SDK repository, navigate to the Blink example, and compile the project.</p>
 <ol class="arabic">
-<li><p><strong>Clone the Examples Repository</strong></p>
-<p>Begin by cloning the examples repository which contains the main code. Open your bash terminal  and execute the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/UNIT-Electronics/CH55x_SDCC_Examples
+<li><p><strong>Clone the SDK Repository</strong></p>
+<p>Begin by cloning the SDK repository which contains the examples. Open your bash terminal and execute the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
 </pre></div>
 </div>
 </li>
 <li><p><strong>Navigate to the Example Path</strong></p>
-<p>Once the repository is cloned, navigate to the path where the example programs are located. Use the following command to change the directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/CH55x_SDCC_Examples/Software/examples/Blink/
+<p>Once the repository is cloned, navigate to the Blink example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>unit_ch55x_docker_sdk/examples/blink
 </pre></div>
 </div>
 </li>
@@ -444,10 +445,10 @@ document.write(`
 <p>This command will compile the project, resulting in the generation of files with various extensions necessary for flashing the microcontroller.</p>
 </li>
 </ol>
-<figure class="align-center" id="id8">
+<figure class="align-center" id="id4">
 <span id="files"></span><a class="reference internal image-reference" href="_images/files.png"><img alt="sections of the code" src="_images/files.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Compilation output files</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Compilation output files</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -533,10 +534,10 @@ To use the WCHISPTool, follow these steps:</p>
 <p class="admonition-title">Note</p>
 <p>The WCHISPTool is a Windows-based tool and may not be compatible with other operating systems.</p>
 </div>
-<figure class="align-center" id="id9">
-<span id="id3"></span><a class="reference internal image-reference" href="_images/wchisptool.png"><img alt="WCHISPTool interface" src="_images/wchisptool.png" style="width: 80%;" /></a>
+<figure class="align-center" id="id5">
+<span id="wchisptool-interface"></span><a class="reference internal image-reference" href="_images/wchisptool.png"><img alt="WCHISPTool interface" src="_images/wchisptool.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">WCHISPTool interface</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">WCHISPTool interface</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -565,13 +566,11 @@ Developed chprog, a Python tool for easily flashing CH55x series microcontroller
 </div>
 <p><strong>References:</strong>
 Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius Wang:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p><a class="reference external" href="https://ATCnetz.de">ATCnetz</a></p></li>
 <li><p><a class="reference external" href="https://github.com/atc1441/chflasher">chflasher on GitHub</a></p></li>
 <li><p><a class="reference external" href="https://github.com/juliuswwj/wchprog">wchprog on GitHub</a></p></li>
 </ul>
-</div></blockquote>
 <p>Once the project is compiled, you need to flash the program onto the CH55x device. Follow these steps:</p>
 <ol class="arabic">
 <li><p><strong>Connect the Device</strong></p>
@@ -584,10 +583,10 @@ Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius W
 </div>
 </li>
 </ol>
-<figure class="align-center" id="id10">
+<figure class="align-center" id="id6">
 <span id="led"></span><a class="reference internal image-reference" href="_images/led.png"><img alt="LED blinking" src="_images/led.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">LED blinking effect</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">LED blinking effect</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -597,17 +596,17 @@ Inspired by and based on chflasher and wchprog by Aaron Christophel and Julius W
 </section>
 <section id="loadupch">
 <h3>Loadupch<a class="headerlink" href="#loadupch" title="Link to this heading">#</a></h3>
-<p>The <a class="reference external" href="https://pypi.org/project/loadupch/">Loadupch</a> is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
+<p>The <a class="reference external" href="https://pypi.org/project/loadupch/">Loadupch package</a> is a software development prototype designed to facilitate the uploading of code to the CH552 microcontroller.
 It is a user-friendly tool that provides a graphical interface, making it easier for users to upload their code.
 Based on chprog, Loadupch is a Python tool that simplifies the process of flashing CH55x series microcontrollers with bootloader versions 1.x and 2.x.x.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Support available up to bootloader version 2.4.0, windows only.</p>
 </div>
-<figure class="align-center" id="id11">
-<span id="id6"></span><a class="reference internal image-reference" href="_images/loadupch.png"><img alt="Loadupch tool" src="_images/loadupch.png" style="width: 50%;" /></a>
+<figure class="align-center" id="id7">
+<span id="loadupch-interface"></span><a class="reference internal image-reference" href="_images/loadupch.png"><img alt="Loadupch tool" src="_images/loadupch.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Loadupch tool interface</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Loadupch tool interface</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -620,7 +619,7 @@ Based on chprog, Loadupch is a Python tool that simplifies the process of flashi
 <p>To install the Loadupch tool, you can use <cite>pypi</cite>. Follow these steps:</p>
 <ol class="arabic">
 <li><p><strong>Install Loadupch</strong></p>
-<p>Use the following command to install the <a class="reference external" href="https://github.com/UNIT-Electronics/ue_loadupch_Loader_Firmware-">Loadupch</a>. tool via pip:</p>
+<p>Use the following command to install the <a class="reference external" href="https://github.com/UNIT-Electronics/ue_loadupch_Loader_Firmware-">Loadupch loader</a> tool via pip:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>loadupch
 </pre></div>
 </div>

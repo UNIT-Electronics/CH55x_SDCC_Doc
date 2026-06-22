@@ -17,10 +17,10 @@ Follow these steps to install the necessary tools:
    Download and install MinGW, a set of development tools for Windows, from the `official MinGW website <https://sourceforge.net/projects/mingw/>`_.
 
 4. **Install CH372 Driver**
-   Download the latest version of the CH372 driver from the `official website <https://www.wch-ic.com/downloads/CH372DRV_EXE.html>`_.
+   Download the latest version of the CH372 driver from the `CH372 driver website <https://www.wch-ic.com/downloads/CH372DRV_EXE.html>`_.
 
 5. **Install Zadig**
-   Download and install the latest version of Zadig from the `official website <https://zadig.akeo.ie/>`_.
+   Download and install the latest version of Zadig from the `Zadig website <https://zadig.akeo.ie/>`_.
 
 6. **Install Python**
    Download and install the latest version of Python from the `official Python website <https://www.python.org/downloads/>`_.
@@ -129,5 +129,4 @@ The current loading tool can utilize the default driver and coexist with the off
    :width: 100%
    
    driver
-
 
