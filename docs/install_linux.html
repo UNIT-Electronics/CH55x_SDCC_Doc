@@ -173,7 +173,6 @@
 <li class="toctree-l1"><a class="reference internal" href="platformio.html">PlatformIO Support for CH55x</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Environment Setup on Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_windows.html">Environment Setup on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generalboardcontrol.html">General Board Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog to Digital Converter (ADC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="i2c.html">I2C (Inter-Integrated Circuit)</a></li>
@@ -394,7 +393,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-configuration-for-usb">Linux Configuration for USB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-configuration-for-usb">Linux Configuration for USB</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compile-and-flash-ch55x-with-sdcc">Compile and Flash CH55x with SDCC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-program">Running a Program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-pyusb">Install pyusb</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-with-pip">Error with pip</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -439,11 +444,11 @@ document.write(`
 </pre></div>
 </div>
 <p>Clone the SDK repository with the examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">UNIT</span><span class="o">-</span><span class="n">Electronics</span><span class="o">-</span><span class="n">MX</span><span class="o">/</span><span class="n">unit_ch55x_docker_sdk</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">UNIT</span><span class="o">-</span><span class="n">Electronics</span><span class="o">-</span><span class="n">MX</span><span class="o">/</span><span class="n">unit_ch55x_sdk</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <p>Navigate to the path:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">unit_ch55x_docker_sdk</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">blink</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">unit_ch55x_sdk</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">blink</span>
 </pre></div>
 </div>
 <p>Execute the command:</p>
@@ -493,6 +498,78 @@ DONE.
 <p class="admonition-title">Note</p>
 <p>chprog.py is a python script that allows you to flash the code to the device.</p>
 </div>
+<section id="compile-and-flash-ch55x-with-sdcc">
+<h3>Compile and Flash CH55x with SDCC<a class="headerlink" href="#compile-and-flash-ch55x-with-sdcc" title="Link to this heading">#</a></h3>
+</section>
+<section id="running-a-program">
+<h3>Running a Program<a class="headerlink" href="#running-a-program" title="Link to this heading">#</a></h3>
+<p>To execute the program, open a Bash terminal or <strong>Git Bash terminal on Windows</strong>. Follow these steps to clone the SDK repository, navigate to the Blink example, and compile the project.</p>
+<ol class="arabic">
+<li><p><strong>Clone the SDK Repository</strong></p>
+<p>Begin by cloning the SDK repository which contains the examples. Open your bash terminal and execute the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:UNIT-Electronics-MX/unit_ch55x_sdk.git
+</pre></div>
+</div>
+</li>
+<li><p><strong>Navigate to the Example Path</strong></p>
+<p>Once the repository is cloned, navigate to the Blink example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>unit_ch55x_sdk/examples/blink
+</pre></div>
+</div>
+</li>
+<li><p><strong>Connect the Device</strong></p>
+<p>Connect your CH55x device to your computer. Ensure that you press and hold the BOOT button while connecting the device. This is essential for the device to enter programming mode.</p>
+</li>
+<li><p><strong>Compile the Project</strong></p>
+<p>To compile the project and generate the necessary files, execute the following command in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>all
+</pre></div>
+</div>
+<p>This command will compile the project, resulting in the generation of files with various extensions necessary for flashing the microcontroller.</p>
+</li>
+</ol>
+<figure class="align-center" id="id1">
+<span id="files"></span><a class="reference internal image-reference" href="_images/files.png"><img alt="sections of the code" src="_images/files.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Compilation output files</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="install-pyusb">
+<h3>Install pyusb<a class="headerlink" href="#install-pyusb" title="Link to this heading">#</a></h3>
+<p>pyusb is a Python module necessary for flashing the CH55x microcontroller. To install pyusb, follow these steps:</p>
+<p>Install <cite>pyusb</cite> on using pip</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pyusb
+</pre></div>
+</div>
+<p>Then verify the installation</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>show<span class="w"> </span>pyusb
+</pre></div>
+</div>
+<p>For Windows, you can use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pyusb
+</pre></div>
+</div>
+</section>
+<section id="error-with-pip">
+<h3>Error with pip<a class="headerlink" href="#error-with-pip" title="Link to this heading">#</a></h3>
+<p>If you encounter this error, we recommend installing the Python environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span>
+</pre></div>
+</div>
+<p>Create an environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">.</span><span class="n">venv</span>
+</pre></div>
+</div>
+<p>Activate the environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">.</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+<p>And install <cite>pyusb</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyusb</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -541,7 +618,13 @@ DONE.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-configuration-for-usb">Linux Configuration for USB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-configuration-for-usb">Linux Configuration for USB</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compile-and-flash-ch55x-with-sdcc">Compile and Flash CH55x with SDCC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-program">Running a Program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-pyusb">Install pyusb</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-with-pip">Error with pip</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

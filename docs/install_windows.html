@@ -56,7 +56,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Compile and Flash CH55x with SDCC" href="compile.html" />
+    <link rel="next" title="General Board Control" href="generalboardcontrol.html" />
     <link rel="prev" title="Environment Setup on Ubuntu" href="install_linux.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,7 +173,6 @@
 <li class="toctree-l1"><a class="reference internal" href="platformio.html">PlatformIO Support for CH55x</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_linux.html">Environment Setup on Ubuntu</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Environment Setup on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compile.html">Compile and Flash CH55x with SDCC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generalboardcontrol.html">General Board Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog to Digital Converter (ADC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="i2c.html">I2C (Inter-Integrated Circuit)</a></li>
@@ -395,12 +394,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiler-installation">Compiler Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variable-configuration">Environment Variable Configuration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#locate-the-file">Locate the file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-it">Rename it</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-path-to-the-environment-variable">Add the path to the environment variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-the-installation">Verify the installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-driver">Update driver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-functionality">Alternative Functionality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wchisptool">WCHISPTool</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -414,26 +411,47 @@ document.write(`
                   
   <section id="environment-setup-on-windows">
 <h1>Environment Setup on Windows<a class="headerlink" href="#environment-setup-on-windows" title="Link to this heading">#</a></h1>
-<p>This section provides a step-by-step guide to setting up the SDCC compiler on Windows operating systems. It also includes instructions for installing the necessary tools and configuring the environment variables. Additionally, it covers the installation of the pyusb library and updating the driver using Zadig.</p>
+<p>This section provides a step-by-step guide to setting up the SDCC compiler on Windows operating systems.
+It also includes instructions for installing the necessary tools and configuring the environment variables.
+Additionally, it covers the installation of the pyusb library and updating the driver using Zadig.</p>
 <section id="compiler-installation">
 <h2>Compiler Installation<a class="headerlink" href="#compiler-installation" title="Link to this heading">#</a></h2>
-<p>Follow these steps to install the necessary tools:</p>
-<ol class="arabic simple">
-<li><p><strong>Install Git for Windows</strong>
-Download and install Git for Windows from the <a class="reference external" href="https://git-scm.com/download">official Git website</a>.</p></li>
-<li><p><strong>Install SDCC</strong>
-Download and install the latest version of SDCC from the <a class="reference external" href="https://sourceforge.net/projects/sdcc/">SDCC downloads page</a>.</p></li>
-<li><p><strong>Install MinGW</strong>
-Download and install MinGW, a set of development tools for Windows, from the <a class="reference external" href="https://sourceforge.net/projects/mingw/">official MinGW website</a>.</p></li>
+<p>Follow these steps to install the necessary tools and files:</p>
+<ol class="arabic">
+<li><p><strong>Download or Clone the Repository</strong></p>
+<p>You can either download the repository as a ZIP file or clone it using Git.</p>
+<ol class="loweralpha">
+<li><p><strong>Clone via Git</strong></p>
+<p>Install Git for Windows from the <a class="reference external" href="https://git-scm.com/download">official Git website</a>.
+Then open a command prompt and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">UNIT</span><span class="o">-</span><span class="n">Electronics</span><span class="o">-</span><span class="n">MX</span><span class="o">/</span><span class="n">unit_ch55x_sdk</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Download as ZIP</strong></p>
+<p>Download the ZIP file from the <a class="reference external" href="https://github.com/UNIT-Electronics-MX/unit_ch55x_sdk/archive/refs/heads/main.zip">GitHub repository</a>
+and extract it to a desired location on your computer.</p>
+</li>
+</ol>
+</li>
 <li><p><strong>Install CH372 Driver</strong>
 Download the latest version of the CH372 driver from the <a class="reference external" href="https://www.wch-ic.com/downloads/CH372DRV_EXE.html">CH372 driver website</a>.</p></li>
-<li><p><strong>Install Zadig</strong>
-Download and install the latest version of Zadig from the <a class="reference external" href="https://zadig.akeo.ie/">Zadig website</a>.</p></li>
 <li><p><strong>Install Python</strong>
 Download and install the latest version of Python from the <a class="reference external" href="https://www.python.org/downloads/">official Python website</a>.</p></li>
 <li><p><strong>Install Editor Code</strong>
 Download and install the latest version of your preferred text editor. Some popular choices include <a class="reference external" href="https://code.visualstudio.com/Download">Visual Studio Code</a>, Sublime Text, and Notepad++.</p></li>
+<li><p><strong>Install PlatformIO IDE</strong>
+Download and install the latest version of Platformio IDE from the visual studio code extensions like in the next image:</p></li>
 </ol>
+<figure class="align-center" id="id2">
+<span id="download-platformio"></span><a class="reference internal image-reference" href="_images/platformIO.png"><img alt="Installing PlatformIO IDE." src="_images/platformIO.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Installing PlatformIO IDE</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<div class="legend">
+<p>You can also install PlatformIO IDE from the <a class="reference external" href="https://platformio.org/install/ide?install=vscode">official Platformio website</a>.</p>
+</div>
+</figcaption>
+</figure>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>It is recommended to install the tools in the order listed above.</p>
@@ -443,84 +461,45 @@ Download and install the latest version of your preferred text editor. Some popu
 <p>Remember to restart your computer after installing the tools.</p>
 </div>
 </section>
-<section id="environment-variable-configuration">
-<h2>Environment Variable Configuration<a class="headerlink" href="#environment-variable-configuration" title="Link to this heading">#</a></h2>
-<p>Remember that for Windows operating systems, an extra step is necessary, which is to open the environment variable -&gt; Edit environment variable:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">MinGW</span>\<span class="nb">bin</span>
-</pre></div>
-</div>
-</section>
-<section id="locate-the-file">
-<h2>Locate the file<a class="headerlink" href="#locate-the-file" title="Link to this heading">#</a></h2>
-<p>After installing MinGW, you will need to locate the <cite>mingw32-make.exe</cite> file. This file is typically found in the <cite>C:/MinGW/bin</cite> directory. Once located, rename the file to <cite>make.exe</cite>.</p>
-<figure class="align-center" id="id1">
-<span id="make-file"></span><a class="reference internal image-reference" href="_images/make_file.png"><img alt="Locating the mingw32-make.exe file." src="_images/make_file.png" style="width: 90%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Locating the <cite>mingw32-make.exe</cite> file</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="rename-it">
-<h2>Rename it<a class="headerlink" href="#rename-it" title="Link to this heading">#</a></h2>
-<p>After locating <cite>mingw32-make.exe</cite>, rename it to <cite>make.exe</cite>. This change is necessary for compatibility with many build scripts that expect the command to be named <cite>make</cite>.</p>
-<figure class="align-center" id="id2">
-<span id="rename"></span><a class="reference internal image-reference" href="_images/rename.png"><img alt="Renaming mingw32-make.exe to make.exe." src="_images/rename.png" style="width: 90%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Renaming <cite>mingw32-make.exe</cite> to <cite>make.exe</cite></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you encounter any issues, create a copy of the file and then rename the copy to <cite>make.exe</cite>.</p>
-</div>
-</section>
-<section id="add-the-path-to-the-environment-variable">
-<h2>Add the path to the environment variable<a class="headerlink" href="#add-the-path-to-the-environment-variable" title="Link to this heading">#</a></h2>
-<p>Next, you need to add the path to the MinGW bin directory to your system’s environment variables. This allows the <cite>make</cite> command to be recognized from any command prompt.</p>
+<section id="alternative-functionality">
+<h2>Alternative Functionality<a class="headerlink" href="#alternative-functionality" title="Link to this heading">#</a></h2>
+<section id="wchisptool">
+<h3>WCHISPTool<a class="headerlink" href="#wchisptool" title="Link to this heading">#</a></h3>
+<p>The WCHISPTool is an official programming tool provided by WCH. It is a Windows-based tool that allows users to flash firmware onto CH55x microcontrollers.
+To use the WCHISPTool, follow these steps:</p>
 <ol class="arabic">
-<li><p>Open the Start Search, type in “env”, and select “Edit the system environment variables”.</p></li>
-<li><p>In the System Properties window, click on the “Environment Variables” button.</p></li>
-<li><p>In the Environment Variables window, under “System variables”, select the “Path” variable and click “Edit”.</p></li>
-<li><p>In the Edit Environment Variable window, click “New” and add the path:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">MinGW</span>\<span class="nb">bin</span>
-</pre></div>
-</div>
+<li><p><strong>Download the WCHISPTool</strong></p>
+<p>Download the <a class="reference external" href="https://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html">WCHISPTool</a> from the official WCH website.</p>
+</li>
+<li><p><strong>Install the WCHISPTool</strong></p>
+<p>Install the WCHISPTool on your Windows computer by following the on-screen instructions.</p>
+</li>
+<li><p><strong>Connect the Device</strong></p>
+<p>Connect your CH55x device to your computer using a USB cable. Ensure that the BOOT button is pressed while connecting the device.</p>
+</li>
+<li><p><strong>Flash the Program</strong></p>
+<p>Open the WCHISPTool and select the appropriate firmware file. Click the “Download” button to flash the program onto the microcontroller.</p>
 </li>
 </ol>
-<figure class="align-center" id="id3">
-<span id="var-env"></span><a class="reference internal image-reference" href="_images/var_env.png"><img alt="Adding MinGW bin directory to environment variables." src="_images/var_env.png" style="width: 60%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Adding MinGW bin directory to environment variables</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="verify-the-installation">
-<h2>Verify the installation<a class="headerlink" href="#verify-the-installation" title="Link to this heading">#</a></h2>
-<p>To verify that the <cite>make</cite> command is correctly set up, open a new command prompt and type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="o">--</span><span class="n">version</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The WCHISPTool is a Windows-based tool and may not be compatible with other operating systems.</p>
 </div>
-<p>You should see the version information for <cite>make</cite>, indicating that it is correctly installed and recognized by the system.</p>
-<figure class="align-center" id="id4">
-<span id="verify"></span><a class="reference internal image-reference" href="_images/make_version.png"><img alt="Verifying the installation of make." src="_images/make_version.png" style="width: 90%;" /></a>
+<figure class="align-center" id="id3">
+<span id="wchisptool-interface"></span><a class="reference internal image-reference" href="_images/wchisptool.png"><img alt="WCHISPTool interface" src="_images/wchisptool.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Verifying the installation of <cite>make</cite></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">WCHISPTool interface</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-</section>
-<section id="update-driver">
-<h2>Update driver<a class="headerlink" href="#update-driver" title="Link to this heading">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The use of Zadig is at your own risk. if you are not familiar with the tool, it is recommended to seek assistance from someone who is. In the case of changing the driver any device, it is important to have the original driver available to revert the changes.</p>
+<p>The WCHISPTool is an official tool provided by WCH and may have limitations compared to other flashing methods.</p>
 </div>
-<p>The current loading tool can utilize the default driver and coexist with the official WCHISPTool. In case the driver encounters issues, it is advisable to switch the driver version to libusb-win32 using <a class="reference external" href="https://zadig.akeo.ie/">Zadig</a>.</p>
-<figure class="align-center" id="id5">
-<span id="driver"></span><a class="reference internal image-reference" href="_images/driver.png"><img alt="GitHub build status reporting for pull requests." src="_images/driver.png" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">driver</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Requires the <a class="reference external" href="https://www.wch-ic.com/downloads/CH372DRV_EXE.html">ch372</a> driver to be installed.</p>
+</div>
+</section>
 </section>
 </section>
 
@@ -545,11 +524,11 @@ Download and install the latest version of your preferred text editor. Some popu
       </div>
     </a>
     <a class="right-next"
-       href="compile.html"
+       href="generalboardcontrol.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Compile and Flash CH55x with SDCC</p>
+        <p class="prev-next-title">General Board Control</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -570,12 +549,10 @@ Download and install the latest version of your preferred text editor. Some popu
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiler-installation">Compiler Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variable-configuration">Environment Variable Configuration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#locate-the-file">Locate the file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-it">Rename it</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-path-to-the-environment-variable">Add the path to the environment variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-the-installation">Verify the installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-driver">Update driver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-functionality">Alternative Functionality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wchisptool">WCHISPTool</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
