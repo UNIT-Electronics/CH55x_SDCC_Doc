@@ -53,7 +53,6 @@ Choose one development workflow:
    platformio
    install_linux
    install_windows
-   compile
    generalboardcontrol
    adc
    i2c
